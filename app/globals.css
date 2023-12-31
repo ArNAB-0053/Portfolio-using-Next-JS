@@ -2,26 +2,484 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+    font-family: FuturaNowHeadlineExtraBold;
+    src: url('../public/Fonts/FuturaNowHeadlineExtraBold.ttf');
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+@font-face {
+    font-family: Montserrat;
+    src: url('../public/Fonts/Montserrat-VariableFont_wght.ttf');
 }
 
+@font-face {
+    font-family: PoppinsBlack;
+    src: url('../public/Fonts/Poppins-Black.ttf');
+}
+
+@font-face {
+    font-family: PoppinsMedium;
+    src: url('../public/Fonts/Poppins-Medium.ttf');
+}
+
+@font-face {
+    font-family: Poppinslight;
+    src: url('../public/Fonts/Poppins-Light.ttf');
+}
+
+@font-face {
+    font-family: MerriweatherLight;
+    src: url('../public/Fonts/Merriweather-Light.ttf');
+}
+
+@font-face {
+    font-family: MerriweatherBlack;
+    src: url('../public/Fonts/Merriweather-Black.ttf');
+}
+
+@font-face {
+    font-family: MerriweatherBold;
+    src: url('../public/Fonts/Merriweather-Bold.ttf');
+}
+
+@font-face {
+    font-family: FuturaNowHeadlineExtraBlack;
+    src: url('../public/Fonts/FuturaNowHeadlineExtraBlack.ttf');
+}
+
+@font-face {
+    font-family: Futura;
+    src: url('../public/Fonts/Futura-Bold.ttf');
+}
+
+@font-face {
+    font-family: HelveticaBold;
+    src: url('../public/Fonts/HelveticaNowText-Bold.ttf');
+}
+
+@font-face {
+    font-family: HelveticaMedium;
+    src: url('../public/Fonts/HelveticaNowText-Medium.ttf');
+}
+
+@font-face {
+    font-family: HelveticaLight;
+    src: url('../public/Fonts/HelveticaNowText-Light.ttf');
+}
+
+@font-face {
+    font-family: DancingScriptBold;
+    src: url('../public/Fonts/DancingScript-Bold.ttf');
+}
+
+@font-face {
+    font-family: DancingScriptMedium;
+    src: url('../public/Fonts/DancingScript-Medium.ttf');
+}
+
+html,
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    scroll-behavior: smooth;
+}
+
+* {
+    scroll-behavior: smooth;   
+}
+
+#hello {
+    font-family: DancingScriptBold;
+}
+
+#arnab {
+    font-family: FuturaNowHeadlineExtraBold;
+}
+
+#passion {
+    font-family: HelveticaBold;
+}
+
+#about {
+    font-family: MerriweatherBlack;
+}
+
+#socialMedia_heading {
+    font-family: Montserrat;
+}
+
+#socialMedia li {
+    text-decoration: none;
+}
+
+.links {
+    border-radius: 50%;
+}
+
+#socialMedia .img {
+    transition: all 0.2s ease;
+}
+
+#socialMedia .img:hover {
+    scale: 1.3;
+}
+
+span .lang {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 12vw;
+    height: 10vh;
+    padding: 0 2vw;
+    margin-top: -1rem;
+    font-size: 1.2rem;
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 4px 9px 0px; */
+    border-radius: 0.5rem;
+    background: #f5f5f5c9;
+    font-family: Montserrat;
+    font-weight: 500;
+    letter-spacing: -0.05rem;
+    text-transform: uppercase;
+}
+
+.lang:hover {
+    background: #f0f0f0;
+    color: #666666;
+}
+
+#skills_heading,
+#project_heading {
+    font-family: Merriweather;
+    font-weight: 900;
+}
+
+#skills_content h1 {
+    font-size: 2rem;
+    font-family: Montserrat;
+    font-weight: bold;
+    letter-spacing: -0.05rem;
+}
+
+.lang {
+    padding: 1.5rem;
+    text-transform: uppercase;
+}
+
+.lang .logo {
+    width: 4rem;
+    height: 4rem;
+}
+
+.project_content_div {
+    -webkit-box-shadow: 5px 3.5px 12px 4px #dddddd;
+    -moz-box-shadow: 5px 3.5px 12px 4px #dddddd;
+    box-shadow: 5px 3.5px 12px 4px #dddddd;
+    transition: all 1.5s ease;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.project_content_main {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 24%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 0.6rem;
+    -ms-overflow-style: none;
+    transition: all 0.5s ease;
+    scroll-behavior: smooth;
+}
+
+.project_content_main::-webkit-scrollbar {
+    display: none;
+    scroll-behavior: smooth;
+}
+
+.scrollBar {
+    scroll-behavior: smooth;
+}
+
+.project_content_main>* {
+    scroll-snap-align: start;
+}
+
+.project_img {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+#project___heading {
+    font-family: Montserrat;
+    font-weight: 800;
+}
+
+#project__desc {
+    font-family: Montserrat;
+    height: 4.5rem;
+    line-height: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -0.5rem;
+}
+
+.project_link {
+    font-family: Montserrat;
+    text-transform: uppercase;
+}
+
+.tech_heading {
+    font-family: Montserrat;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+#contactform input,
+#contactform textarea {
+    outline: none;
+    width: 100%;
+}
+
+/* .footer {
+    background-image: url('../public/Images/bg.png');
+    background-repeat: no-repeat;
+    background-position: start;
+    background-size: cover;
+} */
+
+.contact_form input {
+    outline: none;
+    border-bottom: 1px solid #dadada;
+    color: white;
+}
+
+/* .contact_form input:focus, .contact_form textarea:focus {
+    background: #a5a5a5;
+}
+
+.contact_form input:focus::placeholder, .contact_form textarea:focus::placeholder {
+    color: #040404;
+} */
+
+.conatct_heading {
+    font-family: Montserrat;
+    font-weight: 700;
+}
+
+.connect_text {
+    font-family: Montserrat;
+}
+
+.withme_text {
+    font-family: DancingScriptMedium;
+}
+
+.header_con a {
+    font-family: Montserrat;
+    text-transform: uppercase;
+    /* font-family: 'Merriweather', serif; */
+}
+
+@media (min-width: 1024px) and (max-width: 1535px) {
+    #passion {
+        font-size: 1.9rem;
+    }
+}
+
+@media (max-width: 420px) {
+    #passion {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 400px) {
+    #passion {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 320px) {
+    #passion {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 648px) and (max-width: 1024px) {
+    #about_desc {
+        width: 80vw;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+    #about_desc {
+        width: 60vw;
+    }
+}
+
+@media (min-width: 640px) and (max-width: 1360px) {
+    #bwPhoto {
+        width: 22rem;
+        height: 22rem;
+    }
+}
+
+@media (max-width: 1400px) {
+    .project_content_main {
+        grid-auto-columns: 30%;
+        margin: 0;
+    }
+}
+
+@media (max-width: 1300px) {
+    .project_content_main {
+        grid-auto-columns: 30%;
+        margin: 0;
+    }
+}
+
+@media (max-width: 1280px) {
+    .project_content_main {
+        grid-auto-columns: 34%;
+        margin: 0;
+    }
+}
+
+@media (max-width: 1024px) {
+    .project_content_main {
+        grid-auto-columns: 35%;
+        margin: 0 5vw;
+    }
+
+    .scroll_left {
+        left: 0.5rem;
+    }
+
+    .scroll_right {
+        right: 0.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .project_content_main {
+        grid-auto-columns: 36%;
+        margin: 0 3vw;
+    }
+}
+
+@media (max-width: 680px) {
+    .project_content_main {
+        grid-auto-columns: 42%;
+        margin: 0 3vw;
+    }
+}
+
+
+
+@media (max-width: 640px) {
+    .project_content_main {
+        grid-auto-columns: 55%;
+        margin: 0 3vw;
+    }
+}
+
+@media (max-width: 500px) {
+    .project_content_main {
+        grid-auto-columns: 70%;
+        margin: 0;
+    } 
+}
+
+@media (max-width: 400px) {
+    .project_content_main {
+        grid-auto-columns: 70%;
+        margin: 0;
+    } 
+    .scroll_left, .scroll_right {
+        margin-top: 1rem;
+    }    
+}
+
+@media (max-width: 350px) {
+    .project_content_main {
+        grid-auto-columns: 100%;
+        margin: 0;
+    } 
+
+    .scroll_left, .scroll_right {
+        margin-top: 2rem;
+    }    
+}
+  
+
+.drawerCon {
+    transition: all 0.5s ease;
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+}
+
+.drawerCon.close {
+    right: -100%;
+    transition: all 0.5s ease;
+}
+
+.drawerCon.open {
+    right: 10px;
+    width: 50%;
+}
+
+@media (max-width: 280px) {
+    html, body {
+        font-size: 40%;
+    }
+    .project_content_main {
+        grid-auto-columns: 70%;
+        margin: 0;
+    } 
+    .scroll_left, .scroll_right {
+        margin-top: 3px;
+    }    
+}
+  
+
+@media (max-width: 320px) {
+    .drawerCon.open {
+        right: 0;
+        width: 100%;
+    }
+}
+
+/* @keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.typing_animation {
+    display: inline-block;
+    animation: blink 1.2s infinite;
+} */
+
+.project_link {
+    border: 0.1px solid #EF4444;
+}
+
+
+.cursor{
+    position: fixed;
+    /* width: 25px;
+    height: 25px;
+    background-color: rgb(199, 17, 17);
+    border-radius: 50%; */
+    pointer-events: none;   
+    left: 0;
+    top: 0;
+    z-index: 1;
 }
