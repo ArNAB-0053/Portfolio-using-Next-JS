@@ -13,7 +13,9 @@ export const theme = {
     },
     boxShadow: {
       'custom-shadow': '10px 24px 58px rgba(45, 45, 45), -10px -24px 58px rgba(51, 51, 51)',
-      'own-shadow': '5px 3.5px 12px 4px #1c1c1c90'
+      'own-shadow': '5px 3.5px 12px 4px #1c1c1c90',
+      'red-shadow': '5.5px 6px 16px -5.5px #ff0000',
+      'contact-shadow': '0.5px 3.5px 17.5px 2.5px #9f1515',
     },
     colors: {
       'myRed': '#ff0000',

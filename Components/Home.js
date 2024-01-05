@@ -1,22 +1,29 @@
 // import Image from 'next/image'
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import dynamic from "next/dynamic";
 import Typewriter from 'typewriter-effect';
-import { motion } from "framer-motion"
 
 const Home = () => {
+  const [isHovered, setIsHovered] = useState(false);
+  const handleHover = () => {
+    setIsHovered(true);
+  };
+
+  const handleLeave = () => {
+    setIsHovered(false);
+  };
   return (
-    <div className='overflow-x-hidden flex items-center justify-between w-full h-auto mt-16 max-[1024px]:pb-24 max-[1024px]:flex-col-reverse max-[1024px]:justify-center '>
-      <div className='flex flex-col w-[40vw] gap-y-0 max-[748px]:w-full max-[1280px]:mt-[-4vh] md:max-[1024px]:w-[75vw] lg:max-[1280px]:w-[50vw]'>
+    <div className='overflow-x-hidden px-4 flex items-center justify-between w-full h-auto mt-16 max-[1024px]:pb-24 max-[1280px]:flex-col-reverse max-[1024px]:justify-center lg:max-[1280px]:pb-24 min-[1281px]:max-[1535px]:py-16'>
+      <div className='flex flex-col w-[45vw] gap-y-0 max-[768px]:w-full max-[1280px]:mt-[-4vh] md:max-[1024px]:w-[75vw] lg:max-[1280px]:w-[50vw]'>
         <h1 id='hello' className='text-6xl tracking-tighter max-[748px]:text-3xl'>Hello,</h1>
         <h2 id='arnab' className='text-[4.5rem] bold tracking-tight flex gap-6 mt-[-2rem] max-[748px]:text-4xl max-[748px]:mt-0' > I'm
           <p className='text-red-500 dark:text-[#ff0000]'>Arnab</p>
         </h2>
         <h3 id='passion' className='text-[3rem] tracking-tighter mt-[-1.7rem] flex gap-2 text-red-500 dark:text-[#ff0000] min-[320px]:max-[748px]:text-3xl max-[1280px]:mt-0 md:max-[1024px]:text-5xl  min-[320px]:max-[1024px]:mb-4'>
           Passionate
-          <h4 className={`animation-text  text-black dark:text-white max-[1024px]:twxt-md `}>
+          <h4 className={`animation-text text-black dark:text-white max-[1024px]:text-md`}>
             <Typewriter
               options={{
                 strings: ['Web Developer', 'ML Enthusiast'],
@@ -31,12 +38,14 @@ const Home = () => {
         <a
           href="/PDF/Resume.pdf"
           download='Resume'
-          className='mt-6 w-48 py-2 rounded-full bg-red-500 text-white text-center dark:bg-[#ff0000] max-[748px]:text-sm hover:dark:bg-red-500 hover:bg-red-700'
+          className='mt-6 w-48 py-2 rounded-full bg-red-500 text-white text-center dark:bg-[#ff0000] max-[748px]:text-sm hover:dark:bg-[#ff0000] hover:bg-red-700 relative z-40 dark:hover:shadow-contact-shadow hover:shadow-red-shadow'
+          onMouseEnter={handleHover}
+          onMouseLeave={handleLeave}
         >
-          <p className='bold text-md'>Download Resume</p>
+          <p className='bold text-md font-[Montserrat]'>Download Resume</p>
         </a>
       </div>
-      <svg className='w-[45rem] h-[45rem] mr-[-4.8vw] max-[748px]:w-[90vw] max-[748px]:h-[50vh] max-[748px]:mr-0' id="sw-js-blob-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <svg className='w-[45rem] h-[45rem] mr-[-4vw] max-[748px]:w-[90vw] max-[748px]:h-[50vh] max-[748px]:mr-0 min-[1025px]:max-[1535px]:w-[30rem] min-[1025px]:max-[1535px]:h-[30rem]' id="sw-js-blob-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="sw-gradient" x1="0" x2="1" y1="1" y2="0">
             <stop id="stop1" stop-color="#F8A037" offset="0%"></stop>

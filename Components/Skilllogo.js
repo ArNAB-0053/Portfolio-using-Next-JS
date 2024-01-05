@@ -17,7 +17,7 @@ const Skilllogo = ({langLogo, left=false}) => {
 
         transition={{ duration: 0.4 }}
         
-        className='lang bg-[#dadada] dark:bg-[#454545] w-24 h-24 flex items-center justify-center rounded-full max-[768px]:grid-cols-3'>
+        className='lang bg-[#dadada] dark:bg-[#454545] w-24 h-24 flex items-center justify-center rounded-full max-[768px]:grid-cols-3  max-[640px]:w-20 max-[640px]:h-20 max-[640px]:text-[0.3rem]'>
             <Image
                 src={`/Images/${langLogo}.svg`}
                 width='60'

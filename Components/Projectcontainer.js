@@ -6,7 +6,7 @@ import Projectviewlink from './Projectviewlink'
 const Projectcontainer = ({project_heading, project_desc, project_img, link, bg = 'transparent'}) => {
     return (
         <div       
-        className='project_content_div flex flex-col gap-4 w-64 h-[20rem] bg-[#F0F0F0] rounded-xl pb-6 dark:bg-[#454545] dark:shadow-own-shadow'>
+        className='project_content_div flex flex-col gap-4 w-64 h-auto bg-[#F0F0F0] rounded-xl pb-3 dark:bg-[#454545] dark:shadow-own-shadow'>
             <Image
                 src={`/Images/${project_img}.png`}
                 width='500'

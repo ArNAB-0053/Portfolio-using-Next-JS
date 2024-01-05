@@ -51,7 +51,7 @@ const About = () => {
 
 
                     id='about'
-                    className='text-[3rem] text-red-500 text-center tracking-tighter dark:text-myRed'>About me!</motion.h1>
+                    className='text-[2rem] text-red-500 text-center dark:text-myRed font-[Elnath] tracking-[1rem] uppercase'>About me!</motion.h1>
                 <span id='about_desc' className='mt-10 flex flex-col gap-y-4 text-sm md:max-[1280px]:w-full font-[Montserrat] font-light sm:max-[1024px]:text-lg'>
                     <motion.p
                         initial={{

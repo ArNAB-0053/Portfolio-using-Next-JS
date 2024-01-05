@@ -18,7 +18,7 @@ const Header = () => {
 
   const handleLinkClick = () => {
     handleDrawerClose();
-  };  
+  };
 
   // Mode
   const { theme, setTheme } = useTheme();
@@ -38,6 +38,16 @@ const Header = () => {
     setTheme(initialTheme);
     setChecked(initialTheme === 'dark');
   }, [setTheme]);
+
+
+  const [isHovered, setIsHovered] = useState(false);
+  const handleHover = () => {
+    setIsHovered(true);
+  };
+
+  const handleLeave = () => {
+    setIsHovered(false);
+  };
 
   return (
     <ThemeProvider attribute="class">
@@ -63,12 +73,41 @@ const Header = () => {
               />
             ) : null}
           </a>
-          <div className='flex items-center justify-center text-black dark:text-white max-[1024px]:hidden xl:gap-4'>
-            <a href='#home' className='hover:dark:bg-[#ff0000] hover:bg-red-500 hover:text-white px-4 py-2 rounded-sm text-sm'>Home</a>
-            <a href='#about' className='hover:dark:bg-[#ff0000] hover:bg-red-500 hover:text-white px-4 py-2 rounded-sm text-sm'>About</a>
-            <a href='#skills' className='hover:dark:bg-[#ff0000] hover:bg-red-500 hover:text-white px-4 py-2 rounded-sm text-sm'>Skills</a>
-            <a href='#project' className='hover:dark:bg-[#ff0000] hover:bg-red-500 hover:text-white px-4 py-2 rounded-sm text-sm'>Project</a>
-            <a href='#contact' className='hover:dark:bg-[#ff0000] hover:bg-red-500 hover:text-white px-4 py-2 rounded-sm text-sm'>Contact</a>
+          <div className='flex items-center justify-center text-black dark:text-white max-[1024px]:hidden xl:gap-4 font-[Elnath] tracking-[0.1rem] ' >
+            <a
+              href='#home'
+              className='hover:dark:bg-[#ff0000] hover:bg-red-500 hover:text-white px-4 py-2 rounded-sm text-sm'
+              onMouseEnter={handleHover}
+              onMouseLeave={handleLeave}
+            >Home</a>
+
+            <a 
+            href='#about' 
+            className='hover:dark:bg-[#ff0000] hover:bg-red-500 hover:text-white px-4 py-2 rounded-sm text-sm'
+            onMouseEnter={handleHover}
+            onMouseLeave={handleLeave}
+            >About</a>
+
+            <a 
+            href='#skills' 
+            className='hover:dark:bg-[#ff0000] hover:bg-red-500 hover:text-white px-4 py-2 rounded-sm text-sm'
+            onMouseEnter={handleHover}
+            onMouseLeave={handleLeave}
+            >Skills</a>
+
+            <a 
+            href='#project' 
+            className='hover:dark:bg-[#ff0000] hover:bg-red-500 hover:text-white px-4 py-2 rounded-sm text-sm'
+            onMouseEnter={handleHover}
+            onMouseLeave={handleLeave}
+            >Project</a>
+
+            <a 
+            href='#contact' 
+            className='hover:dark:bg-[#ff0000] hover:bg-red-500 hover:text-white px-4 py-2 rounded-sm text-sm'
+            onMouseEnter={handleHover}
+            onMouseLeave={handleLeave}
+            >Contact</a>
           </div>
 
           <span className='flex items-center justify-center gap-4'>
@@ -110,7 +149,7 @@ const Header = () => {
             </button>
           </span>
 
-          <div className={` drawerCon flex flex-col items-center justify-center gap-4 rounded-es-xl absolute text-black dark:text-white bg-[#dadada4c] dark:bg-[#1111114c] px-6 py-12 max-[280px]:py-0 max-[280px]:h-screen  max-[280px]:rounded-es-none right-[-100%] top-0 ${isOpen ? 'open' : 'close'}`}>
+          <div className={` drawerCon flex flex-col items-center justify-center gap-4 rounded-es-xl absolute text-black dark:text-white bg-[#dadada4c] dark:bg-[#1111114c] px-6 py-12 max-[280px]:py-0 max-[280px]:h-screen  max-[280px]:rounded-es-none right-[-100%] top-0 ${isOpen ? 'open' : 'close'} font-[Elnath] tracking-[0.1rem]`}>
             <button onClick={handleDrawerClose} className='bg-[#0c0c0c] dark:bg-red-500 text-white p-4 absolute right-2 top-2 rounded-lg'>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
                 <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
@@ -135,10 +174,9 @@ const Header = () => {
             <div className='w-full h-[0.2px] bg-zinc-800 dark:bg-zinc-400'></div>
             <a href='#contact' onClick={handleLinkClick}>Contact</a>
           </div>
-        </div>
-      </div>
-
-      <Cursor />
+        </div>        
+      </div>  
+      {isHovered ? <Cursor bg='bg-transparent' /> : <Cursor />}    
     </ThemeProvider>
   )
 }

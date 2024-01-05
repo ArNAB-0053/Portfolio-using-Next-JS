@@ -39,7 +39,9 @@ const Footer = () => {
             <input type="text" placeholder='Description' className='bg-transparent p-2 w-full' />
           </form>
 
-          <button className='w-[10vw] mt-10 py-3 bg-red-500 dark:bg-[#ff0000] font-bold uppercase text-white rounded-md hover:bg-[#cf6363] active:bg-red-600 max-[1024px]:w-full'>Submit</button>
+          <button className='relative z-40 w-[10vw] mt-10 py-3 rounded-md
+           bg-red-500 dark:bg-[#ff0000] font-bold uppercase text-white hover:bg-[#ff0000] hover:shadow-contact-shadow active:bg-red-600 
+           max-[1024px]:w-full'>Submit</button>
         </motion.div>
 
         <motion.div

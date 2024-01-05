@@ -32,10 +32,10 @@ const Body = () => {
           duration: 1.5,
         }}
 
-        className='bg-white dark:bg-[#2E2E2E] overflow-x-hidden'
+        className='bg-white dark:bg-[#2E2E2E] overflow-x-hidden relative'
       >
         <Header />
-        <section data-scroll data-scroll-speed="0.3" id='home' className='overflow-hidden min-h-screen px-48 w-screen bg-white dark:bg-[#2E2E2E] max-[1024px]:px-8'>
+        <section data-scroll data-scroll-speed="0.3" id='home' className='overflow-hidden min-h-screen px-44 w-screen bg-white dark:bg-[#2E2E2E] max-[1024px]:px-8'>
           <Home />
         </section>
         <section data-scroll id='about' className='overflow-hidden min-h-screen px-48 w-screen bg-[#f0f0f0] dark:bg-[#454545] max-[1024px]:px-8 lg:max-[1280px]:px-8'>

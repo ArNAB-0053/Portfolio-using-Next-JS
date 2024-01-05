@@ -3,7 +3,6 @@
 import Body from '@/Components/Body'
 import React, { useEffect } from 'react'
 import { ThemeProvider } from "next-themes"
-import Cursor from '@/Components/Cursor'
 
 
 const page = () => {
@@ -11,7 +10,7 @@ const page = () => {
     <ThemeProvider attribute="class">
       <div>
         <Body />  
-        <Cursor/>     
+        {/* <Cursor/>      */}
       </div>
     </ThemeProvider>
   )
