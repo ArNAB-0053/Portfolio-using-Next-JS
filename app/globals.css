@@ -302,6 +302,12 @@ span .lang {
     }
 }
 
+@media (min-width: 421px) and (max-width: 640px) {
+    #passion {
+        font-size: 1.7rem;
+    }
+}
+
 @media (max-width: 420px) {
     #passion {
         font-size: 1.7rem;

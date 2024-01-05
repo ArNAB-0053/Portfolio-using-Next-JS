@@ -62,7 +62,7 @@ const Project = () => {
                         technology and continuous learning. Visit my
                         <a
                             className='bg-transparent underline underline-offset-2 font-semibold hover:bg-red-600 text-red-500 hover:text-white hover:no-underline px-4 py-[0.2rem] rounded-sm text-center z-40 relative'
-                            href="https://github.com/ArNAB-0053">GitHub
+                            href="https://github.com/ArNAB-0053?tab=repositories">GitHub
                         </a> profile to explore them in detail.
                     </motion.h4>
                     <motion.div
