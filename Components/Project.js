@@ -57,7 +57,7 @@ const Project = () => {
                             opacity: 1,
                             y: 0,
                         }}
-                        className='mb-8 font-[Montserrat] text-md text-center max-[768px]:text-sm max-[640px]:text-start font-light sm:max-[1024px]:text-xl overflow-hidden max-[640px]:px-8'>My projects consist of a diverse range, including both web and machine learning projects. Some of them were developed
+                        className='mb-8 font-[Montserrat] text-md text-center max-[768px]:text-sm max-[640px]:text-start font-light sm:max-[1024px]:text-xl overflow-hidden'>My projects consist of a diverse range, including both web and machine learning projects. Some of them were developed
                         for hackathons, showcasing my skills in building innovative solutions. Each project reflects my passion for
                         technology and continuous learning. Visit my
                         <a
