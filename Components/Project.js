@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from 'react'
 import Projectcontainer from './Projectcontainer'
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
+import Swiper from './Swiper';
 
 const Project = () => {
     const containerRef = useRef(null);
@@ -22,7 +23,7 @@ const Project = () => {
     };
 
     return (
-        <div className='mt-16 w-full'>
+        <div className='mt-16 mb-[-2rem] sm:mb-0 w-full'>
             <motion.h1
                 initial={{
                     opacity: 0,
@@ -79,7 +80,7 @@ const Project = () => {
                             opacity: 1,
                             y: 0,
                         }}
-                        className='project_content_main gap-16 py-6 px-4 max-[768px]:px-0 relative'
+                        className='project_content_main gap-16 py-6 px-4 max-[768px]:px-0 relative max-[639.9px]:hidden'
                         ref={containerRef}>
                         <Projectcontainer
                             project_img='anihub'
@@ -122,6 +123,7 @@ const Project = () => {
                             link='AttendEase----Smart-Attendance-System-Using-OpenCV'
                         />
                     </motion.div>
+                    <Swiper/>
                     <motion.button
                         initial={{
                             opacity: 0,

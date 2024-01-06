@@ -126,6 +126,8 @@ body {
 }
 
 #socialMedia .img {
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
 }
 
@@ -134,9 +136,15 @@ body {
 }
 
 span .lang {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     gap: 0.5rem;
     min-width: 12vw;
     height: 10vh;
@@ -182,21 +190,31 @@ span .lang {
 
 .project_content_div {
     -webkit-box-shadow: 5px 3.5px 12px 4px #dddddd;
-    -moz-box-shadow: 5px 3.5px 12px 4px #dddddd;
     box-shadow: 5px 3.5px 12px 4px #dddddd;
+    -webkit-transition: all 1.5s ease;
+    -o-transition: all 1.5s ease;
     transition: all 1.5s ease;
     overflow: hidden;
     scroll-behavior: smooth;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
 }
 
 .project_content_main {
+    display: -ms-grid;
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 24%;
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    -ms-scroll-snap-type: x mandatory;
+        scroll-snap-type: x mandatory;
     scroll-padding-inline: 0.6rem;
     -ms-overflow-style: none;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
     scroll-behavior: smooth;
 }
@@ -210,13 +228,14 @@ span .lang {
     scroll-behavior: smooth;
 }
 
-.project_content_main>* {
+/* .project_content_main>* {
     scroll-snap-align: start;
-}
+} */
 
 .project_img {
     aspect-ratio: 16/9;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 
 #project___heading {
@@ -228,9 +247,15 @@ span .lang {
     font-family: Montserrat;
     height: 4.5rem;
     line-height: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin-top: -0.5rem;
 }
 
@@ -288,6 +313,8 @@ span .lang {
 }
 
 .header_con a {
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
     transition: all 0.4s ease;
 }
 
@@ -395,70 +422,9 @@ span .lang {
     }
 }
 
-
-
-@media (max-width: 640px) {
-    .project_content_main {
-        display: grid;
-        grid-auto-flow: column;
-        grid-auto-columns: 100%;
-        padding: 0;
-        scroll-padding-inline: 0;
-        margin: 0;
-    }
-
-    .project_content_div {
-        width: 100%;
-        height: auto;
-        margin: 0;
-    }
-
-    .project_img  {
-        height: auto;
-        width: 100%;
-        aspect-ratio: 5/3;
-        object-fit: cover;
-    }
-
-    .project_link {
-        height: 2.7rem;
-        width: 50%;
-    }
-}
-
-/* @media (max-width: 500px) {
-    .project_content_main {
-        grid-auto-columns: 70%;
-        margin: 0;
-    }
-}
-
-@media (max-width: 400px) {
-    .project_content_main {
-        grid-auto-columns: 70%;
-        margin: 0;
-    }
-
-    .scroll_left,
-    .scroll_right {
-        margin-top: 1rem;
-    }
-}
-
-@media (max-width: 350px) {
-    .project_content_main {
-        grid-auto-columns: 100%;
-        margin: 0;
-    }
-
-    .scroll_left,
-    .scroll_right {
-        margin-top: 2rem;
-    }
-} */
-
-
 .drawerCon {
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
     -webkit-backdrop-filter: blur(7px);
     backdrop-filter: blur(7px);
@@ -466,6 +432,8 @@ span .lang {
 
 .drawerCon.close {
     right: -100%;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
 
@@ -475,21 +443,10 @@ span .lang {
 }
 
 @media (max-width: 280px) {
-
     html,
     body {
         font-size: 40%;
     }
-
-    /* .project_content_main {
-        grid-auto-columns: 70%;
-        margin: 0;
-    }
-
-    .scroll_left,
-    .scroll_right {
-        margin-top: 3px;
-    } */
 }
 
 
@@ -499,23 +456,6 @@ span .lang {
         width: 100%;
     }
 }
-
-/* @keyframes blink {
-
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0;
-    }
-}
-
-.typing_animation {
-    display: inline-block;
-    animation: blink 1.2s infinite;
-} */
 
 .project_link {
     border: 0.1px solid #EF4444;
@@ -528,4 +468,21 @@ span .lang {
     z-index: 1;
     top: -100%;
     left: -100%;
+}
+
+.swiper {
+    width: 100%;
+}
+
+
+.swiper-slide {
+    padding-bottom: 2rem;
+}
+
+.swiper-pagination-bullet {
+    background-color: #ff8484 !important;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #ff0000 !important;
 }
