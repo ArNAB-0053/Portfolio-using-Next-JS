@@ -11,7 +11,7 @@ const About = () => {
             <motion.span
 
                 initial={{
-                    x: -200,
+                    x: -100,
                     opacity: 0,
                     y: -20,
                 }}
@@ -55,7 +55,7 @@ const About = () => {
                 <span id='about_desc' className='mt-10 flex flex-col gap-y-4 text-sm md:max-[1280px]:w-full font-[Montserrat] font-light sm:max-[1024px]:text-lg'>
                     <motion.p
                         initial={{
-                            x: 200
+                            x: 100
                         }}
 
                         whileInView={{
@@ -68,7 +68,7 @@ const About = () => {
                     <motion.p
 
                         initial={{
-                            x: 200
+                            x: 100
                         }}
 
                         whileInView={{
@@ -82,7 +82,7 @@ const About = () => {
                     <motion.p
 
                         initial={{
-                            x: 200
+                            x: 100
                         }}
 
                         whileInView={{
@@ -95,7 +95,7 @@ const About = () => {
                 </span>
                 <motion.div
                     initial={{
-                        x: 200
+                        x: 100
                     }}
 
                     whileInView={{

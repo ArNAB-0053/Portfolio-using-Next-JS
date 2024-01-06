@@ -304,19 +304,19 @@ span .lang {
 
 @media (min-width: 421px) and (max-width: 640px) {
     #passion {
-        font-size: 1.7rem;
+        font-size: 1.6rem;
     }
 }
 
 @media (max-width: 420px) {
     #passion {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
     }
 }
 
 @media (max-width: 400px) {
     #passion {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 }
 
@@ -416,8 +416,9 @@ span .lang {
     .project_img  {
         height: auto;
         width: 100%;
-        aspect-ratio: 4/3;
+        aspect-ratio: 14/9;
         object-fit: cover;
+        object-position: 15%;
     }
 
     .project_link {
@@ -481,7 +482,7 @@ span .lang {
         font-size: 40%;
     }
 
-    .project_content_main {
+    /* .project_content_main {
         grid-auto-columns: 70%;
         margin: 0;
     }
@@ -489,7 +490,7 @@ span .lang {
     .scroll_left,
     .scroll_right {
         margin-top: 3px;
-    }
+    } */
 }
 
 

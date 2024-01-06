@@ -40,7 +40,7 @@ const Project = () => {
 
                 // viewport={{ once: true }}
                 id='project_heading'
-                className='text-[2rem] text-red-500 dark:text-myRed text-center mb-12 font-[Pavelt] tracking-[1rem]'>Projects</motion.h1>
+                className='text-[2rem] text-red-500 dark:text-myRed text-center mb-12 font-[Pavelt] tracking-[1rem] max-[360px]:tracking-wider'>Projects</motion.h1>
             <div className='relative '>
                 <div className='overflow-hidden ' >
                     <motion.h4
@@ -99,7 +99,7 @@ const Project = () => {
                             project_img='mediapipe'
                             project_heading='volar'
                             project_desc='Voler is the OpenCV project, by using it user can control the volumn of their PC or Laptop by only using two fingers.'
-                            bg='white'
+                            bg='zinc-800 dark:bg-white'
                             link='Voler----Volume-Control-by-Hand'
                         />
 
@@ -115,7 +115,7 @@ const Project = () => {
                             project_img='attendease'
                             project_heading='attendease'
                             project_desc='It matchs the faces of student with the database and depent upon that it marks that student as present or absent.'
-                            bg='white'
+                            bg='zinc-800 dark:bg-white'
                             link='AttendEase----Smart-Attendance-System-Using-OpenCV'
                         />
                     </motion.div>

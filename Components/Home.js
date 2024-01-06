@@ -15,7 +15,7 @@ const Home = () => {
     setIsHovered(false);
   };
   return (
-    <div className='overflow-x-hidden px-4 flex items-center justify-between w-full h-auto mt-16 max-[1024px]:pb-24 max-[1280px]:flex-col-reverse max-[1024px]:justify-center lg:max-[1280px]:pb-24 min-[1281px]:max-[1535px]:py-16'>
+    <div className='overflow-x-hidden px-4 flex items-center justify-between w-full h-auto mt-16 max-[1024px]:pb-24 max-[1280px]:flex-col-reverse max-[1024px]:justify-center lg:max-[1280px]:pb-24 min-[1281px]:max-[1535px]:py-16 '>
       <div className='flex flex-col w-[45vw] gap-y-0 max-[768px]:w-full max-[1280px]:mt-[-4vh] md:max-[1024px]:w-[75vw] lg:max-[1280px]:w-[50vw]'>
         <h1 id='hello' className='text-6xl tracking-tighter max-[748px]:text-3xl'>Hello,</h1>
         <h2 id='arnab' className='text-[4.5rem] bold tracking-tight flex gap-6 mt-[-2rem] max-[748px]:text-4xl max-[748px]:mt-0' > I'm
