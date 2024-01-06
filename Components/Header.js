@@ -116,7 +116,7 @@ const Header = () => {
           </div>
 
           <span
-            className='relative  text-white'>
+            className='relative  text-white flex items-center justify-center '>
             {theme === 'dark' && (
               <button
                 className='px-4 py-2 font-[Montserrat] rounded-md dark:hover:bg-zinc-700  text-yellow-400 '
@@ -142,15 +142,18 @@ const Header = () => {
               </button>
             )}
             <button className={`drawerBtn min-[1025px]:hidden w-12 h-8`} onClick={handleDrawerOpen}>
-              <svg className='w-full h-full dark:text-white text-black' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
-              </svg>
+            <Image
+                src='/Images/drawer.svg'
+                width={100}
+                height={100}
+                className='w-6 h-6 dark:invert ml-2'
+              />
             </button>
           </span>
 
           <div className={` drawerCon flex flex-col items-center justify-center gap-4 rounded-es-xl absolute text-black dark:text-white bg-[#dadada4c] dark:bg-[#1111114c] px-6 py-12 max-[280px]:py-0 max-[280px]:h-screen  max-[280px]:rounded-es-none right-[-100%] top-0 ${isOpen ? 'open' : 'close'} font-[Elnath] tracking-[0.1rem]`}>
             <button onClick={handleDrawerClose} className='bg-[#0c0c0c] dark:bg-red-500 text-white p-4 absolute right-2 top-2 rounded-lg'>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+              <svg className='w-6 h-6' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                 <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
               </svg>
             </button>
