@@ -40,7 +40,7 @@ const Project = () => {
 
                 // viewport={{ once: true }}
                 id='project_heading'
-                className='text-[2rem] text-red-500 dark:text-myRed text-center mb-12 font-[Pavelt] tracking-[1rem] max-[360px]:tracking-wider'>Projects</motion.h1>
+                className='text-[2rem] text-red-500 dark:text-myRed text-center mb-12 font-[Pavelt] tracking-[1rem] max-[360px]:tracking-wider max-[640px]:tracking-[0.9rem]'>Projects</motion.h1>
             <div className='relative '>
                 <div className='overflow-hidden ' >
                     <motion.h4
@@ -57,7 +57,7 @@ const Project = () => {
                             opacity: 1,
                             y: 0,
                         }}
-                        className='mb-8 font-[Montserrat] text-md text-center max-[768px]:text-sm max-[640px]:text-start font-light sm:max-[1024px]:text-xl overflow-hidden'>My projects consist of a diverse range, including both web and machine learning projects. Some of them were developed
+                        className='mb-8 font-[Montserrat] text-md text-center max-[768px]:text-sm max-[640px]:text-start font-light sm:max-[1024px]:text-xl overflow-hidden max-[640px]:px-8'>My projects consist of a diverse range, including both web and machine learning projects. Some of them were developed
                         for hackathons, showcasing my skills in building innovative solutions. Each project reflects my passion for
                         technology and continuous learning. Visit my
                         <a
@@ -86,6 +86,7 @@ const Project = () => {
                             project_heading='Anihub4U'
                             project_desc='AniHub4U is web application that have all information about anime, its characters and also it have the Trailor of the anime.'
                             link='ANIHUB4U'
+                            bg='transparent object-[20%]'
                         />
 
                         <Projectcontainer
@@ -93,6 +94,7 @@ const Project = () => {
                             project_heading='doctplus'
                             project_desc='DoctPlus is a web application that uses ML as a feature to detect human diseases.'
                             link='DoctPlus'
+                            bg='transparent object-[20%]'
                         />
 
                         <Projectcontainer
@@ -109,6 +111,7 @@ const Project = () => {
                             project_heading='groot'
                             project_desc='Groot is an Android application to detect plant diseases, here I handled the ML part.'
                             link='Groot-App'
+                            bg='transparent object-[50%]'
                         />
 
                         <Projectcontainer
