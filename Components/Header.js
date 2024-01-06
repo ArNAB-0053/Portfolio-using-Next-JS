@@ -52,15 +52,20 @@ const Header = () => {
   return (
     <ThemeProvider attribute="class">
       <div className={` header w-screen h-[10vh] mb-[-10vh] top-0 left-0 z-20 px-48 transition-all max-[1024px]:px-8 relative`} >
-        <div className='header_con min-h-12 flex items-center justify-between text-black  overflow-x-hidden '
+        <div className='header_con min-h-12 flex items-center justify-between text-black  overflow-x-hidden pt-3 pl-4'
         >
-          <a href='#home'>
+          <a
+            href='#home'
+            className='rounded-md hover:bg-zinc-200 dark:hover:bg-zinc-700 p-3'
+            onMouseEnter={handleHover}
+            onMouseLeave={handleLeave}
+          >
             {theme === 'light' ? (
               <Image
-                src='/Images/logo_black.svg'
+                src='/Images/logo_dark.svg'
                 width={100}
                 height={100}
-                className='w-28 h-20'
+                className='w-16 h-8'
               />
             ) : null}
 
@@ -69,7 +74,7 @@ const Header = () => {
                 src='/Images/logo_light.svg'
                 width={100}
                 height={100}
-                className='w-28 h-20'
+                className='w-16 h-8'
               />
             ) : null}
           </a>
@@ -81,67 +86,61 @@ const Header = () => {
               onMouseLeave={handleLeave}
             >Home</a>
 
-            <a 
-            href='#about' 
-            className='hover:dark:bg-[#ff0000] hover:bg-red-500 hover:text-white px-4 py-2 rounded-sm text-sm'
-            onMouseEnter={handleHover}
-            onMouseLeave={handleLeave}
+            <a
+              href='#about'
+              className='hover:dark:bg-[#ff0000] hover:bg-red-500 hover:text-white px-4 py-2 rounded-sm text-sm'
+              onMouseEnter={handleHover}
+              onMouseLeave={handleLeave}
             >About</a>
 
-            <a 
-            href='#skills' 
-            className='hover:dark:bg-[#ff0000] hover:bg-red-500 hover:text-white px-4 py-2 rounded-sm text-sm'
-            onMouseEnter={handleHover}
-            onMouseLeave={handleLeave}
+            <a
+              href='#skills'
+              className='hover:dark:bg-[#ff0000] hover:bg-red-500 hover:text-white px-4 py-2 rounded-sm text-sm'
+              onMouseEnter={handleHover}
+              onMouseLeave={handleLeave}
             >Skills</a>
 
-            <a 
-            href='#project' 
-            className='hover:dark:bg-[#ff0000] hover:bg-red-500 hover:text-white px-4 py-2 rounded-sm text-sm'
-            onMouseEnter={handleHover}
-            onMouseLeave={handleLeave}
+            <a
+              href='#project'
+              className='hover:dark:bg-[#ff0000] hover:bg-red-500 hover:text-white px-4 py-2 rounded-sm text-sm'
+              onMouseEnter={handleHover}
+              onMouseLeave={handleLeave}
             >Project</a>
 
-            <a 
-            href='#contact' 
-            className='hover:dark:bg-[#ff0000] hover:bg-red-500 hover:text-white px-4 py-2 rounded-sm text-sm'
-            onMouseEnter={handleHover}
-            onMouseLeave={handleLeave}
+            <a
+              href='#contact'
+              className='hover:dark:bg-[#ff0000] hover:bg-red-500 hover:text-white px-4 py-2 rounded-sm text-sm'
+              onMouseEnter={handleHover}
+              onMouseLeave={handleLeave}
             >Contact</a>
           </div>
 
-          <span className='flex items-center justify-center gap-4'>
-            <div className="mode max-[280px]:hidden">
-              <label className="toggle" htmlFor="switch">
-                <input
-                  id="switch"
-                  className="input"
-                  type="checkbox"
-                  checked={checked}
-                  onChange={handleToggle}
-                />
-
-                <div className="icon icon--moon">
-                  {theme === 'light' ? (
-                    <div className={` ${theme === 'dark' ? 'dark' : ''}`}>
-                      <svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" fill="currentColor" className="bi bi-moon-stars-fill w-[80%]" viewBox="0 0 16 16">
-                        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278" />
-                        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
-                      </svg>
-                    </div>
-                  ) : null}
-                </div>
-
-
-                <div className="icon icon--sun">
-                  <div className={`${theme === 'light' ? 'dark' : ''}`}>
-                    <svg height="32" width="32" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"></path>
-                    </svg>
-                  </div>
-                </div>
-              </label>
-            </div>
+          <span
+            className='relative  text-white'>
+            {theme === 'dark' && (
+              <button
+                className='px-4 py-2 font-[Montserrat] rounded-md dark:hover:bg-zinc-700  text-yellow-400 '
+                onClick={() => setTheme('light')}
+                onMouseEnter={handleHover}
+                onMouseLeave={handleLeave}
+              >
+                <svg className='w-6 h-6 ' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708" />
+                </svg>
+              </button>
+            )}
+            {theme === 'light' && (
+              <button
+                className='px-4 py-2 font-[Montserrat] rounded-md hover:bg-zinc-200 '
+                onClick={() => setTheme('dark')}
+                onMouseEnter={handleHover}
+                onMouseLeave={handleLeave}
+              >
+                <svg className='w-6 h-6  text-[#1c1c1c]' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278" />
+                </svg>
+              </button>
+            )}
             <button className={`drawerBtn min-[1025px]:hidden w-12 h-8`} onClick={handleDrawerOpen}>
               <svg className='w-full h-full dark:text-white text-black' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
@@ -174,9 +173,9 @@ const Header = () => {
             <div className='w-full h-[0.2px] bg-zinc-800 dark:bg-zinc-400'></div>
             <a href='#contact' onClick={handleLinkClick}>Contact</a>
           </div>
-        </div>        
-      </div>  
-      {isHovered ? <Cursor bg='bg-transparent' /> : <Cursor />}    
+        </div>
+      </div>
+      {isHovered ? <Cursor bg='bg-transparent' /> : <Cursor />}
     </ThemeProvider>
   )
 }
