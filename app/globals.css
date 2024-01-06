@@ -422,6 +422,71 @@ span .lang {
     }
 }
 
+
+
+@media (max-width: 640px) {
+    .project_content_main {
+        display: -ms-grid;
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 100%;
+        padding: 0;
+        scroll-padding-inline: 0;
+        margin: 0;
+    }
+
+    .project_content_div {
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+
+    .project_img {
+        height: auto;
+        width: 100%;
+        aspect-ratio: 5/3;
+        -o-object-fit: cover;
+           object-fit: cover;
+    }
+
+    .project_link {
+        height: 2.7rem;
+        width: 50%;
+    }
+}
+
+/* @media (max-width: 500px) {
+    .project_content_main {
+        grid-auto-columns: 70%;
+        margin: 0;
+    }
+}
+
+@media (max-width: 400px) {
+    .project_content_main {
+        grid-auto-columns: 70%;
+        margin: 0;
+    }
+
+    .scroll_left,
+    .scroll_right {
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 350px) {
+    .project_content_main {
+        grid-auto-columns: 100%;
+        margin: 0;
+    }
+
+    .scroll_left,
+    .scroll_right {
+        margin-top: 2rem;
+    }
+} */
+
+
 .drawerCon {
     -webkit-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -443,10 +508,21 @@ span .lang {
 }
 
 @media (max-width: 280px) {
+
     html,
     body {
         font-size: 40%;
     }
+
+    /* .project_content_main {
+        grid-auto-columns: 70%;
+        margin: 0;
+    }
+
+    .scroll_left,
+    .scroll_right {
+        margin-top: 3px;
+    } */
 }
 
 
@@ -456,6 +532,23 @@ span .lang {
         width: 100%;
     }
 }
+
+/* @keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.typing_animation {
+    display: inline-block;
+    animation: blink 1.2s infinite;
+} */
 
 .project_link {
     border: 0.1px solid #EF4444;
@@ -477,6 +570,7 @@ span .lang {
 
 .swiper-slide {
     padding-bottom: 2rem;
+    /* margin-bottom: -2rem; */
 }
 
 .swiper-pagination-bullet {
