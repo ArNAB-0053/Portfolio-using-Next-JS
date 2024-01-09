@@ -73,7 +73,7 @@ const Project = () => {
                         }}
 
                         transition={{
-                            duration: .3,
+                            duration: .2,
                         }}
 
                         whileInView={{
@@ -127,16 +127,16 @@ const Project = () => {
                     <motion.button
                         initial={{
                             opacity: 0,
-                            y: 100,
+                            x: -100,
                         }}
 
                         transition={{
-                            duration: .3,
+                            duration: .5,
                         }}
 
                         whileInView={{
                             opacity: 1,
-                            y: 0,
+                            x: 0,
                         }}
                         className='scroll_left absolute top-[50%] left-[-3%] rounded-full bg-[#0000006e] p-6 text-white max-[640px]:p-2 max-[768px]:left-[-1rem] max-[768px]:top-[57%] sm:max-[768px]:left-0 max-[640px]:hidden' onClick={handleScrollLeft}>
                         <svg className='w-8 h-8' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -147,16 +147,16 @@ const Project = () => {
                     <motion.button
                         initial={{
                             opacity: 0,
-                            y: 100,
+                            x: 100,
                         }}
 
                         transition={{
-                            duration: .3,
+                            duration: .5,
                         }}
 
                         whileInView={{
                             opacity: 1,
-                            y: 0,
+                            x: 0,
                         }}
                         className='scroll_right absolute top-[50%] right-[-4%] rounded-full bg-[#0000006e] p-6 max-[640px]:p-2 max-[768px]:right-[-1rem] text-white max-[768px]:top-[57%] sm:max-[768px]:right-0 max-[640px]:hidden' onClick={handleScrollRight}>
                         <svg className='w-8 h-8' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
