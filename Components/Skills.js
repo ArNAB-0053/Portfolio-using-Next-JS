@@ -34,7 +34,7 @@ const Skills = () => {
         <Skilllogo langLogo='python' left={true} conf='80%' />
         <Skilllogo langLogo='java' left={true} conf='78%'  />
         <Skilllogo langLogo='c' left={true} conf='84%' />
-        <Skilllogo langLogo='js' left={true} conf='72%' />
+        <Skilllogo langLogo='js' left={true} conf='80%' />
         <Skilllogo langLogo='html' left={true} conf='87%' />
         <Skilllogo langLogo='css' left={true} conf='82%' />
         <Skilllogo langLogo='react' left={true} conf='74%' />
