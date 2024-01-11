@@ -1,9 +1,11 @@
 'use client'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Projectcontainer from './Projectcontainer'
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import Swiper from './Swiper';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Project = () => {
     const containerRef = useRef(null);
@@ -22,6 +24,24 @@ const Project = () => {
         }
     };
 
+    const [select, setSelect] = useState(true);
+
+    const handleSelection = () => {
+        setSelect(false);
+    };
+
+    const notify = () => {
+        toast.warn('🦄 Wow so easy!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+        });
+    }
     return (
         <div className='mt-16 mb-[-2rem] sm:mb-0 w-full'>
             <motion.h1
@@ -81,7 +101,10 @@ const Project = () => {
                             y: 0,
                         }}
                         className='project_content_main gap-16 py-6 px-4 max-[768px]:px-0 relative max-[639.9px]:hidden'
-                        ref={containerRef}>
+                        ref={containerRef}
+                        style={{ userSelect: select ? 'none' : 'auto' }}
+                        
+                    >
                         <Projectcontainer
                             project_img='anihub'
                             project_heading='Anihub4U'
@@ -123,7 +146,7 @@ const Project = () => {
                             link='AttendEase----Smart-Attendance-System-Using-OpenCV'
                         />
                     </motion.div>
-                    <Swiper/>
+                    <Swiper />
                     <motion.button
                         initial={{
                             opacity: 0,
@@ -138,7 +161,8 @@ const Project = () => {
                             opacity: 1,
                             x: 0,
                         }}
-                        className='scroll_left absolute top-[50%] left-[-3%] rounded-full bg-[#0000006e] p-6 text-white max-[640px]:p-2 max-[768px]:left-[-1rem] max-[768px]:top-[57%] sm:max-[768px]:left-0 max-[640px]:hidden' onClick={handleScrollLeft}>
+                        className='scroll_left absolute top-[50%] left-[-3%] rounded-full bg-[#0000006e] p-6 text-white max-[640px]:p-2 max-[768px]:left-[-1rem] max-[768px]:top-[57%] sm:max-[768px]:left-0 max-[640px]:hidden hover:bg-[#1c1c1caa] dark:hover:bg-[#ff0000] dark:z-40'
+                        onClick={handleScrollLeft}>
                         <svg className='w-8 h-8' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
                         </svg>
@@ -158,13 +182,15 @@ const Project = () => {
                             opacity: 1,
                             x: 0,
                         }}
-                        className='scroll_right absolute top-[50%] right-[-4%] rounded-full bg-[#0000006e] p-6 max-[640px]:p-2 max-[768px]:right-[-1rem] text-white max-[768px]:top-[57%] sm:max-[768px]:right-0 max-[640px]:hidden' onClick={handleScrollRight}>
+                        className='scroll_right absolute top-[50%] right-[-4%] rounded-full bg-[#0000006e] p-6 max-[640px]:p-2 max-[768px]:right-[-1rem] text-white max-[768px]:top-[57%] sm:max-[768px]:right-0 max-[640px]:hidden hover:bg-[#1c1c1caa] dark:hover:bg-[#ff0000] dark:z-40'
+                        onClick={handleScrollRight}>
                         <svg className='w-8 h-8' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
                         </svg>
                     </motion.button>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     )
 }

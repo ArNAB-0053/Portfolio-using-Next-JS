@@ -325,19 +325,19 @@ span .lang {
 
 @media (min-width: 1024px) and (max-width: 1535px) {
     #passion {
-        font-size: 1.8rem;
+        font-size: 1.9rem;
     }
 }
 
 @media (min-width: 421px) and (max-width: 640px) {
     #passion {
-        font-size: 1.6rem;
+        font-size: 1.9rem;
     }
 }
 
 @media (max-width: 420px) {
     #passion {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 }
 
@@ -550,10 +550,6 @@ span .lang {
     animation: blink 1.2s infinite;
 } */
 
-.project_link {
-    border: 0.1px solid #EF4444;
-}
-
 
 .cursor {
     position: fixed;
@@ -579,4 +575,12 @@ span .lang {
 
 .swiper-pagination-bullet-active {
     background-color: #ff0000 !important;
+}
+
+.lang:hover .logo {
+    opacity: 0.2;
+}
+
+.lang:hover .confidence {
+    display: block;
 }

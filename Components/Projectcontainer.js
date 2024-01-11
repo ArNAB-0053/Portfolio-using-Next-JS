@@ -2,7 +2,6 @@ import Image from 'next/image'
 import React from 'react'
 import Projectviewlink from './Projectviewlink'
 
-
 const Projectcontainer = ({project_heading, project_desc, project_img, link, bg = 'transparent'}) => {
     return (
         <div       

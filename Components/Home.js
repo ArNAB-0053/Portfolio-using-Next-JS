@@ -15,7 +15,7 @@ const Home = () => {
     setIsHovered(false);
   };
   return (
-    <div className='overflow-x-hidden px-4 flex items-center justify-between w-full h-auto mt-16 max-[1024px]:pb-24 max-[1280px]:flex-col-reverse max-[1024px]:justify-center lg:max-[1280px]:pb-24 min-[1281px]:max-[1535px]:py-16 '>
+    <div className='overflow-x-hidden px-4 flex items-center justify-between w-full h-auto mt-16 sm:max-[1024px]:pb-24 max-[1280px]:flex-col-reverse max-[1024px]:justify-center lg:max-[1280px]:pb-24 min-[1281px]:max-[1535px]:py-16 max-[640px]:px-0'>
       <div className='flex flex-col w-[45vw] gap-y-0 max-[768px]:w-full max-[1280px]:mt-[-4vh] md:max-[1024px]:w-[75vw] lg:max-[1280px]:w-[50vw]'>
         <h1 id='hello' className='text-6xl tracking-tighter max-[748px]:text-3xl'>Hello,</h1>
         <h2 id='arnab' className='text-[4.5rem] bold tracking-tight flex gap-6 mt-[-2rem] max-[748px]:text-4xl max-[748px]:mt-0' > I'm
@@ -38,11 +38,11 @@ const Home = () => {
         <a
           href="/PDF/Resume.pdf"
           download='Resume'
-          className='mt-6 w-48 py-2 rounded-full bg-red-500 text-white text-center dark:bg-[#ff0000] max-[748px]:text-sm hover:dark:bg-[#ff0000] hover:bg-red-700 relative z-40 dark:hover:shadow-contact-shadow hover:shadow-red-shadow'
+          className='mt-6 w-28 py-2 rounded-full bg-red-500 text-white text-center dark:bg-[#ff0000] max-[748px]:text-sm hover:dark:bg-[#ff0000] hover:bg-red-700 relative z-40 dark:hover:shadow-contact-shadow hover:shadow-red-shadow'
           onMouseEnter={handleHover}
           onMouseLeave={handleLeave}
         >
-          <p className='bold text-md font-[Montserrat]'>Download Resume</p>
+          <p className='bold text-md font-[Montserrat]'>Resume</p>
         </a>
       </div>
       <svg className='w-[45rem] h-[45rem] mr-[-4vw] max-[748px]:w-[90vw] max-[748px]:h-[50vh] max-[748px]:mr-0 min-[1025px]:max-[1535px]:w-[30rem] min-[1025px]:max-[1535px]:h-[30rem]' id="sw-js-blob-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">

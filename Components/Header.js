@@ -51,7 +51,9 @@ const Header = () => {
 
   return (
     <ThemeProvider attribute="class">
-      <div className={` header w-screen h-[10vh] mb-[-10vh] top-0 left-0 z-20 px-48 transition-all max-[1024px]:px-8 relative`} >
+      <div className={` header w-screen h-[10vh] mb-[-10vh] top-0 left-0 z-20 px-48 transition-all max-[1024px]:px-8 relative max-[640px]:pl-4`} 
+      style={{userSelect: 'none'}}
+      >
         <div className='header_con min-h-12 flex items-center justify-between text-black  overflow-x-hidden pt-3 pl-4'
         >
           <a
@@ -61,21 +63,28 @@ const Header = () => {
             onMouseLeave={handleLeave}
           >
             {theme === 'light' ? (
-              <Image
-                src='/Images/logo_dark.svg'
-                width={100}
-                height={100}
-                className='w-16 h-8'
-              />
+              <span className='flex items-end justify-start overflow-hidden'>
+                <Image
+                  src='/Images/logo_dark.svg'
+                  width={100}
+                  height={100}
+                  className='w-16 h-8'
+                />
+                <p className='bg-[#545454] w-2 h-2 rounded-full'> .</p>
+              </span>
+
             ) : null}
 
             {theme === 'dark' ? (
+              <span className='flex items-end justify-start overflow-hidden'>
               <Image
                 src='/Images/logo_light.svg'
                 width={100}
                 height={100}
                 className='w-16 h-8'
               />
+              <p className='bg-[#606060] w-2 h-2 rounded-full'> .</p>
+            </span>
             ) : null}
           </a>
           <div className='flex items-center justify-center text-black dark:text-white max-[1024px]:hidden xl:gap-4 font-[Elnath] tracking-[0.1rem] ' >
@@ -142,7 +151,7 @@ const Header = () => {
               </button>
             )}
             <button className={`drawerBtn min-[1025px]:hidden w-12 h-8`} onClick={handleDrawerOpen}>
-            <Image
+              <Image
                 src='/Images/drawer.svg'
                 width={100}
                 height={100}
