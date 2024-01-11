@@ -16,7 +16,7 @@ const Home = () => {
   };
   return (
     <div className='overflow-x-hidden px-4 flex items-center justify-between w-full h-auto mt-16 sm:max-[1024px]:pb-24 max-[1280px]:flex-col-reverse max-[1024px]:justify-center lg:max-[1280px]:pb-24 min-[1281px]:max-[1535px]:py-16 max-[640px]:px-0'>
-      <div className='flex flex-col w-[45vw] gap-y-0 max-[768px]:w-full max-[1280px]:mt-[-4vh] md:max-[1024px]:w-[75vw] lg:max-[1280px]:w-[50vw]'>
+      <div className='flex flex-col w-[45vw] gap-y-0 max-[768px]:w-full max-[1280px]:mt-[-4vh] md:max-[1024px]:w-[75vw] lg:max-[1280px]:w-[50vw] pb-8'>
         <h1 id='hello' className='text-6xl tracking-tighter max-[748px]:text-3xl'>Hello,</h1>
         <h2 id='arnab' className='text-[4.5rem] bold tracking-tight flex gap-6 mt-[-2rem] max-[748px]:text-4xl max-[748px]:mt-0' > I'm
           <p className='text-red-500 dark:text-[#ff0000]'>Arnab</p>
@@ -48,8 +48,8 @@ const Home = () => {
       <svg className='w-[45rem] h-[45rem] mr-[-4vw] max-[748px]:w-[90vw] max-[748px]:h-[50vh] max-[748px]:mr-0 min-[1025px]:max-[1535px]:w-[30rem] min-[1025px]:max-[1535px]:h-[30rem]' id="sw-js-blob-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="sw-gradient" x1="0" x2="1" y1="1" y2="0">
-            <stop id="stop1" stop-color="#F8A037" offset="0%"></stop>
-            <stop id="stop2" stop-color="#FB621F" offset="100%"></stop>
+            <stop id="stop1" stopColor="#F8A037" offset="0%"></stop>
+            <stop id="stop2" stopColor="#FB621F" offset="100%"></stop>
           </linearGradient>
         </defs>
         <mask id='mask1' mask-type='alpha'>

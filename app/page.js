@@ -10,7 +10,6 @@ const page = () => {
     <ThemeProvider attribute="class">
       <div>
         <Body />
-        {/* <Cursor/>      */}
         <Movestopbtn/>
       </div>
 

@@ -31,26 +31,26 @@ const Skills = () => {
       <div
         id='skills_content'
         className='w-full px-24 grid grid-cols-5 grid-rows-auto gap-6 mt-16 place-items-center sm:max-[768px]:grid-cols-4 max-[768px]:px-8 max-[640px]:grid-cols-3 max-[320px]:grid-cols-2 '>
-        <Skilllogo langLogo='python' left={true} conf='88%' />
-        <Skilllogo langLogo='java' left={true} conf='85%'  />
-        <Skilllogo langLogo='c' left={true} conf='92%' />
-        <Skilllogo langLogo='js' left={true} conf='88%' />
-        <Skilllogo langLogo='html' left={true} conf='91%' />
-        <Skilllogo langLogo='css' left={true} conf='92%' />
-        <Skilllogo langLogo='react' left={true} conf='80%' />
-        <Skilllogo langLogo='next' left={true} conf='87%' />
-        <Skilllogo langLogo='tailwind' left={true} conf='88%' />
-        <Skilllogo langLogo='framer-motion' left={true} conf='80%' />
-        <Skilllogo langLogo='git' conf='84%' />
-        {/* <Skilllogo langLogo='node'/>
-        <Skilllogo langLogo='express' /> */}
-        <Skilllogo langLogo='sql' conf='81%' />
+        <Skilllogo langLogo='python' left={true} conf='80%' />
+        <Skilllogo langLogo='java' left={true} conf='78%'  />
+        <Skilllogo langLogo='c' left={true} conf='84%' />
+        <Skilllogo langLogo='js' left={true} conf='72%' />
+        <Skilllogo langLogo='html' left={true} conf='87%' />
+        <Skilllogo langLogo='css' left={true} conf='82%' />
+        <Skilllogo langLogo='react' left={true} conf='74%' />
+        <Skilllogo langLogo='next' left={true} conf='76%' />
+        <Skilllogo langLogo='tailwind' left={true} conf='82%' />
+        <Skilllogo langLogo='framer-motion' left={true} conf='69%' />
+        <Skilllogo langLogo='git' conf='80%' />
+        {/* <Skilllogo langLogo='node'/> */}
+        {/* <Skilllogo langLogo='express' style='dark:invert' conf='50%' /> */}
+        <Skilllogo langLogo='sql' conf='56%' />
         {/* <Skilllogo langLogo='mongo' /> */}
-        <Skilllogo langLogo='flask' conf='80%' />
-        <Skilllogo langLogo='opencv' conf='85%' />
-        <Skilllogo langLogo='mediapipe_logo' conf='80%' />
-        <Skilllogo langLogo='tf' conf='81%' />
-        <Skilllogo langLogo='keras' conf='80%' />
+        <Skilllogo langLogo='flask' conf='70%' />
+        <Skilllogo langLogo='opencv' conf='75%' />
+        <Skilllogo langLogo='mediapipe_logo' conf='65%' />
+        <Skilllogo langLogo='tf' conf='66%' />
+        <Skilllogo langLogo='keras' conf='65%' />
       </div>
     </div>
   )

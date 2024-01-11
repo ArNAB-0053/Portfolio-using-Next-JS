@@ -5,7 +5,7 @@ import React from 'react'
 import { motion } from "framer-motion"
 
 
-const Skilllogo = ({ langLogo, left = false, conf }) => {
+const Skilllogo = ({ langLogo, left = false, conf, style }) => {
     return (
         <>
             <motion.div
@@ -28,7 +28,7 @@ const Skilllogo = ({ langLogo, left = false, conf }) => {
                     src={`/Images/${langLogo}.svg`}
                     width='60'
                     height='60'
-                    className='rounded logo'
+                    className={`rounded logo ${style}`}
                 />
 
                 <div className='confidence hidden absolute z-1 dark:text-white text-black text-2xl font-[Elnath]'>
