@@ -39,9 +39,11 @@ const Skills = () => {
         <Skilllogo langLogo='css' left={true} conf='82%' />
         <Skilllogo langLogo='react' left={true} conf='74%' />
         <Skilllogo langLogo='next' left={true} conf='76%' />
-        <Skilllogo langLogo='tailwind' left={true} conf='82%' />
+        <Skilllogo langLogo='tailwind' left={true} conf='78%' />
+        <Skilllogo langLogo='typescript' left={true} conf='64%' />
         <Skilllogo langLogo='framer-motion' left={true} conf='69%' />
         <Skilllogo langLogo='git' conf='80%' />
+        <Skilllogo langLogo='firebase' conf='57%' />
         {/* <Skilllogo langLogo='node'/> */}
         {/* <Skilllogo langLogo='express' style='dark:invert' conf='50%' /> */}
         <Skilllogo langLogo='sql' conf='56%' />

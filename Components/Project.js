@@ -106,6 +106,15 @@ const Project = () => {
                         
                     >
                         <Projectcontainer
+                            project_img='chatgpt-clone'
+                            project_heading='ChatGPT Clone'
+                            project_desc='A fully working ChatGPT clone using NextJS, TypeScript, Tailwind CSS and firebase. '
+                            link='Chat-GPT-clone'
+                            bg='transparent'
+                            fontSize='text-2xl'
+                        />
+
+                        <Projectcontainer
                             project_img='anihub'
                             project_heading='Anihub4U'
                             project_desc='AniHub4U is web application that have all information about anime, its characters and also it have the Trailor of the anime.'
