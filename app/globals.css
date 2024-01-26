@@ -190,7 +190,7 @@ span .lang {
 
 .project_content_div {
     -webkit-box-shadow: 5px 3.5px 12px 4px #dddddd;
-    box-shadow: 5px 3.5px 12px 4px #dddddd;
+    box-shadow: 5px 3.5px 12px 4px #dddddd3f;
     -webkit-transition: all 1.5s ease;
     -o-transition: all 1.5s ease;
     transition: all 1.5s ease;
