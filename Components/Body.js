@@ -9,6 +9,7 @@ import Header from './Header'
 import Footer from './Footer'
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion"
+import ProjectSlider from './ProjectSlider'
 
 const Body = () => {
   return (
@@ -41,6 +42,7 @@ const Body = () => {
         <section id='skills' className='overflow-hidden min-h-screen px-48 w-screen bg-white dark:bg-[#2E2E2E] max-[1024px]:px-8 md:max-[1024px]:pt-8 md:max-[1024px]:pb-16 md:max-[1024px]:min-h-[50vh]' >
           <Skills />
         </section>
+        
         <section id='project' className='overflow-hidden min-h-screen pb-24 pt-0 px-60 w-screen bg-white dark:bg-[#2E2E2E] max-[1024px]:px-8 md:max-[1024px]:min-h-[70vh]' >
           <Project />
         </section>

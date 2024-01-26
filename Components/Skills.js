@@ -31,25 +31,25 @@ const Skills = () => {
       <div
         id='skills_content'
         className='w-full px-24 grid grid-cols-5 grid-rows-auto gap-6 mt-16 place-items-center sm:max-[768px]:grid-cols-4 max-[768px]:px-8 max-[640px]:grid-cols-3 max-[320px]:grid-cols-2 '>
-        <Skilllogo langLogo='python' left={true} conf='80%' />
-        <Skilllogo langLogo='java' left={true} conf='78%'  />
+        <Skilllogo langLogo='python' left={true} conf='78%' />
+        <Skilllogo langLogo='java' left={true} conf='76%'  />
         <Skilllogo langLogo='c' left={true} conf='84%' />
         <Skilllogo langLogo='js' left={true} conf='80%' />
         <Skilllogo langLogo='html' left={true} conf='87%' />
         <Skilllogo langLogo='css' left={true} conf='82%' />
-        <Skilllogo langLogo='react' left={true} conf='74%' />
-        <Skilllogo langLogo='next' left={true} conf='76%' />
+        <Skilllogo langLogo='react' left={true} conf='72%' />
+        <Skilllogo langLogo='next' left={true} conf='74%' />
         <Skilllogo langLogo='tailwind' left={true} conf='78%' />
-        <Skilllogo langLogo='typescript' left={true} conf='64%' />
-        <Skilllogo langLogo='framer-motion' left={true} conf='69%' />
+        <Skilllogo langLogo='typescript' left={true} conf='60%' />
+        <Skilllogo langLogo='framer-motion' left={true} conf='55%' />
         <Skilllogo langLogo='git' conf='80%' />
-        <Skilllogo langLogo='firebase' conf='57%' />
+        <Skilllogo langLogo='firebase' conf='54%' />
         {/* <Skilllogo langLogo='node'/> */}
         {/* <Skilllogo langLogo='express' style='dark:invert' conf='50%' /> */}
         <Skilllogo langLogo='sql' conf='56%' />
         {/* <Skilllogo langLogo='mongo' /> */}
         <Skilllogo langLogo='flask' conf='59%' />
-        <Skilllogo langLogo='opencv' conf='75%' />
+        <Skilllogo langLogo='opencv' conf='72%' />
         <Skilllogo langLogo='mediapipe_logo' conf='65%' />
         <Skilllogo langLogo='tf' conf='66%' />
         <Skilllogo langLogo='keras' conf='65%' />

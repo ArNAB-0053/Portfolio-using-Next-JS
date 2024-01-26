@@ -1,20 +1,79 @@
-"use client";
-import React from "react";
+'use client'
+import React, { useEffect, useRef, useState } from 'react';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import 'swiper/css/navigation';
+// Import Swiper styles
+import 'swiper/css';
 import 'swiper/css/pagination';
-import dynamic from "next/dynamic";
-import Projectcontainer from "./Projectcontainer";
-import { Pagination } from "swiper/modules"
+import 'swiper/css/navigation';
 
-const Sliding = () => {
+// import required modules
+import { EffectCoverflow, Pagination } from 'swiper/modules';
+import Projectcontainer from './Projectcontainer';
+
+function ProjectSlider() {
+    const [num, setNum] = useState(1)
+    const [size, setSize] = useState(100)
+
+
+    useEffect(() => {
+        const handleResize = () => {
+            const screenWidth = window.innerWidth;
+
+            if (screenWidth <= 649) {
+                // Tablet size
+                setNum(1.1);
+                setSize(100);
+            }
+            else if (screenWidth <= 768 && screenWidth >= 648) {
+                // Tablet size
+                setNum(2);
+                setSize(30)
+            }
+            else if (screenWidth <= 1400 && screenWidth >= 769) {
+                // Tablet size
+                setNum(2);
+                setSize(60)
+            }
+            else {
+                // Laptop or desktop size
+                setNum(3);
+                setSize(100);
+            }
+        };
+
+        // Initial call to set the initial value based on the current screen size
+        handleResize();
+
+        // Add event listener for window resize
+        window.addEventListener('resize', handleResize);
+
+        // Cleanup the event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     return (
-        <div className="sm:hidden">
+        <div className=''>
             <Swiper
-                pagination={{ type: 'bullets', clickable: true }}
-                modules={[Pagination]}
+                effect={'coverflow'}
+                grabCursor={true}
+                centeredSlides={true}
+                slidesPerView={num}
+                coverflowEffect={{
+                    rotate: 0,
+                    stretch: 0,
+                    depth: 200,
+                    modifier: 3,
+                    slideShadows: true,
+                }}
+                loop={true}
+                pagination={true}
+                spaceBetween={size}
+                modules={[EffectCoverflow, Pagination]}
+                className="mySwiper"
             >
                 <SwiperSlide >
                     <Projectcontainer
@@ -76,6 +135,6 @@ const Sliding = () => {
             </Swiper>
         </div>
     );
-};
+}
 
-export default dynamic(() => Promise.resolve(Sliding), { ssr: false })
+export default ProjectSlider;
