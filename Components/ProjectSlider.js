@@ -108,7 +108,7 @@ function ProjectSlider() {
                 <SwiperSlide >
                     <Projectcontainer
                         project_img='mediapipe'
-                        project_heading='volar'
+                        project_heading='voler'
                         project_desc='Voler is the OpenCV project, by using it user can control the volumn of their PC or Laptop by only using two fingers.'
                         bg='zinc-800 dark:bg-white'
                         link='Voler----Volume-Control-by-Hand'
