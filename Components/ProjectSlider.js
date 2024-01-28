@@ -77,6 +77,17 @@ function ProjectSlider() {
             >
                 <SwiperSlide >
                     <Projectcontainer
+                        project_img='sharekaro'
+                        project_heading='ShareKaro'
+                        project_desc='A file storing app like Dropbox but additional feature is user can share the URL of the file.'
+                        link='Share-Karo'
+                        bg='transparent'
+                        fontSize='text-2xl'
+                    />
+                </SwiperSlide>
+
+                <SwiperSlide >
+                    <Projectcontainer
                         project_img='chatgpt-clone'
                         project_heading='ChatGPT Clone'
                         project_desc='A fully working ChatGPT clone using NextJS, TypeScript, Tailwind CSS and firebase. '
@@ -84,7 +95,6 @@ function ProjectSlider() {
                         bg='transparent'
                         fontSize='text-2xl'
                     />
-
                 </SwiperSlide>
 
                 <SwiperSlide >

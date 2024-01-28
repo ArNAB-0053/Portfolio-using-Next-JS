@@ -1,12 +1,63 @@
 'use client'
 import Link from 'next/link'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../style/footerlink.css'
 import dynamic from "next/dynamic";
 import { ThemeProvider } from "next-themes"
 import { motion } from "framer-motion";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from '@/firebase';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Footer = () => {
+  const [firstName, setFirstName] = useState()
+  const [lastName, setLastName] = useState()
+  const [sub, setSub] = useState()
+  const [email, setEmail] = useState()
+  const [desc, setDesc] = useState()
+  const [emailError, setEmailError] = useState(false);
+  const [descError, setDescError] = useState(false);
+
+  const handleSubmit = async () => {
+    const notify = toast.loading("Submitting...");
+    const docRef = await addDoc(collection(db, "portfolio", email, sub), {
+      FirstName: firstName.toUpperCase(),
+      LastName: lastName.toUpperCase(),
+      Subject: sub.toUpperCase(),
+      Email: email,
+      Description: desc.toUpperCase(),
+      Timestamp: serverTimestamp(),
+    });
+    if (docRef !== null) {
+      toast.success("Submitted!", { id: notify });
+    } else {
+      toast.error("Failed to submit!", { id: notify });
+    }
+    setFirstName('')
+    setLastName('')
+    setSub("")
+    setDesc("")
+    setEmail("")
+  }
+
+  const validateEmail = (input) => {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(input);
+  };
+  const handleEmailChange = (e) => {
+    const newEmail = e.target.value;
+    setEmail(newEmail);
+    setEmailError(!validateEmail(newEmail));
+  };
+
+  const handleDescChange = (e) => {
+    const newDesc = e.target.value;
+    setDesc(newDesc);
+    const wordCount = newDesc.split(/\s+/).filter(word => word !== '').length;
+    setDescError(wordCount < 3);
+  };
+
+
   return (
     <ThemeProvider attribute="class">
       <section id='contact' className='footer flex items-center justify-between max-[1024px]:justify-center md:max-[1024px]:gap-16 max-[1024px]:flex-col min-h-screen w-screen bg-[#2c2c2c] dark:bg-[#1c1c1c] px-48 max-[1024px]:px-12 py-20 gap-6 relative '>
@@ -31,17 +82,41 @@ const Footer = () => {
           </h1>
           <form action="form" className='contact_form flex flex-col items-start justify-start gap-4 w-[35vw] max-[768px]:w-full md:max-[1024px]:w-[30rem]'>
             <div className='flex items-center justify-center gap-x-6 w-full'>
-              <input type="text" placeholder='First Name' className='bg-transparent p-2 w-full' />
-              <input type="text" placeholder='Last Name' className='bg-transparent p-2 w-full' />
+              <input type="text" value={firstName} onChange={(e) => { setFirstName(e.target.value) }} placeholder='First Name' className='bg-transparent p-2 w-full' />
+              <input type="text" value={lastName} onChange={(e) => { setLastName(e.target.value) }} placeholder='Last Name' className='bg-transparent p-2 w-full' />
             </div>
-            <input type="email" placeholder='Email' className='bg-transparent  p-2 w-[25vw] max-[1024px]:w-full' />
-            <input type="text" placeholder='Subject' className='bg-transparent p-2 w-full' />
-            <input type="text" placeholder='Description' className='bg-transparent p-2 w-full' />
+            <div className='w-full'>
+              <input
+                type="email"
+                value={email}
+                onChange={handleEmailChange}
+                placeholder='Email'
+                className={`bg-transparent p-2 w-[25vw] max-[1024px]:w-full ${emailError ? 'border-red-500' : ''}`}
+              />
+              {emailError && <p className="text-red-500 dark:text-[#ff0000] text-sm">Please enter a valid email address.</p>}
+            </div>
+            <input type="text" value={sub} onChange={(e) => { setSub(e.target.value) }} placeholder='Subject' className='bg-transparent p-2 w-full' />
+            <div className='w-full'>
+              <input
+                type="text"
+                value={desc}
+                onChange={handleDescChange}
+                placeholder='Description'
+                className={`bg-transparent p-2 w-full ${descError ? 'border-red-500' : ''}`}
+              />
+              {descError && <p className="text-red-500 dark:text-[#ff0000] text-sm">Description must contain at least 3 words.</p>}
+            </div>
           </form>
 
-          <button className='relative z-40 w-[10vw] mt-10 py-3 rounded-md
-           bg-red-500 dark:bg-[#ff0000] font-bold uppercase text-white hover:bg-[#ff0000] hover:shadow-contact-shadow active:bg-red-600 
-           max-[1024px]:w-full'>Submit</button>
+          <button
+            disabled={!firstName || !lastName || !email || !sub || !desc || emailError === true || descError === true}
+            onClick={handleSubmit}
+            className='relative z-40 w-[10vw] mt-10 py-3 rounded-md
+    bg-red-500 dark:bg-[#ff0000] font-bold uppercase text-white hover:bg-[#ff0000] hover:shadow-contact-shadow active:bg-red-600 
+    max-[1024px]:w-full disabled:bg-black/30 disabled:text-zinc-500/50 disabled:cursor-not-allowed disabled:pointer-events-none disabled:z-0'>
+            Submit
+          </button>
+
         </motion.div>
 
         <motion.div
@@ -107,6 +182,10 @@ const Footer = () => {
           }}
           className='absolute bottom-12 text-center font-[Montserrat] text-zinc-400'>Made with ❤️ using Next.js!</motion.h2>
       </section>
+      <Toaster
+        position="top-right"
+        reverseOrder={false}
+      />
 
     </ThemeProvider>
   )

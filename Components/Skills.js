@@ -49,10 +49,10 @@ const Skills = () => {
         <Skilllogo langLogo='sql' conf='56%' />
         {/* <Skilllogo langLogo='mongo' /> */}
         <Skilllogo langLogo='flask' conf='59%' />
-        <Skilllogo langLogo='opencv' conf='72%' />
-        <Skilllogo langLogo='mediapipe_logo' conf='65%' />
-        <Skilllogo langLogo='tf' conf='66%' />
-        <Skilllogo langLogo='keras' conf='65%' />
+        <Skilllogo langLogo='opencv' conf='70%' />
+        <Skilllogo langLogo='mediapipe_logo' conf='58%' />
+        <Skilllogo langLogo='tf' conf='56%' />
+        <Skilllogo langLogo='keras' conf='55%' />
       </div>
     </div>
   )
