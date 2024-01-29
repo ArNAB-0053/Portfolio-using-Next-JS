@@ -63,7 +63,7 @@ const About = () => {
                         }}
 
 
-                    >Hey there, I'm Arnab Bhattacharyya hailing from Gobordanga, North 24 Parganas, West Bengal, India (743273). Currently cruising through my B.Tech in Computer Science with a specialization in AIML at Brainware University, Barasat.</motion.p>
+                    >Hey there, I'm Arnab Bhattacharyya hailing from Gopalpur, North 24 Parganas, West Bengal, India (743273). Currently cruising through my B.Tech in Computer Science with a specialization in AIML at Brainware University, Barasat.</motion.p>
 
                     <motion.p
 
