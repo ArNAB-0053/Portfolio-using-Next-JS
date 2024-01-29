@@ -121,10 +121,6 @@ body {
     text-decoration: none;
 }
 
-.links {
-    border-radius: 50%;
-}
-
 #socialMedia .img {
     -webkit-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
@@ -591,4 +587,8 @@ span .lang {
 
 .swiper-pagination-bullet-active {
     background-color: #ff0000 !important;
+}
+
+.tooltip-link {
+    position: relative;
 }

@@ -52,7 +52,7 @@ const About = () => {
 
                     id='about'
                     className='text-[2rem] text-red-500 text-center dark:text-myRed font-[Elnath] tracking-[1rem] uppercase'>About me!</motion.h1>
-                <span id='about_desc' className='mt-10 flex flex-col gap-y-4 text-sm md:max-[1280px]:w-full font-[Montserrat] font-light sm:max-[1024px]:text-lg'>
+                <span id='about_desc' className='mt-10 flex flex-col gap-y-4 text-md md:max-[1280px]:w-[90%] font-[Montserrat] font-light sm:max-[1024px]:text-lg'>
                     <motion.p
                         initial={{
                             x: 100
@@ -62,22 +62,8 @@ const About = () => {
                             x: 0
                         }}
 
-    
-                    >Hello, I'm Arnab Bhattacharyya, a dedicated Computer Science & Engineering student with a keen focus on Artificial Intelligence & Machine Learning. Currently on the exciting journey of pursuing my Bachelor's degree at Brainware University, Barasat, my academic expedition spans from 2021 to 2025.</motion.p>
 
-                    <motion.p
-
-                        initial={{
-                            x: 100
-                        }}
-
-                        whileInView={{
-                            x: 0
-                        }}
-
-    
-
-                    >Passionate about crafting seamless digital experiences, I thrive in both frontend and backend web development. From designing visually appealing user interfaces to ensuring robust server-side functionality, I enjoy the intricacies of building holistic web solutions.</motion.p>
+                    >Hey there, I'm Arnab Bhattacharyya hailing from Gobordanga, North 24 Parganas, West Bengal, India (743273). Currently cruising through my B.Tech in Computer Science with a specialization in AIML at Brainware University, Barasat</motion.p>
 
                     <motion.p
 
@@ -89,9 +75,23 @@ const About = () => {
                             x: 0
                         }}
 
-    
 
-                    >In parallel, my journey into the world of machine learning has been equally exhilarating. Armed with knowledge in this dynamic field, I've had the pleasure of translating theoretical concepts into practical solutions through various projects. These experiences have not only honed my technical skills but have also instilled a deep appreciation for the limitless possibilities that AI and ML offer.</motion.p>
+
+                    >I'm not just a coder; I'm a passionate programmer on a mission. My journey involves soaking up new skills and then sprinkling them into real projects. Right now, I'm deep-diving into the realms of Web Development and Machine Learning, soaking in the knowledge like a sponge.</motion.p>
+
+                    <motion.p
+
+                        initial={{
+                            x: 100
+                        }}
+
+                        whileInView={{
+                            x: 0
+                        }}
+
+
+
+                    >Feel free to connect with me on social media. I'm always up for interesting conversations and collaborations.</motion.p>
                 </span>
                 <motion.div
                     initial={{
@@ -109,7 +109,7 @@ const About = () => {
                     <h5 id='socialMedia_heading' className='text-[2rem] tracking-tighter text-blue-800 dark:text-blue-300 font-normal'>Social Media</h5>
                     <span id='socialMedia' className='flex items-center justify-center gap-4'>
                         {/* Facebook */}
-                        <Link className='links hover:text-blue-700' href="https://www.facebook.com/arnab.bhattacharyya.520">
+                        <Link className='links hover:text-blue-700' target='blank' href="https://www.facebook.com/arnab.bhattacharyya.520" title='Facebook'>
                             <Image
                                 src='/Images/fb.svg'
                                 width={40}
@@ -119,7 +119,7 @@ const About = () => {
                         </Link>
 
                         {/* Instagram */}
-                        <Link className='links hover:text-red-600' href="https://www.instagram.com/__arnab_bhattacharyya/">
+                        <Link className='links hover:text-red-600' target='blank' href="https://www.instagram.com/__arnab_bhattacharyya/" title='Instagram'>
                             <Image
                                 src='/Images/insta.svg'
                                 width={40}
@@ -128,18 +128,18 @@ const About = () => {
                             />
                         </Link>
 
-                        {/* Twitter*/}
-                        <Link className='links ' href="https://twitter.com/__Ar_nab__">
+                        {/* Twitter
+                        <Link className='links ' target='blank' href="https://twitter.com/__Ar_nab__" title='Twitter'>
                             <Image
                                 src='/Images/twi.svg'
                                 width={40}
                                 height={40}
                                 className='img rounded-full'
                             />
-                        </Link>
+                        </Link> */}
 
                         {/* Linkedin */}
-                        <Link className='links text-blue-600' href="https://www.linkedin.com/in/arnab-bhattacharyya-380966291/">
+                        <Link className='links text-blue-600' target='blank' href="https://www.linkedin.com/in/arnab-bhattacharyya-380966291/" title="LinkedIn">
                             <Image
                                 src='/Images/linkedin.svg'
                                 width={40}
@@ -149,7 +149,7 @@ const About = () => {
                         </Link>
 
                         {/* GitHub */}
-                        <Link className='links' href="https://github.com/ArNAB-0053">
+                        <Link className='links' target='blank' href="https://github.com/ArNAB-0053" title="GitHub">
                             <Image
                                 src='/Images/github.svg'
                                 width={40}
@@ -157,6 +157,7 @@ const About = () => {
                                 className='img rounded-full'
                             />
                         </Link>
+
                     </span>
                 </motion.div>
             </motion.div>
