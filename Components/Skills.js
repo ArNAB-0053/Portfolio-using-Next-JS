@@ -44,8 +44,8 @@ const Skills = () => {
         <Skilllogo langLogo='framer-motion' left={true} conf='55%' />
         <Skilllogo langLogo='git' conf='80%' />
         <Skilllogo langLogo='firebase' conf='54%' />
-        {/* <Skilllogo langLogo='node'/> */}
-        {/* <Skilllogo langLogo='express' style='dark:invert' conf='50%' /> */}
+        <Skilllogo langLogo='node' conf='57%'/>
+        <Skilllogo langLogo='express' style='dark:invert' conf='60%' />
         <Skilllogo langLogo='sql' conf='56%' />
         {/* <Skilllogo langLogo='mongo' /> */}
         <Skilllogo langLogo='flask' conf='59%' />
