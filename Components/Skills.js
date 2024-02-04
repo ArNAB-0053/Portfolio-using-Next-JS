@@ -47,7 +47,7 @@ const Skills = () => {
         <Skilllogo langLogo='node' conf='57%'/>
         <Skilllogo langLogo='express' style='dark:invert' conf='60%' />
         <Skilllogo langLogo='sql' conf='56%' />
-        {/* <Skilllogo langLogo='mongo' /> */}
+        <Skilllogo langLogo='mongo' conf='62%'/>
         <Skilllogo langLogo='flask' conf='59%' />
         <Skilllogo langLogo='opencv' conf='70%' />
         <Skilllogo langLogo='mediapipe_logo' conf='58%' />
