@@ -31,28 +31,28 @@ const Skills = () => {
       <div
         id='skills_content'
         className='w-full px-24 grid grid-cols-5 grid-rows-auto gap-6 mt-16 place-items-center sm:max-[768px]:grid-cols-4 max-[768px]:px-8 max-[640px]:grid-cols-3 max-[320px]:grid-cols-2 '>
-        <Skilllogo langLogo='python' left={true} conf='78%' />
-        <Skilllogo langLogo='java' left={true} conf='76%'  />
-        <Skilllogo langLogo='c' left={true} conf='84%' />
-        <Skilllogo langLogo='js' left={true} conf='80%' />
-        <Skilllogo langLogo='html' left={true} conf='87%' />
-        <Skilllogo langLogo='css' left={true} conf='82%' />
-        <Skilllogo langLogo='react' left={true} conf='72%' />
-        <Skilllogo langLogo='next' left={true} conf='74%' />
-        <Skilllogo langLogo='tailwind' left={true} conf='78%' />
-        <Skilllogo langLogo='typescript' left={true} conf='60%' />
-        <Skilllogo langLogo='framer-motion' left={true} conf='55%' />
-        <Skilllogo langLogo='git' conf='80%' />
-        <Skilllogo langLogo='firebase' conf='54%' />
-        <Skilllogo langLogo='node' conf='57%'/>
-        <Skilllogo langLogo='express' style='dark:invert' conf='60%' />
-        <Skilllogo langLogo='sql' conf='56%' />
-        <Skilllogo langLogo='mongo' conf='62%'/>
-        <Skilllogo langLogo='flask' conf='59%' />
-        <Skilllogo langLogo='opencv' conf='70%' />
-        <Skilllogo langLogo='mediapipe_logo' conf='58%' />
-        <Skilllogo langLogo='tf' conf='56%' />
-        <Skilllogo langLogo='keras' conf='55%' />
+        <Skilllogo langLogo='python' left={true} nam='Python'  />
+        <Skilllogo langLogo='java' left={true} nam='Java'/>
+        <Skilllogo langLogo='c' left={true} nam='C Programming'/>
+        <Skilllogo langLogo='js' left={true} nam='javascript'/>
+        <Skilllogo langLogo='html' left={true} nam='html'/>
+        <Skilllogo langLogo='css' left={true} nam='css'/>
+        <Skilllogo langLogo='react' left={true} nam='react js'/>
+        <Skilllogo langLogo='next' left={true} style='dark:invert-[0.8] ' nam='next js'/>
+        <Skilllogo langLogo='tailwind' left={true} nam='tailwind css'/>
+        <Skilllogo langLogo='typescript' left={true} nam='typescript'/>
+        <Skilllogo langLogo='framer-motion' left={true} nam='framer motion'/>
+        <Skilllogo langLogo='git' nam='git'/>
+        <Skilllogo langLogo='firebase' nam='firebase'/>
+        <Skilllogo langLogo='node' nam='nodejs'/>
+        <Skilllogo langLogo='express' style='dark:invert' nam='Express js' />
+        <Skilllogo langLogo='mysql' style='dark:invert scale-[1.3]'  nam='MySQL'/>
+        <Skilllogo langLogo='mongo' nam='Mongodb'/>
+        <Skilllogo langLogo='flask' style='dark:invert-[0.8]'  nam='Flask'/>
+        <Skilllogo langLogo='opencv' nam='OpenCV'/>
+        <Skilllogo langLogo='mediapipe_logo' nam='Mediapipe'/>
+        <Skilllogo langLogo='tf' nam='Tensorflow'/>
+        <Skilllogo langLogo='keras' nam='Keras'/>
       </div>
     </div>
   )
