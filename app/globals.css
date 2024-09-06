@@ -131,6 +131,18 @@ body {
   scale: 1.3;
 }
 
+.swiperSlider {
+    width: 20rem !important;
+}
+
+
+.glassMorphism {
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 6px );
+-webkit-backdrop-filter: blur( 6px );
+border-radius: 10px;
+}
+
 span .lang {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -4,7 +4,7 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 
-const Skilllogo = ({ langLogo, nam, left = false, style }) => {
+const Skilllogo = ({ langLogo, left = false, style }) => {
   return (
     <>
       <motion.div
@@ -21,14 +21,12 @@ const Skilllogo = ({ langLogo, nam, left = false, style }) => {
         style={{ userSelect: "none" }}
       >
         <Image
-          src={`/Images/${langLogo}.svg`}
+          src={`/Images/${langLogo}`}
           width="60"
           height="60"
           className={`rounded logo ${style}`}
         />
-        <div className="absolute hidden skillname left-20 top-10 bg-[#2c2c2c9f] text-white dark:bg-[#cccccc33] px-6 py-2 uppercase z-10 bolder">
-          {nam}
-        </div>
+        
       </motion.div>
 
       <motion.div
@@ -41,14 +39,12 @@ const Skilllogo = ({ langLogo, nam, left = false, style }) => {
         style={{ userSelect: "none" }}
       >
         <Image
-          src={`/Images/${langLogo}.svg`}
+          src={`/Images/${langLogo}`}
           width="60"
           height="60"
           className="rounded logo"
         />
-        <div className="absolute hidden skillname left-20 top-10 bg-[#2c2c2c9f] text-white dark:bg-[#cccccc33] px-6 py-2 uppercase bolder">
-          {nam}
-        </div>
+        
       </motion.div>
     </>
   );

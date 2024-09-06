@@ -31,28 +31,29 @@ const Skills = () => {
       <div
         id='skills_content'
         className='w-full px-24 grid grid-cols-5 grid-rows-auto gap-6 mt-16 place-items-center sm:max-[768px]:grid-cols-4 max-[768px]:px-8 max-[640px]:grid-cols-3 max-[320px]:grid-cols-2 '>
-        <Skilllogo langLogo='python' left={true} nam='Python'  />
-        <Skilllogo langLogo='java' left={true} nam='Java'/>
-        <Skilllogo langLogo='c' left={true} nam='C Programming'/>
-        <Skilllogo langLogo='js' left={true} nam='javascript'/>
-        <Skilllogo langLogo='html' left={true} nam='html'/>
-        <Skilllogo langLogo='css' left={true} nam='css'/>
-        <Skilllogo langLogo='react' left={true} nam='react js'/>
-        <Skilllogo langLogo='next' left={true} style='dark:invert-[0.8] ' nam='next js'/>
-        <Skilllogo langLogo='tailwind' left={true} nam='tailwind css'/>
-        <Skilllogo langLogo='typescript' left={true} nam='typescript'/>
-        <Skilllogo langLogo='framer-motion' left={true} nam='framer motion'/>
-        <Skilllogo langLogo='git' nam='git'/>
-        <Skilllogo langLogo='firebase' nam='firebase'/>
-        <Skilllogo langLogo='node' nam='nodejs'/>
-        <Skilllogo langLogo='express' style='dark:invert' nam='Express js' />
-        <Skilllogo langLogo='mysql' style='dark:invert scale-[1.3]'  nam='MySQL'/>
-        <Skilllogo langLogo='mongo' nam='Mongodb'/>
-        <Skilllogo langLogo='flask' style='dark:invert-[0.8]'  nam='Flask'/>
-        <Skilllogo langLogo='opencv' nam='OpenCV'/>
-        <Skilllogo langLogo='mediapipe_logo' nam='Mediapipe'/>
-        <Skilllogo langLogo='tf' nam='Tensorflow'/>
-        <Skilllogo langLogo='keras' nam='Keras'/>
+        <Skilllogo langLogo='python.svg' left={true}  />
+        <Skilllogo langLogo='java.svg' left={true} />
+        <Skilllogo langLogo='c.svg' left={true} />
+        <Skilllogo langLogo='js.svg' left={true} />
+        <Skilllogo langLogo='html.svg' left={true} />
+        <Skilllogo langLogo='css.svg' left={true}/>
+        <Skilllogo langLogo='react.svg' left={true} />
+        <Skilllogo langLogo='next.svg' left={true} style='dark:invert-[0.8] ' />
+        <Skilllogo langLogo='tailwind.svg' left={true} />
+        <Skilllogo langLogo='shadcn.png' left={true} />
+        {/* <Skilllogo langLogo='typescript.svg' left={true} /> */}
+        <Skilllogo langLogo='framer-motion.svg' left={true} />
+        <Skilllogo langLogo='git.svg' />
+        <Skilllogo langLogo='firebase.svg' />
+        <Skilllogo langLogo='node.svg' />
+        <Skilllogo langLogo='express.svg' style='dark:invert'  />
+        <Skilllogo langLogo='mysql.svg' style='dark:invert scale-[1.3]' />
+        <Skilllogo langLogo='mongo.svg' />
+        <Skilllogo langLogo='flask.svg' style='dark:invert-[0.8]' />
+        <Skilllogo langLogo='opencv.svg' />
+        <Skilllogo langLogo='mediapipe_logo.svg' n/>
+        {/* <Skilllogo langLogo='tf.svg' /> */}
+        {/* <Skilllogo langLogo='keras.svg'/> */}
       </div>
     </div>
   )
