@@ -63,7 +63,7 @@ const About = () => {
                         }}
 
 
-                    >Hey there, I'm Arnab Bhattacharyya, currently pursing B.Tech in Computer Science with a specialization in AIML at Brainware University, Barasat.</motion.p>
+                    >Hey there, I'm Arnab Bhattacharyya, currently pursing B.Tech in Computer Science with a specialization in AIML at Brainware University, Barasat. I have a strong foundation in Web Development, Machine Learning, Data Structures, Algorithms (DSA), DBMS, and Object-Oriented Programming (OOP).</motion.p>
 
                     <motion.p
 
@@ -77,7 +77,8 @@ const About = () => {
 
 
 
-                    >I'm not just a coder; I'm a passionate programmer on a mission. My journey involves soaking up new skills and then sprinkling them into real projects. Right now, I'm deep-diving into the realms of Web Development and Machine Learning, soaking in the knowledge like a sponge.</motion.p>
+                    >
+                    Dedicated to growth, I have actively participated in various hackathons and competitions, honing my technical expertise and problem-solving abilities. I am a quick learner, committed to continuous improvement, and enthusiastic about exploring new technologies to build impactful solutions.</motion.p>
 
                     <motion.p
 
