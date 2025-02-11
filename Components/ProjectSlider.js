@@ -44,7 +44,7 @@ function ProjectSlider() {
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={'auto'}
+        slidesPerView={"auto"}
         coverflowEffect={{
           rotate: 0,
           stretch: 0,
@@ -57,11 +57,21 @@ function ProjectSlider() {
         spaceBetween={size}
         modules={[EffectCoverflow, Pagination, Autoplay]}
         autoplay={{
-          delay: 2500,
+          delay: 4500,
           disableOnInteraction: false,
         }}
         className="mySwiper"
       >
+        <SwiperSlide className="swiperSlider">
+          <Projectcontainer
+            project_img="contractlens"
+            project_heading="ContractLens"
+            project_desc="A project to streamline contract management with text extraction, comparison, and validation features."
+            link="ContractLens"
+            bg="zinc-800 dark:bg-white"
+          />
+        </SwiperSlide>
+
         <SwiperSlide className="swiperSlider">
           <Projectcontainer
             project_img="otakutv"

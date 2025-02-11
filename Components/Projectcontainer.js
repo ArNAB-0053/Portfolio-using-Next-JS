@@ -23,7 +23,7 @@ const Projectcontainer = ({
   return (
     <Link
       href={`https://github.com/ArNAB-0053/${link}`}
-      className="project_content_div flex flex-col gap-4 h-full w-full bg-[#F0F0F0] rounded-xl pb-3 dark:bg-[#454545] dark:shadow-own-shadow max-[640px]:rounded relative overflow-hidden"
+      className="project_content_div flex flex-col gap-4 h-full w-full bg-[#F0F0F0] rounded-xl pb-3 dark:bg-[#454545] shadow-none border-2 border-black dark:border-none dark:shadow-own-shadow max-[640px]:rounded relative overflow-hidden"
     >
       <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.5 }}>
         <Image
@@ -31,11 +31,11 @@ const Projectcontainer = ({
           alt={`${project_heading} image`}
           width="500"
           height="500"
-          className={`project_img logo w-full bg-${bg}`}
+          className={`project_img logo w-full border-b-2 border-black dark:border-none bg-${bg}`}
           loading="lazy"
         />
       </motion.div>
-      <div className="flex items-center justify-center flex-col px-4 mb-8 gap-2 max-[640px]:px-6 max-[640px]:pb-2 max-[640px]:mt-2">
+      <div className="flex b items-center justify-center flex-col px-4 mb-8 gap-2 max-[640px]:px-6 max-[640px]:pb-2 max-[640px]:mt-2">
         <h1
           id="project___heading"
           className={`project_heading text-center uppercase ${fontSize}`}

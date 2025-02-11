@@ -37,7 +37,7 @@ const Home = () => {
         <h5 id='desc' className='font-[Montserrat] font-light sm:max-[1024px]:text-xl'>Currently pursuing Bachelor of Technology in Computer Science & Engineering - Artificial Intelligence & Machine Learning at Brainware University, Barasat, my academic expedition spans from 2021 to 2025.</h5>
         <a
           href="/PDF/Resume.pdf"
-          download='Resume'
+          download='Arnab_Bhattacharyya_Resume'
           className='mt-6 w-28 py-2 rounded-full bg-red-500 text-white text-center dark:bg-[#ff0000] max-[748px]:text-sm hover:dark:bg-[#ff0000] hover:bg-red-700 relative z-40 dark:hover:shadow-contact-shadow hover:shadow-red-shadow'
           target='_blank'
           title='My Resume'
