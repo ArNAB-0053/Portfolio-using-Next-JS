@@ -1,10 +1,5 @@
-## Fully Responsible
-![mobile (2)](https://github.com/ArNAB-0053/Portfolio-using-Next-JS/assets/105587279/af608ba8-69c3-43ed-b22d-1d38f8d651d2)
+Hey there, I'm Arnab Bhattacharyya, currently pursing B.Tech in Computer Science with a specialization in AIML at Brainware University, Barasat. I have a strong foundation in Web Development, Machine Learning, Data Structures, Algorithms (DSA), DBMS, and Object-Oriented Programming (OOP).
 
-![mobile (1)](https://github.com/ArNAB-0053/Portfolio-using-Next-JS/assets/105587279/92e0c33b-5c36-44ff-a3b4-47d25848aa74)
+Dedicated to growth, I have actively participated in various hackathons and competitions, honing my technical expertise and problem-solving abilities. I am a quick learner, committed to continuous improvement, and enthusiastic about exploring new technologies to build impactful solutions.
 
-
-![mobile](https://github.com/ArNAB-0053/Portfolio-using-Next-JS/assets/105587279/708d42f6-d1df-4a40-88d2-a3a26f1a5c1b)
-
-
-![mobile (3)](https://github.com/ArNAB-0053/Portfolio-using-Next-JS/assets/105587279/6c7ad5e7-d5f8-4919-8fe4-35570cb391be)
+Feel free to connect with me on social media. I'm always up for interesting conversations and collaborations.
