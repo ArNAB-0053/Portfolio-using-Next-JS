@@ -7,6 +7,24 @@
   src: url("../public/Fonts/FuturaNowHeadlineExtraBold.ttf");
 }
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #27272a #0c0c0c;
+}
+
+*::-webkit-scrollbar {
+  width: 8px; 
+}
+
+*::-webkit-scrollbar-track {
+  background: #0c0c0c;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #27272a;
+  border-radius: 4px;
+}
+
 @font-face {
   font-family: Elnath;
   src: url("../public/Fonts/ELNATH.ttf");
@@ -574,8 +592,8 @@ span .lang {
   position: fixed;
   pointer-events: none;
   z-index: 1;
-  top: -100%;
-  left: -100%;
+  top: 0%;
+  left: 0;
 }
 
 .swiper {
@@ -596,14 +614,32 @@ span .lang {
   width: 100%;
 }
 
+.swiper-pagination {
+  position: relative !important;
+  margin-top: 20px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Default bullet styles */
 .swiper-pagination-bullet {
-  background-color: #ff8484 !important;
+  width: 10px;
+  height: 10px;
+  background-color: #00E5FF !important; 
+  border-radius: 50%; 
+  transition: all 0.3s ease-in-out;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #ff0000 !important;
+  width: 30px !important;
+  height: 6px !important; 
+  border-radius: 10px !important; 
+  background-color: #00E5FF !important;
 }
 
 .tooltip-link {
   position: relative;
 }
+

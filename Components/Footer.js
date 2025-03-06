@@ -9,7 +9,7 @@ import ContactForm from './ContactForm';
 const Footer = () => {
   return (
     <ThemeProvider attribute="class">
-      <section id='contact' className='footer flex items-center justify-between max-[1024px]:justify-center md:max-[1024px]:gap-16 max-[1024px]:flex-col min-h-screen w-screen bg-[#2c2c2c] dark:bg-[#1c1c1c] px-48 max-[1024px]:px-12 py-20 gap-6 relative '>
+      <section id='contact' className='footer flex items-center justify-between max-[1024px]:justify-center md:max-[1024px]:gap-16 max-[1024px]:flex-col min-h-screen w-screen bg-gradient-to-t from-[#00E5FF]/10 to-black/0 px-48 max-[1024px]:px-12 py-20 gap-6 relative -ml-5'>
         <motion.div
           initial={{
             opacity: 0,

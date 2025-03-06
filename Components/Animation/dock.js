@@ -7,6 +7,7 @@ import {
   useTransform,
   AnimatePresence,
 } from "framer-motion";
+import Link from "next/link";
 import {
   Children,
   cloneElement,
@@ -19,7 +20,7 @@ import {
 function DockItem({
   children,
   className = "",
-  onClick,
+  href = "/",
   mouseX,
   spring,
   distance,
@@ -45,26 +46,25 @@ function DockItem({
   const size = useSpring(targetSize, spring);
 
   return (
-    <motion.div
-      ref={ref}
-      style={{
-        width: size,
-        height: size,
-      }}
-      onHoverStart={() => isHovered.set(1)}
-      onHoverEnd={() => isHovered.set(0)}
-      onFocus={() => isHovered.set(1)}
-      onBlur={() => isHovered.set(0)}
-      onClick={onClick}
-      className={`relative inline-flex items-center justify-center rounded-full bg-[#060606] border-neutral-700 border-2 shadow-md ${className}`}
-      tabIndex={0}
-      role="button"
-      aria-haspopup="true"
-    >
-      {Children.map(children, (child) =>
-        cloneElement(child, { isHovered })
-      )}
-    </motion.div>
+    <Link href={href} passHref legacyBehavior>
+      <motion.a
+        ref={ref}
+        style={{
+          width: size,
+          height: size,
+        }}
+        onHoverStart={() => isHovered.set(1)}
+        onHoverEnd={() => isHovered.set(0)}
+        className={`relative inline-flex items-center justify-center rounded-full bg-[#060606]/50 border-neutral-700 backdrop-blur-xl border-2 shadow-md ${className}`}
+        tabIndex={0}
+        role="button"
+        aria-haspopup="true"
+      >
+        {Children.map(children, (child) =>
+          cloneElement(child, { isHovered })
+        )}
+      </motion.a>
+    </Link>
   );
 }
 
@@ -148,7 +148,7 @@ export default function Dock({
         {items.map((item, index) => (
           <DockItem
             key={index}
-            onClick={item.onClick}
+            href={item.href}
             className={item.className}
             mouseX={mouseX}
             spring={spring}

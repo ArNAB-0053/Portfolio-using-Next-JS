@@ -1,18 +1,14 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Home from "./Home";
-import About from "./About";
-import Skills from "./Skills";
-import Project from "./Project";
+import Home from "./Home/Home";
+import Skills from "./Skills/Skills";
+import Project from "./Project/Project";
 import { ThemeProvider } from "next-themes";
-import Header from "./Header";
 import Footer from "./Footer";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
-import ProjectSlider from "./ProjectSlider";
-import DockHeader from "./dock-header";
-import Squares from "./Animation/Squares";
 import Hero from "./Hero";
+import Header from "./Header";
 
 const Body = () => {
   return (
@@ -29,13 +25,13 @@ const Body = () => {
         transition={{
           duration: 1.5,
         }}
-        className="bg-[#1C1C1C] overflow-x-hidden relative "
+        className="overflow-x-hidden relative z-10"
       >
         {/* <Header /> */}
         <Hero />
         <section
           id="home"
-          className="overflow-hidden relative min-h-screen w-screen"
+          className="relative min-h-screen w-screen"
         >
           {/* Blurred Squares as Background */}
 
@@ -45,22 +41,22 @@ const Body = () => {
           </div>
         </section>
 
-        <section
+        {/* <section
           id="about"
           className="overflow-hidden min-h-screen px-48 w-screen max-[1024px]:px-8 lg:max-[1280px]:px-8 relative z-10"
         >
           <About />
-        </section>
+        </section> */}
         <section
           id="skills"
-          className="overflow-hidden min-h-screen px-48 w-screen bg-white dark:bg-[#2E2E2E] max-[1024px]:px-8 md:max-[1024px]:pt-8 md:max-[1024px]:pb-16 md:max-[1024px]:min-h-[50vh]"
+          className="overflow-hidden min-h-screen px-48 w-screen max-[1024px]:px-8 md:max-[1024px]:pt-8 md:max-[1024px]:pb-16 md:max-[1024px]:min-h-[50vh]"
         >
           <Skills />
         </section>
 
         <section
           id="project"
-          className="overflow-hidden min-h-screen pb-24 pt-0 px-60 w-screen bg-white dark:bg-[#2E2E2E] max-[1024px]:px-8 md:max-[1024px]:min-h-[70vh]"
+          className="overflow-hidden min-h-screen pb-24 pt-0 px-60 w-screen max-[1024px]:px-8 md:max-[1024px]:min-h-[70vh]"
         >
           <Project />
         </section>
