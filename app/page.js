@@ -10,7 +10,7 @@ import SpotlightComponent from "@/Components/Animation/SpotlightComponent";
 const Page = () => {
   return (
     <SpotlightComponent
-      className="px-0 py-0 bg-transparent rounded-none bg-zi00"
+      className="px-0 py-0 bg-black rounded-none bg-zi00"
       spotlightColor="rgba(0, 155, 255, 0.1)"
     >
     <div className="relative w-screen min-h-screen overflow-hidden ">

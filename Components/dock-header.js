@@ -1,5 +1,5 @@
 import Dock from "./Animation/dock";
-import { FaBrain, FaHome, FaProjectDiagram } from "react-icons/fa";
+import { FaBrain, FaCode, FaHome, FaProjectDiagram } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { MdAttachEmail } from "react-icons/md";
 
@@ -20,7 +20,7 @@ const items = [
     href: '#skills'
   },
   {
-    icon: <FaProjectDiagram size={18} />,
+    icon: <FaCode size={18} />,
     label: "Projects",
     href: '#project'
   },
@@ -38,7 +38,7 @@ const DockHeader = () => {
       panelHeight={68}
       baseItemSize={50}
       magnification={70}
-      className="bg-black/20 backdrop-blur-md"
+      className="bg-black/20 backdrop-blur-md text-white"
     />
   );
 };

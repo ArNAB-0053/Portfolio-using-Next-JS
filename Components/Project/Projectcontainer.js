@@ -2,7 +2,6 @@
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import SpotlightCard from "../Animation/SpotlightCard";
 
 const truncateText = (text, wordLimit) => {
@@ -19,7 +18,6 @@ const Projectcontainer = ({
   project_img,
   link,
   tags = [],
-  bg = "transparent",
   fontSize = "text-3xl",
   project_tag = []
 }) => {
@@ -30,10 +28,8 @@ const Projectcontainer = ({
     >
       {/* GitHub Icon at Top-Right */}
       <Link href={`https://github.com/ArNAB-0053/${link}`} target="_blank" className="absolute top-4 right-4 z-20"> 
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          transition={{ duration: 0.3 }}
-          className="rounded-full bg-white/10 p-2 backdrop-blur-sm"
+        <div
+          className="rounded-full hover:scale-110 transition-all ease-in-out duration-200 bg-white/10 p-2 backdrop-blur-sm"
         >
           <Image
             src="/Images/github.svg"
@@ -43,22 +39,22 @@ const Projectcontainer = ({
             className="w-6 h-6 opacity-80"
             loading="lazy"
           />
-        </motion.div>
+        </div>
       </Link>
 
       {/* Project Image */}
-      <motion.div
-        className="relative w-full h-48 overflow-hidden"
+      <div
+        className="relative w-full h-48 overflow-hidden "
       >
         <Image
           src={project_img}
           alt={`${project_heading} image`}
           width="500"
           height="500"
-          className={`w-full h-full object-cover rounded-xl border-b-2 border-white/10 bg-${bg}`}
+          className={`w-full h-full object-cover rounded-xl bg-white`}
           loading="lazy"
         />
-      </motion.div>
+      </div>
 
       {/* Project Content */}
       <div className="flex flex-col items-start justify-center gap-y-3 px-4 max-[640px]:px-6 max-[640px]:pb-2 max-[640px]:mt-2">

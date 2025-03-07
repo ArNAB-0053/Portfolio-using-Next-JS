@@ -19,7 +19,6 @@ function ProjectSlider({ activeTab }) {
       project_heading: "ContractLens",
       project_desc: "A project to streamline contract management with text extraction, comparison, and validation features.",
       link: "ContractLens",
-      bg: "zinc-800 dark:bg-white",
       tags: ["flask", "nextjs", "nlp-machine-learning", "tailwindcss", "shadcn-ui"],
       project_tag: ["web", "ml"]
     },
@@ -78,7 +77,6 @@ function ProjectSlider({ activeTab }) {
       project_heading: "Voler",
       project_desc: "An OpenCV-based project allowing volume control of PCs using hand gestures for a hands-free experience.",
       link: "Voler----Volume-Control-by-Hand",
-      bg: "zinc-800 dark:bg-white",
       tags: ["opencv", "mediapipe", "pycaw", "finger-distance-calculation"],
       project_tag: ["ml"]
     },
@@ -96,7 +94,6 @@ function ProjectSlider({ activeTab }) {
       project_heading: "AttendEase",
       project_desc: "A smart attendance system that uses facial recognition to automatically mark students as present or absent.",
       link: "AttendEase----Smart-Attendance-System-Using-OpenCV",
-      bg: "zinc-800 dark:bg-white",
       tags: ["opencv", "mediapipe", "face-recognition", "cvzone"],
       project_tag: ["ml"]
     }
@@ -163,7 +160,7 @@ function ProjectSlider({ activeTab }) {
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
-        centeredSlides={false}
+        centeredSlides={num === 1.5 || num === 2.3 ? true : false}
         slidesPerView={"auto"}
         coverflowEffect={{
           rotate: 0,

@@ -103,7 +103,7 @@ const ContactForm = () => {
           required
         />
         {emailError && (
-          <p className="text-red-500 dark:text-[#ff0000] text-sm">
+          <p className="text-red-500 dark:text-[#ff0000] ml-2 text-sm">
             Please enter a valid email address.
           </p>
         )}
@@ -128,7 +128,7 @@ const ContactForm = () => {
           required
         />
         {descError && (
-          <p className="text-red-500 dark:text-[#ff0000] text-sm">
+          <p className="text-red-500 dark:text-[#ff0000] ml-2 text-sm">
             Description must contain at least 3 words.
           </p>
         )}

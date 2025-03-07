@@ -3,16 +3,13 @@ import React, { useEffect, useState } from "react";
 import Home from "./Home/Home";
 import Skills from "./Skills/Skills";
 import Project from "./Project/Project";
-import { ThemeProvider } from "next-themes";
 import Footer from "./Footer";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import Hero from "./Hero";
-import Header from "./Header";
 
 const Body = () => {
   return (
-    <ThemeProvider attribute="class">
       <motion.div
         initial={{
           opacity: 0,
@@ -62,7 +59,6 @@ const Body = () => {
         </section>
         <Footer />
       </motion.div>
-    </ThemeProvider>
   );
 };
 
