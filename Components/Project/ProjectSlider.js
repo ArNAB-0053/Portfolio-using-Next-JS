@@ -44,6 +44,16 @@ function ProjectSlider({ activeTab }) {
       project_tag: ["web"]
     },
     {
+      project_img: "https://i.imgur.com/aHWaqKB.jpeg",
+      project_heading: "ReState",
+      project_desc: "ReState is a mobile app built with React Native that allows users to explore various properties.",
+      link: "ReState",
+      bg: "transparent",
+      fontSize: "text-2xl",
+      tags: ["react-native", "appwrite", "firebase", "expo", "native-wind"],
+      project_tag: ["react-native"]
+    },
+    {
       project_img: "https://i.imgur.com/AHWtiQe.png",
       project_heading: "ChatGPT Clone",
       project_desc: "A clone of ChatGPT developed with NextJS, TypeScript, Tailwind CSS, and Firebase for authentication.",
@@ -153,11 +163,11 @@ function ProjectSlider({ activeTab }) {
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
-        centeredSlides={true}
+        centeredSlides={false}
         slidesPerView={"auto"}
         coverflowEffect={{
           rotate: 0,
-          stretch: 3,
+          stretch: 0,
           depth: 0,
           modifier: 2,
           slideShadows: false,

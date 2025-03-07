@@ -44,6 +44,7 @@ const Skills = () => {
         {/* <Skilllogo langLogo='typescript.svg' name="TypeScript" left={true} /> */}
         <Skilllogo langLogo='framer-motion.svg' name="Framer Motion" left={true} />
         <Skilllogo langLogo='git.svg' name="Git" />
+        <Skilllogo langLogo='github.svg' name="GitHub" />
         <Skilllogo langLogo='firebase.svg' name="Firebase" />
         <Skilllogo langLogo='node.svg' name="Node.js" />
         <Skilllogo langLogo='express.svg' name="Express.js" style='dark:invert' />
@@ -52,6 +53,7 @@ const Skills = () => {
         <Skilllogo langLogo='flask.svg' name="Flask" style='dark:invert-[0.8]' />
         <Skilllogo langLogo='opencv.svg' name="OpenCV" />
         <Skilllogo langLogo='mediapipe_logo.svg' name="MediaPipe" />
+        <Skilllogo langLogo='react-native.png' name="React-Native" />
         {/* <Skilllogo langLogo='tf.svg' name="TensorFlow" /> */}
         {/* <Skilllogo langLogo='keras.svg' name="Keras" /> */}
       </div>
