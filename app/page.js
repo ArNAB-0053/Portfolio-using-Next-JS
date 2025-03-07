@@ -3,7 +3,6 @@ import Body from "@/Components/Body";
 import React from "react";
 import Movestopbtn from "@/Components/Movestopbtn";
 import DockHeader from "@/Components/dock-header";
-import Squares from "@/Components/Animation/Squares";
 import Particles from "@/Components/Animation/Particles";
 import SpotlightComponent from "@/Components/Animation/SpotlightComponent";
 
@@ -17,15 +16,6 @@ const Page = () => {
       {/* Global Background */}
       <div className="fixed inset-0 z-10">
         <div className="absolute inset-0 backdrop-blur-md opacity-40 z-10"></div>{" "}
-        {/* Blur effect */}
-        {/* <Squares
-          speed={0.09}
-          squareSize={290}
-          direction="diagonal"
-          borderColor="#efefef40"
-          hoverFillColor="#fff"
-          className="w-full h-full"
-        /> */}
         <div style={{ width: "100%", height: "100%", position: "relative" }}>
           <Particles
             particleColors={["#00E5FF33", "#00E5FF"]}

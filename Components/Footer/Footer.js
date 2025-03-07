@@ -1,10 +1,14 @@
 import Link from "next/link";
-import "../style/footerlink.css";
+import "../../style/footerlink.css";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { Toaster } from "react-hot-toast";
 import ContactForm from "./ContactForm";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { DM_Sans } from "next/font/google";
+
+const dm_sans = DM_Sans({ subsets: ["latin"], weight: ["400", "700"] });
+// const oswald = Oswald({ subsets: ["latin"], weight: ["400", "700"] });
 
 // Social links data extracted for reusability
 const socialLinks = [
@@ -114,7 +118,7 @@ const AnimatedSection = ({ isMobile, initialProps, children }) => {
 
 const Footer = () => {
   const isMobile = useIsMobile();
-  
+
   const contactAnimProps = {
     initial: {
       opacity: 0,
@@ -127,9 +131,10 @@ const Footer = () => {
       opacity: 1,
       x: 0,
     },
-    className: "flex flex-col items-start justify-center max-[768px]:w-full md:max-[1024px]:w-[30rem]"
+    className:
+      "flex flex-col items-start justify-center max-[768px]:w-full md:max-[1024px]:w-[30rem]",
   };
-  
+
   const connectAnimProps = {
     initial: {
       opacity: 0,
@@ -142,9 +147,10 @@ const Footer = () => {
       opacity: 1,
       x: 0,
     },
-    className: "bg-[#f3f3f3] w-64 min-h-72 p-4 flex items-center justify-center flex-col rounded-lg max-[768px]:w-full md:max-[1024px]:w-[30rem]"
+    className:
+      "bg-[#f3f3f3] w-64 min-h-72 p-4 flex items-center justify-center flex-col rounded-lg max-[768px]:w-full md:max-[1024px]:w-[30rem]",
   };
-  
+
   const footerAnimProps = {
     initial: {
       opacity: 0,
@@ -157,14 +163,26 @@ const Footer = () => {
       opacity: 1,
       y: 0,
     },
-    className: "absolute max-lg:bottom-24 bottom-12 text-center font-[Montserrat] text-zinc-400"
+    className:
+      "absolute max-lg:bottom-24 bottom-12 text-center font-[Montserrat] text-zinc-400",
   };
 
   return (
     <>
+      <p className={`max-lg:hidden text-center text-gray-400 pt-20 ${dm_sans.className}`}>
+        You can fill out the contact form or connect with me on social media.
+        <br />
+        Let's connect and collaborate—I'm ready to contribute and grow together!
+      </p>
+
+      <p className={` px-12 lg:hidden text-center text-gray-400 pt-20 pb-12 text-xs ${dm_sans.className}`}>
+        You can fill out the contact form or connect with me on social media.
+        Let's connect and collaborate—I'm ready to contribute and grow together!
+      </p>
+
       <section
         id="contact"
-        className="footer flex items-center justify-between max-[1024px]:justify-center md:max-[1024px]:gap-16 max-[1024px]:flex-col min-h-screen w-screen bg-gradient-to-t from-[#00E5FF]/10 to-black/0 max-[1024px]:px-12 px-44 pt-20 pb-48 gap-6 relative "
+        className="footer flex items-center justify-between max-[1024px]:justify-center md:max-[1024px]:gap-16 max-[1024px]:flex-col min-h-screen w-screen bg-gradient-to-t from-[#00E5FF]/10 to-black/0 max-[1024px]:px-12 px-44 pb-48 gap-6 relative "
       >
         <AnimatedSection isMobile={isMobile} initialProps={contactAnimProps}>
           <h1 className="conatct_heading text-white my-4 flex items-center justify-center gap-4 ">
@@ -189,7 +207,7 @@ const Footer = () => {
           <div className="h-[1px] w-[60%] bg-black mt-[-1rem] mb-6"></div>
           <SocialLinks />
         </AnimatedSection>
-        
+
         <AnimatedSection isMobile={isMobile} initialProps={footerAnimProps}>
           Made with ❤️ using Next.js!
         </AnimatedSection>

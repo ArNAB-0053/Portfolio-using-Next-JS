@@ -20,7 +20,7 @@ const Skilllogo = ({ langLogo, name, left = false, style, isMobile }) => {
           <span
             className="absolute z-10 bottom-full left-1/2 -translate-x-1/2 translate-y-2
             px-2 py-1 bg-white font-semibold text-black text-center text-xs rounded-md opacity-0 
-            group-hover:opacity-100 transition-opacity duration-300"
+            group-hover:opacity-100 transition-opacity duration-300 "
           >
             {name}
           </span>
@@ -29,7 +29,7 @@ const Skilllogo = ({ langLogo, name, left = false, style, isMobile }) => {
             spotlightColor="rgba(0, 229, 255, 0.2)"
           >
             <Image
-              src={`/Images/${langLogo}`}
+              src={langLogo}
               width={50}
               height={50}
               className={`rounded logo w-[50px] h-[50px] ${style}`}
@@ -69,7 +69,7 @@ const Skilllogo = ({ langLogo, name, left = false, style, isMobile }) => {
           spotlightColor="rgba(0, 229, 255, 0.2)"
         >
           <Image
-            src={`/Images/${langLogo}`}
+            src={langLogo}
             width={50}
             height={50}
             className={`rounded logo w-[50px] h-[50px] ${style}`}
@@ -104,7 +104,7 @@ const Skilllogo = ({ langLogo, name, left = false, style, isMobile }) => {
             spotlightColor="rgba(0, 229, 255, 0.2)"
           >
             <Image
-              src={`/Images/${langLogo}`}
+              src={langLogo}
               width={50}
               height={50}
               className={`rounded logo w-[50px] h-[50px] ${style}`}
@@ -131,7 +131,7 @@ const Skilllogo = ({ langLogo, name, left = false, style, isMobile }) => {
         <span
           className="absolute bottom-full left-1/2 -translate-x-1/2 translate-y-2 
           px-2 py-1 bg-black text-white text-xs rounded-md opacity-0 
-          group-hover:opacity-100 transition-opacity duration-300"
+          group-hover:opacity-100 transition-opacity duration-300 "
         >
           {name}
         </span>
@@ -141,7 +141,7 @@ const Skilllogo = ({ langLogo, name, left = false, style, isMobile }) => {
           spotlightColor="rgba(0, 229, 255, 0.2)"
         >
           <Image
-            src={`/Images/${langLogo}`}
+            src={langLogo}
             width={50}
             height={50}
             className={`rounded logo w-[50px] h-[50px] ${style}`}

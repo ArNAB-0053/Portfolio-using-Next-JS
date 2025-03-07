@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Home from "./Home/Home";
 import Skills from "./Skills/Skills";
 import Project from "./Project/Project";
-import Footer from "./Footer";
+import Footer from "./Footer/Footer";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import Hero from "./Hero";

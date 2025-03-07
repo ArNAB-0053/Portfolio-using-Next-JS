@@ -1,3 +1,4 @@
+import { ToastContainer } from 'react-toastify';
 import './globals.css'
 import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
@@ -13,6 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className=''>
       <body className={`${inter.className} overflow-x-hidden selection:bg-white selection:text-black`}>        
         {children}
+        <ToastContainer />
       </body>
     </html>
   );

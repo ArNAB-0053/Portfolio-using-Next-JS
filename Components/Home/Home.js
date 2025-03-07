@@ -9,7 +9,6 @@ import { FaFacebook, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 import Blob from "./Blob";
 import TiltedCard from "../Animation/TiltedCard";
-import ProfileImage from "./ProfileImage";
 import Image from "next/image";
 import { useIsMobile } from "@/hooks/use-mobile";
 
