@@ -53,6 +53,16 @@ function ProjectSlider({ activeTab }) {
       project_tag: ["react-native"]
     },
     {
+      project_img: "https://i.imgur.com/o9W3a2J.jpeg",
+      project_heading: "MovieWithPopcorn",
+      project_desc: "It is a React Native movie app that provides information about movies using the TMDB API. ",
+      link: "MovieWithPopcorn-App",
+      bg: "transparent",
+      fontSize: "text-xl",
+      tags: ["react-native", "tmdb api", "expo", "native-wind"],
+      project_tag: ["react-native"]
+    },
+    {
       project_img: "https://i.imgur.com/AHWtiQe.png",
       project_heading: "ChatGPT Clone",
       project_desc: "A clone of ChatGPT developed with NextJS, TypeScript, Tailwind CSS, and Firebase for authentication.",
