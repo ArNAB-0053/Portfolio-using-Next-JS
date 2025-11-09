@@ -89,7 +89,7 @@ const Home = () => {
         <>
           <div className="relative flex items-center mb-4 justify-center mt-8 sm:w-5/6">
             <Image
-              src="/photo3.jpg"
+              src="/Images/image-of-me.jpg"
               width={600}
               height={600}
               className="rounded-lg w-full object-cover"
@@ -169,7 +169,7 @@ const Home = () => {
             className="relative flex items-center justify-center mt-8 xl:hidden w-1/2 mb-10 "
           >
             <Image
-              src="/photo3.jpg"
+              src="/Images/image-of-me.jpg"
               width={600}
               height={600}
               className="rounded-lg w-full object-cover"
@@ -258,7 +258,7 @@ const Home = () => {
             className="absolute lg:right-50 lg:top-0 xl:right-60 xl:top-60 z-10 max-xl:hidden"
           >
             <TiltedCard
-              imageSrc="/photo3.jpg"
+              imageSrc="/Images/image-of-me.jpg"
               altText="Arnab Bhattacharyya"
               containerHeight="400px"
               containerWidth="400px"
