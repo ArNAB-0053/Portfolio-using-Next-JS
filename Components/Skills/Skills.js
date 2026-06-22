@@ -1,85 +1,111 @@
 'use client'
-import React, { useEffect } from 'react'
+import React from 'react'
 import dynamic from "next/dynamic";
-import { motion } from "framer-motion"
 import Skilllogo from './Skilllogo';
 import { useIsMobile } from '@/hooks/use-mobile';
+import SectionHeader from "../UI/SectionHeader";
 
 const Skills = () => {
   const isMobile = useIsMobile();
 
-  // Render the skills heading conditionally based on device type
-  const renderSkillsHeading = () => {
-    if (isMobile) {
-      // Mobile view - no animations
-      return (
-        <h1
-          id='skills_heading'
-          className='text-[2rem] text-white text-center font-[Pavelt] tracking-[1rem] uppercase'
-        >
-          Skills
-        </h1>
-      );
-    } else {
-      // Desktop view - with animations
-      return (
-        <motion.h1
-          initial={{
-            opacity: 0,
-            fontSize: "0px",
-            x: -20
-          }}
-          transition={{
-            duration: .3,
-          }}
-          whileInView={{
-            opacity: 1,
-            fontSize: "2rem",
-            x: 0
-          }}
-          viewport={{ once: true }}
-          id='skills_heading'
-          className='text-[2rem] text-white text-center font-[Pavelt] tracking-[1rem] uppercase'
-        >
-          Skills
-        </motion.h1>
-      );
+  const categories = [
+    {
+      name: "Programming Languages",
+      skills: [
+        { name: "JavaScript", logo: "/Images/js.svg", left: true },
+        { name: "TypeScript", logo: "/Images/typescript.svg", left: true },
+        { name: "Python", logo: "/Images/python.svg", left: true },
+        { name: "C", logo: "/Images/c.svg", left: true },
+        { name: "Java", logo: "/Images/java.svg", left: true },
+      ]
+    },
+    {
+      name: "Frontend Stack",
+      skills: [
+        { name: "React", logo: "/Images/react.svg", left: true },
+        { name: "Next.js", logo: "/Images/next.svg", left: true, style: "invert-[0.8]" },
+        { name: "SvelteKit", logo: "/Images/svelte.svg", left: true, style: "invert-[0.8]" },
+        { name: "Tailwind CSS", logo: "/Images/tailwind.svg", left: true },
+        { name: "ShadCN UI", logo: "/Images/shadcn.png", left: true },
+        { name: "Framer Motion", logo: "/Images/framer-motion.svg", left: true },
+        { name: "HTML", logo: "/Images/html.svg", left: true },
+        { name: "CSS", logo: "/Images/css.svg", left: true },
+      ]
+    },
+    {
+      name: "Backend & Databases",
+      skills: [
+        { name: "Node.js", logo: "/Images/node.svg", left: false },
+        { name: "Express.js", logo: "/Images/express.svg", left: false, style: "invert" },
+        { name: "Fastify", logo: "/Images/fastify.svg", left: false, style: "invert-[0.8]" },
+        { name: "ASP.NET", logo: "/Images/dotnet.svg", left: false, style: "invert-[0.8]" },
+        { name: "REST APIs", logo: "/Images/api.svg", left: false },
+        { name: "PostgreSQL", logo: "/Images/postgresql.svg", left: false, style: "invert-[0.8]" },
+        { name: "MongoDB", logo: "/Images/mongo.svg", left: false },
+        { name: "MySQL", logo: "/Images/mysql.svg", left: false, style: "invert scale-[1.3]" },
+        { name: "Firebase", logo: "/Images/firebase.svg", left: false },
+        { name: "Flask", logo: "/Images/flask.svg", left: false, style: "invert-[0.8]" },
+      ]
+    },
+    {
+      name: "AI & Machine Learning",
+      skills: [
+        { name: "LangChain", logo: "/Images/langchain.svg", left: false, style: "invert-[0.8]" },
+        { name: "RAG", logo: "/Images/rag.svg", left: false },
+        { name: "NLP", logo: "/Images/nlp.svg", left: false },
+        { name: "Vector Databases", logo: "/Images/vectordb.svg", left: false },
+        { name: "Machine Learning", logo: "/Images/ml.svg", left: false },
+        { name: "Scikit-Learn", logo: "/Images/scikitlearn.svg", left: false, style: "invert-[0.8]" },
+        { name: "OpenCV", logo: "/Images/opencv.svg", left: false },
+        { name: "MediaPipe", logo: "/Images/mediapipe_logo.svg", left: false },
+      ]
+    },
+    {
+      name: "DevOps & Tools",
+      skills: [
+        { name: "Docker", logo: "/Images/docker.svg", left: false, style: "invert-[0.8]" },
+        { name: "GitHub Actions", logo: "/Images/githubactions.svg", left: false, style: "invert-[0.8]" },
+        { name: "Git", logo: "/Images/git.svg", left: false },
+        { name: "GitHub", logo: "/Images/github.svg", left: false, style: "invert" },
+        { name: "MinIO", logo: "/Images/minio.svg", left: false, style: "invert-[0.8]" },
+        { name: "Vercel", logo: "/Images/vercel.svg", left: false, style: "invert-[0.8]" },
+        { name: "Render", logo: "/Images/render.svg", left: false, style: "invert-[0.8]" },
+        { name: "React-Native", logo: "/Images/react-native.png", left: false },
+        { name: "Expo", logo: "https://i.imgur.com/EX5o5jA.png", left: false, style: "invert-[0.8]" },
+      ]
     }
-  };
+  ];
 
   return (
     <div id='skills' className='h-auto w-full pt-24 pb-8 md:max-[1024px]:pb-0'>
-      {renderSkillsHeading()}
-      <div
-        id='skills_content'
-        className='w-full px-24 grid grid-cols-5 grid-rows-auto gap-6 mt-16 place-items-center sm:max-[768px]:grid-cols-4 max-[768px]:px-8 max-[640px]:grid-cols-3 max-[320px]:grid-cols-2'
-      >
-        <Skilllogo langLogo='/Images/python.svg' name="Python" left={true} isMobile={isMobile} />
-        <Skilllogo langLogo='/Images/js.svg' name="JavaScript" left={true} isMobile={isMobile} />
-        <Skilllogo langLogo='/Images/c.svg' name="C" left={true} isMobile={isMobile} />
-        <Skilllogo langLogo='/Images/java.svg' name="Java" left={true} isMobile={isMobile} />
-        <Skilllogo langLogo='/Images/html.svg' name="HTML" left={true} isMobile={isMobile} />
-        <Skilllogo langLogo='/Images/css.svg' name="CSS" left={true} isMobile={isMobile} />
-        <Skilllogo langLogo='/Images/react.svg' name="React" left={true} isMobile={isMobile} />
-        <Skilllogo langLogo='/Images/next.svg' name="Next.js" left={true} isMobile={isMobile} style='invert-[0.8]' />
-        <Skilllogo langLogo='/Images/tailwind.svg' name="Tailwind CSS" left={true} isMobile={isMobile} />
-        <Skilllogo langLogo='/Images/shadcn.png' name="ShadCN" left={true} isMobile={isMobile} />
-        {/* <Skilllogo langLogo='/Images/typescript.svg' name="TypeScript" left={true} isMobile={isMobile} /> */}
-        <Skilllogo langLogo='/Images/framer-motion.svg' name="Framer Motion" left={true} isMobile={isMobile} />
-        <Skilllogo langLogo='/Images/git.svg' name="Git" isMobile={isMobile} />
-        <Skilllogo langLogo='/Images/github.svg' name="GitHub" isMobile={isMobile} />
-        <Skilllogo langLogo='/Images/firebase.svg' name="Firebase" isMobile={isMobile} />
-        <Skilllogo langLogo='/Images/node.svg' name="Node.js" isMobile={isMobile} />
-        <Skilllogo langLogo='/Images/express.svg' name="Express.js" style='invert' isMobile={isMobile} />
-        <Skilllogo langLogo='/Images/mysql.svg' name="MySQL" style='invert scale-[1.3]' isMobile={isMobile} />
-        <Skilllogo langLogo='/Images/mongo.svg' name="MongoDB" isMobile={isMobile} />
-        <Skilllogo langLogo='/Images/flask.svg' name="Flask" style='invert-[0.8]' isMobile={isMobile} />
-        <Skilllogo langLogo='/Images/opencv.svg' name="OpenCV" isMobile={isMobile} />
-        <Skilllogo langLogo='/Images/mediapipe_logo.svg' name="MediaPipe" isMobile={isMobile} />
-        <Skilllogo langLogo='/Images/react-native.png' name="React-Native" isMobile={isMobile} />
-        <Skilllogo langLogo='https://i.imgur.com/EX5o5jA.png' name="Expo" style='invert-[0.8]' isMobile={isMobile} />
-        {/* <Skilllogo langLogo='/Images/tf.svg' name="TensorFlow" /> */}
-        {/* <Skilllogo langLogo='/Images/keras.svg' name="Keras" /> */}
+      <SectionHeader title="Engineering Stack" />
+
+      <div className="mt-12 space-y-12 max-w-6xl mx-auto px-4 md:px-12">
+        {categories.map((category, index) => (
+          <div key={index} className="space-y-6">
+            {/* Category Header */}
+            <div className="flex items-center gap-4">
+              <h3 className="text-xs sm:text-sm font-bold tracking-[0.2em] text-cyan-400/80 uppercase">
+                {category.name}
+              </h3>
+              <div className="flex-grow h-[1px] bg-gradient-to-r from-cyan-500/20 via-zinc-800/30 to-transparent"></div>
+            </div>
+
+            {/* Logo Grid */}
+            <div className="w-full grid grid-cols-2 min-[320px]:grid-cols-3 min-[480px]:grid-cols-4 md:grid-cols-5 lg:grid-cols-8 justify-items-center items-center">
+              {category.skills.map((skill, sIdx) => (
+                <Skilllogo
+                  key={sIdx}
+                  langLogo={skill.logo}
+                  name={skill.name}
+                  left={skill.left}
+                  isMobile={isMobile}
+                  style={skill.style}
+                />
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   )

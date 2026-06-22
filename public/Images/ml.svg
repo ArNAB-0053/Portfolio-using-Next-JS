@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="ml-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#EC4899" />
+    </linearGradient>
+  </defs>
+  <path d="M24 44l40-20M24 44l40 20M24 44l40 40M24 84l40-40M24 84l40 20M24 84l40 40M64 24l40 40M64 64l40 0M64 64l40-40M64 64l40 40M64 104l40-40M64 104l40 0" stroke="url(#ml-grad)" stroke-width="3" stroke-opacity="0.6" />
+  <circle cx="24" cy="44" r="8" fill="url(#ml-grad)" />
+  <circle cx="24" cy="84" r="8" fill="url(#ml-grad)" />
+  <circle cx="64" cy="24" r="8" fill="url(#ml-grad)" />
+  <circle cx="64" cy="64" r="8" fill="url(#ml-grad)" />
+  <circle cx="64" cy="104" r="8" fill="url(#ml-grad)" />
+  <circle cx="104" cy="44" r="8" fill="url(#ml-grad)" />
+  <circle cx="104" cy="84" r="8" fill="url(#ml-grad)" />
+</svg>

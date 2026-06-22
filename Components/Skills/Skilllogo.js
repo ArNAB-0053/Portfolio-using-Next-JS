@@ -39,7 +39,7 @@ const Skilllogo = ({ langLogo, name, left = false, style, isMobile }) => {
         </div>
       );
     }
-    
+
     // For desktop, use animation
     return (
       <motion.div
@@ -114,7 +114,7 @@ const Skilllogo = ({ langLogo, name, left = false, style, isMobile }) => {
         </div>
       );
     }
-    
+
     // For desktop, use animation
     return (
       <motion.div

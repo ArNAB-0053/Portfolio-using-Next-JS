@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="nlp-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+  </defs>
+  <path d="M20 30h88v48H44L20 90V30z" fill="none" stroke="url(#nlp-grad)" stroke-width="6" stroke-linejoin="round" />
+  <line x1="36" y1="46" x2="92" y2="46" stroke="url(#nlp-grad)" stroke-width="6" stroke-linecap="round" />
+  <line x1="36" y1="62" x2="76" y2="62" stroke="url(#nlp-grad)" stroke-width="6" stroke-linecap="round" />
+  <circle cx="86" cy="62" r="6" fill="url(#nlp-grad)" />
+  <path d="M76 62h4M86 56v-4" stroke="url(#nlp-grad)" stroke-width="2" />
+</svg>

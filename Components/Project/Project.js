@@ -7,6 +7,7 @@ import { useState } from "react";
 import ProjectSlider from "./ProjectSlider";
 import ProjectTab from "./ProjectTab";
 import { useIsMobile } from "@/hooks/use-mobile";
+import SectionHeader from "../UI/SectionHeader";
 
 const tabs = ["All", "Web Application", "React Native", "Machine Learning"];
 
@@ -20,12 +21,7 @@ const Project = () => {
       // Mobile view - no animations
       return (
         <>
-          <h1 
-            id="project_heading"
-            className="text-[2rem] text-white text-center mb-12 font-[Pavelt] tracking-[1rem] max-[360px]:tracking-wider max-[640px]:tracking-[0.9rem]"
-          >
-            Projects
-          </h1>
+          <SectionHeader title="Projects" />
           <div className="relative">
             <div className="overflow-hidden">
               <h4 
@@ -58,23 +54,7 @@ const Project = () => {
       // Desktop view - with animations
       return (
         <>
-          <motion.h1
-            initial={{
-              opacity: 0,
-              y: 100,
-            }}
-            transition={{
-              duration: 0.3,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            id="project_heading"
-            className="text-[2rem] text-white text-center mb-12 font-[Pavelt] tracking-[1rem] max-[360px]:tracking-wider max-[640px]:tracking-[0.9rem]"
-          >
-            Projects
-          </motion.h1>
+          <SectionHeader title="Projects" />
           <div className="relative">
             <div className="overflow-hidden">
               <motion.h4

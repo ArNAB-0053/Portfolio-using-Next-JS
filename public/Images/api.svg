@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="api-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE" />
+      <stop offset="100%" stop-color="#4FACFE" />
+    </linearGradient>
+  </defs>
+  <rect x="12" y="12" width="40" height="40" rx="8" fill="url(#api-grad)" />
+  <rect x="76" y="12" width="40" height="40" rx="8" fill="none" stroke="url(#api-grad)" stroke-width="6" />
+  <rect x="44" y="76" width="40" height="40" rx="8" fill="none" stroke="url(#api-grad)" stroke-width="6" />
+  <path d="M32 52v12a12 12 0 0 0 12 12h2" fill="none" stroke="url(#api-grad)" stroke-width="6" stroke-linecap="round" />
+  <path d="M96 52v12a12 12 0 0 1-12 12H68" fill="none" stroke="url(#api-grad)" stroke-width="6" stroke-linecap="round" />
+</svg>
