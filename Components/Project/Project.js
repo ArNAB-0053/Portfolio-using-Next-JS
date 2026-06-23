@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import "react-toastify/dist/ReactToastify.css";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ProjectSlider from "./ProjectSlider";
 import ProjectTab from "./ProjectTab";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -14,6 +14,42 @@ const tabs = ["All", "Web Application", "React Native", "Machine Learning"];
 const Project = () => {
   const [activeTab, setActiveTab] = useState("All");
   const isMobile = useIsMobile();
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    let isMounted = true;
+    const fetchProjects = async () => {
+      try {
+        setLoading(true);
+        const res = await fetch("/api/projects");
+        if (!res.ok) {
+          throw new Error("Failed to fetch projects data");
+        }
+        const data = await res.json();
+        if (isMounted) {
+          setProjects(data);
+          setError(null);
+        }
+      } catch (err) {
+        if (isMounted) {
+          console.error("Error fetching projects:", err);
+          setError(err.message || "Failed to load projects");
+        }
+      } finally {
+        if (isMounted) {
+          setLoading(false);
+        }
+      }
+    };
+
+    fetchProjects();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   // Conditional rendering based on device type
   const renderContent = () => {
@@ -24,7 +60,7 @@ const Project = () => {
           <SectionHeader title="Projects" />
           <div className="relative">
             <div className="overflow-hidden">
-              <h4 
+              <h4
                 className="mb-8 font-[Montserrat] text-md text-center max-[768px]:text-sm font-light sm:max-[1024px]:text-xl overflow-hidden text-gray-300"
               >
                 My projects consist of a diverse range, including React Native, web, and machine learning projects. Some of them were developed for hackathons, where I worked alongside my teammates to turn ideas into reality.
@@ -38,13 +74,19 @@ const Project = () => {
                 </Link>{" "}
                 profile to explore them in detail.
               </h4>
-              
+
               {/* Tabs */}
               <ProjectTab tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} isMobile={isMobile} />
-              
+
               {/* Project Slider with activeTab prop */}
               <div key={activeTab}>
-                <ProjectSlider activeTab={activeTab} isMobile={isMobile} />
+                <ProjectSlider
+                  activeTab={activeTab}
+                  isMobile={isMobile}
+                  projects={projects}
+                  loading={loading}
+                  error={error}
+                />
               </div>
             </div>
           </div>
@@ -82,10 +124,10 @@ const Project = () => {
                 </Link>{" "}
                 profile to explore them in detail.
               </motion.h4>
-              
+
               {/* Tabs */}
               <ProjectTab tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} isMobile={isMobile} />
-              
+
               {/* Project Slider with activeTab prop */}
               <motion.div
                 initial={{
@@ -99,9 +141,15 @@ const Project = () => {
                   opacity: 1,
                   y: 0,
                 }}
-                key={activeTab} 
+                key={activeTab}
               >
-                <ProjectSlider activeTab={activeTab} isMobile={isMobile} />
+                <ProjectSlider
+                  activeTab={activeTab}
+                  isMobile={isMobile}
+                  projects={projects}
+                  loading={loading}
+                  error={error}
+                />
               </motion.div>
             </div>
           </div>
