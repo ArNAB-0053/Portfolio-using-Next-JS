@@ -1,6 +1,6 @@
 import Dock from "./Animation/dock";
 import { FaBrain, FaCode, FaBriefcase } from "react-icons/fa";
-import { CgProfile } from "react-icons/cg";
+import { CgHome, CgProfile } from "react-icons/cg";
 import { MdAttachEmail } from "react-icons/md";
 
 const items = [

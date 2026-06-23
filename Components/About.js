@@ -34,23 +34,25 @@ const About = () => {
 
   const achievements = [
     {
+      title: "Top 10 – HustleX (IIM Lucknow)",
+      desc: "Top placement in collaborative engineering hackathon challenge.",
+      cert: 'https://drive.google.com/file/d/1iVLV_5_t0D5hdmMX9GX0hf3mU52gv8aH/view'
+    },
+    {
+      title: "Finalist – Ideathon (IIM Bangalore)",
+      desc: "Recognized among top builders in national product innovation competition.",
+      cert: 'https://drive.google.com/file/d/1aR4NURwG_3_3Au-8miSJNRaqQhiam1_0/view'
+    },
+    {
       title: "9.53 CGPA",
       desc: "Strong academic foundation in computer science fundamentals.",
-    },
-    {
-      title: "Top 22 – Ideathon (IIM Bangalore)",
-      desc: "Recognized among top builders in national product innovation competition.",
-    },
-    {
-      title: "5th Place – HustleX (IIM Lucknow)",
-      desc: "Top placement in collaborative engineering hackathon challenge.",
     },
   ];
 
   return (
     <div className={`w-full py-20 flex flex-col items-center justify-center text-white ${dm_sans.className}`}>
       {/* Section Header */}
-      <SectionHeader title="About" />
+      <SectionHeader title="About Me" />
 
       <motion.div
         variants={containerVariants}
@@ -71,7 +73,7 @@ const About = () => {
             </span>
           </h3>
           <div className="h-[2px] w-12 bg-cyan-500/50 rounded-full"></div>
-          
+
           <div className="space-y-5 text-zinc-400 text-base sm:text-lg leading-relaxed">
             <p>
               I started my journey through AI and Machine Learning, but over time I
@@ -112,6 +114,17 @@ const About = () => {
                   <p className="text-zinc-400 text-sm leading-relaxed">
                     {item.desc}
                   </p>
+
+                  {item.cert && (
+                    <a
+                      href={item.cert}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center mt-2 text-xs text-cyan-400 hover:text-cyan-300 transition-colors"
+                    >
+                      View certificate →
+                    </a>
+                  )}
                 </div>
               </div>
             ))}

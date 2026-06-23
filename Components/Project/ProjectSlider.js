@@ -66,32 +66,12 @@ function ProjectSlider({ activeTab, projects = [], loading = false, error = null
   if (loading) {
     const skeletonCount = 4;
     return (
-      <div className="">
-        <Swiper
-          effect={"coverflow"}
-          grabCursor={true}
-          centeredSlides={num === 1.5 || num === 2.3 ? true : false}
-          slidesPerView={"auto"}
-          coverflowEffect={{
-            rotate: 0,
-            stretch: 0,
-            depth: 0,
-            modifier: 2,
-            slideShadows: false,
-          }}
-          loop={false}
-          pagination={true}
-          spaceBetween={size}
-          modules={[EffectCoverflow, Pagination]}
-          className="mySwiper"
-          key="loading-swiper"
-        >
-          {Array.from({ length: skeletonCount }).map((_, index) => (
-            <SwiperSlide className="swiperSlider" key={`skeleton-${index}`}>
-              <ProjectSkeleton />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+      <div className="flex flex-row justify-center gap-8 overflow-hidden py-10 w-full max-w-full">
+        {Array.from({ length: skeletonCount }).map((_, index) => (
+          <div className="w-[20rem] flex-shrink-0" key={`skeleton-${index}`}>
+            <ProjectSkeleton />
+          </div>
+        ))}
       </div>
     );
   }

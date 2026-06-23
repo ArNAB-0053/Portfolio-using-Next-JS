@@ -80,7 +80,7 @@ const Skills = () => {
     <div id='skills' className='h-auto w-full pt-24 pb-8 md:max-[1024px]:pb-0'>
       <SectionHeader title="Engineering Stack" />
 
-      <div className="mt-12 space-y-12 max-w-6xl mx-auto px-4 md:px-12">
+      <div className="mt-12 space-y-12 max-w-6xl mx-auto">
         {categories.map((category, index) => (
           <div key={index} className="space-y-6">
             {/* Category Header */}

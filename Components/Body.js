@@ -8,6 +8,7 @@ import Footer from "./Footer/Footer";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import Hero from "./Hero";
+import Header from "./Header";
 
 const Body = () => {
   return (
@@ -28,8 +29,9 @@ const Body = () => {
       {/* Hero Section */}
       <section
         id="hero"
-        className="overflow-hidden min-h-screen px-48 w-screen max-[1024px]:px-8 lg:max-[1280px]:px-8 relative z-10"
+        className="overflow-hidden min-h-screen px-48 w-screen max-[1024px]:px-8 lg:max-[1280px]:px-8 relative z-10 relative"
       >
+        {/* <Header /> */}
         <Hero />
       </section>
 

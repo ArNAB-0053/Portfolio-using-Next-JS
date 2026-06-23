@@ -9,7 +9,7 @@ import ProjectTab from "./ProjectTab";
 import { useIsMobile } from "@/hooks/use-mobile";
 import SectionHeader from "../UI/SectionHeader";
 
-const tabs = ["All", "Web Application", "React Native", "Machine Learning"];
+const tabs = ["All", "Web Application", "Machine Learning", "React Native"];
 
 const Project = () => {
   const [activeTab, setActiveTab] = useState("All");

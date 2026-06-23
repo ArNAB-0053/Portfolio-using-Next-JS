@@ -2,8 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import TextPressure from "./Animation/text-pressure";
-import DecryptedText from "./Animation/decrypted-text";
+import Typewriter from "typewriter-effect";
 import { DM_Sans, Playfair_Display } from "next/font/google";
 import { useIsMobile } from "@/hooks/use-mobile";
 import Link from "next/link";
@@ -78,14 +77,11 @@ const Hero = () => {
         initial="hidden"
         animate="visible"
       >
-        <motion.div variants={item} className="mb-6">
-          <DecryptedText
-            text={greeting}
-            speed={1}
-            animateOn="view"
-            revealDirection="center"
-            className="text-sm font-medium text-zinc-500 tracking-wider"
-          />
+        <motion.div variants={item} className="mb-6 flex items-center gap-x-1.5 w-fit">
+          <span className="text-cyan-500/70 font-mono text-sm select-none">~/</span>
+          <p className="text-sm font-mono text-zinc-500 tracking-wide">
+            hey, I'm
+          </p>
         </motion.div>
 
         {/* Name */}
@@ -96,12 +92,48 @@ const Hero = () => {
           Arnab Bhattacharyya
         </motion.h1>
 
-        <motion.p
-          variants={item}
-          className="text-sm font-medium tracking-[0.18em] text-zinc-500 uppercase mb-8"
-        >
-          Full Stack Engineer&nbsp;&nbsp;·&nbsp;&nbsp;AI Engineering
-        </motion.p>
+        <motion.div variants={item} className="mb-8">
+          <div className="flex items-center gap-1.5 mb-2">
+            <span className="text-cyan-500/70 font-mono text-sm">~/</span>
+            <span className="font-mono text-sm text-zinc-500">
+              currently
+            </span>
+          </div>
+
+          <div className="font-mono text-lg sm:text-xl text-zinc-300 flex">
+            <span className="text-cyan-400 mr-2">{">"}</span>
+
+            <Typewriter
+              options={{
+                loop: true,
+                autoStart: true,
+                delay: 50,
+                deleteSpeed: 25,
+                cursor: "_",
+              }}
+              onInit={(typewriter) => {
+                typewriter
+                  .typeString("Building AI Applications")
+                  .pauseFor(2000)
+                  .deleteAll()
+
+                  .typeString("Developing Full Stack Systems")
+                  .pauseFor(2000)
+                  .deleteAll()
+
+                  .typeString("Building RAG Systems")
+                  .pauseFor(2000)
+                  .deleteAll()
+
+                  .typeString("Learning DevOps")
+                  .pauseFor(2000)
+                  .deleteAll()
+
+                  .start();
+              }}
+            />
+          </div>
+        </motion.div>
 
         {/* Bio */}
         <motion.p
@@ -138,7 +170,7 @@ const Hero = () => {
         {/* CTA Buttons - Clean & Subtle */}
         <motion.div
           variants={item}
-          className="flex flex-wrap items-center gap-3"
+          className="flex items-center gap-3"
         >
           <Link
             href="/PDF/Resume.pdf"
@@ -146,36 +178,43 @@ const Hero = () => {
             className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-zinc-900 text-sm font-semibold rounded-lg hover:bg-zinc-100 active:scale-[0.97] transition-all duration-200"
           >
             <FaFileAlt size={13} />
-            View resume
+            <p className="max-[370px]:hidden">
+              View resume
+            </p>
+            <p className="hidden max-[370px]:block">
+              Resume
+            </p>
           </Link>
 
-          <Link
-            href="https://github.com/ArNAB-0053"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-transparent text-zinc-300 text-sm font-medium rounded-lg border border-zinc-800 hover:border-cyan-500/50 hover:text-cyan-400 active:scale-[0.97] transition-all duration-200"
-          >
-            <FaGithub size={13} />
-            GitHub
-          </Link>
+          <div className="flex items-center gap-x-3">
+            <Link
+              href="https://github.com/ArNAB-0053"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-transparent text-zinc-500 md:text-zinc-300 text-sm font-medium rounded-lg border border-zinc-800 hover:border-cyan-500/50 hover:text-cyan-400 active:scale-[0.97] transition-all duration-200 max-md:px-2 max-md:py-2 max-md:w-10 max-md:h-10"
+            >
+              <FaGithub size={13} />
+              <p className="hidden md:block">GitHub</p>
+            </Link>
 
-          <Link
-            href="https://www.linkedin.com/in/arnab-bhattacharyya-dev"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-zinc-800 text-zinc-500 hover:text-cyan-400 hover:border-cyan-500/50 active:scale-[0.97] transition-all duration-200"
-            aria-label="LinkedIn"
-          >
-            <FaLinkedin size={14} />
-          </Link>
+            <Link
+              href="https://www.linkedin.com/in/arnab-bhattacharyya-dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-zinc-800 text-zinc-500 hover:text-cyan-400 hover:border-cyan-500/50 active:scale-[0.97] transition-all duration-200"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin size={14} />
+            </Link>
 
-          <Link
-            href="mailto:dev.arnabbhattacharyya@gmail.com"
-            className="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-zinc-800 text-zinc-500 hover:text-cyan-400 hover:border-cyan-500/50 active:scale-[0.97] transition-all duration-200"
-            aria-label="Email"
-          >
-            <FaEnvelope size={14} />
-          </Link>
+            <Link
+              href="mailto:dev.arnabbhattacharyya@gmail.com"
+              className="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-zinc-800 text-zinc-500 hover:text-cyan-400 hover:border-cyan-500/50 active:scale-[0.97] transition-all duration-200"
+              aria-label="Email"
+            >
+              <FaEnvelope size={14} />
+            </Link>
+          </div>
         </motion.div>
       </motion.div>
     </div>

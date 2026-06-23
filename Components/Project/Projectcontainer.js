@@ -18,7 +18,7 @@ const Projectcontainer = ({
   project_img,
   link,
   tags = [],
-  fontSize = "text-3xl",
+  fontSize = "text-2xl!",
   project_tag = []
 }) => {
   return (
@@ -27,7 +27,7 @@ const Projectcontainer = ({
       spotlightColor="rgba(0, 229, 255, 0.2)"
     >
       {/* GitHub Icon at Top-Right */}
-      <Link href={`https://github.com/ArNAB-0053/${link}`} target="_blank" className="absolute top-4 right-4 z-20"> 
+      <Link href={`https://github.com/ArNAB-0053/${link}`} target="_blank" className="absolute top-4 right-4 z-20">
         <div
           className="rounded-full hover:scale-110 transition-all ease-in-out duration-200 bg-white/10 p-2 backdrop-blur-sm"
         >

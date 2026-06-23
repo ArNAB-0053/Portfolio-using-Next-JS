@@ -32,7 +32,7 @@ const Skilllogo = ({ langLogo, name, left = false, style, isMobile }) => {
               src={langLogo}
               width={50}
               height={50}
-              className={`rounded logo w-[50px] h-[50px] ${style}`}
+              className={`rounded logo w-[40px] h-[40px] lg:w-[50px] lg:h-[50px] ${style}`}
               alt={name}
             />
           </SpotlightCard>
