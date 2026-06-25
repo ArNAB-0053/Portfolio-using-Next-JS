@@ -19,7 +19,7 @@ const Skilllogo = ({ langLogo, name, left = false, style, isMobile }) => {
           {/* Tooltip Text */}
           <span
             className="absolute z-10 bottom-full left-1/2 -translate-x-1/2 translate-y-2
-            px-2 py-1 bg-white font-semibold text-black text-center text-xs rounded-md opacity-0 
+            w-max max-w-[85vw] md:max-w-none px-3 py-1 bg-white font-semibold text-black text-center text-xs rounded-md opacity-0 
             group-hover:opacity-100 transition-opacity duration-300 "
           >
             {name}
@@ -32,14 +32,14 @@ const Skilllogo = ({ langLogo, name, left = false, style, isMobile }) => {
               src={langLogo}
               width={50}
               height={50}
-              className={`rounded logo w-[50px] h-[50px] ${style}`}
+              className={`rounded logo w-[40px] h-[40px] lg:w-[50px] lg:h-[50px] ${style}`}
               alt={name}
             />
           </SpotlightCard>
         </div>
       );
     }
-    
+
     // For desktop, use animation
     return (
       <motion.div
@@ -59,7 +59,7 @@ const Skilllogo = ({ langLogo, name, left = false, style, isMobile }) => {
         {/* Tooltip Text */}
         <span
           className="absolute bottom-full left-1/2 -translate-x-1/2 translate-y-2
-          px-2 py-1 bg-white font-semibold text-black text-center text-xs rounded-md opacity-0 
+          w-max max-w-[85vw] md:max-w-none px-3 py-1 bg-white font-semibold text-black text-center text-xs rounded-md opacity-0 
           group-hover:opacity-100 transition-opacity duration-300"
         >
           {name}
@@ -93,7 +93,7 @@ const Skilllogo = ({ langLogo, name, left = false, style, isMobile }) => {
           {/* Tooltip Text */}
           <span
             className="absolute z-10 bottom-full left-1/2 -translate-x-1/2 translate-y-2 
-            px-2 py-1 bg-black text-white text-xs rounded-md opacity-0 
+            w-max max-w-[85vw] md:max-w-none px-3 py-1 bg-black text-white text-xs rounded-md opacity-0 
             group-hover:opacity-100 transition-opacity duration-300"
           >
             {name}
@@ -114,7 +114,7 @@ const Skilllogo = ({ langLogo, name, left = false, style, isMobile }) => {
         </div>
       );
     }
-    
+
     // For desktop, use animation
     return (
       <motion.div
@@ -130,7 +130,7 @@ const Skilllogo = ({ langLogo, name, left = false, style, isMobile }) => {
         {/* Tooltip Text */}
         <span
           className="absolute bottom-full left-1/2 -translate-x-1/2 translate-y-2 
-          px-2 py-1 bg-black text-white text-xs rounded-md opacity-0 
+          w-max max-w-[85vw] md:max-w-none px-3 py-1 bg-black text-white text-xs rounded-md opacity-0 
           group-hover:opacity-100 transition-opacity duration-300 "
         >
           {name}

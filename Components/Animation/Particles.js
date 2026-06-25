@@ -123,7 +123,8 @@ const Particles = ({
       container.addEventListener("mousemove", handleMouseMove);
     }
 
-    const count = particleCount;
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+    const count = isMobile ? Math.min(particleCount, 80) : particleCount;
     const positions = new Float32Array(count * 3);
     const randoms = new Float32Array(count * 4);
     const colors = new Float32Array(count * 3);
@@ -169,9 +170,17 @@ const Particles = ({
     let animationFrameId;
     let lastTime = performance.now();
     let elapsed = 0;
+    let lastRenderTime = performance.now();
+    const fpsInterval = 1000 / 60;
 
     const update = (t) => {
       animationFrameId = requestAnimationFrame(update);
+
+      const timeSinceLastRender = t - lastRenderTime;
+      if (timeSinceLastRender < fpsInterval) {
+        return;
+      }
+
       const delta = t - lastTime;
       lastTime = t;
       elapsed += delta * speed;
@@ -193,6 +202,8 @@ const Particles = ({
       }
 
       renderer.render({ scene: particles, camera });
+
+      lastRenderTime = t - (timeSinceLastRender % fpsInterval);
     };
 
     animationFrameId = requestAnimationFrame(update);

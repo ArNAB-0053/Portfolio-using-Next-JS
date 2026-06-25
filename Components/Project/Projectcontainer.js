@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import Link from "next/link";
 import SpotlightCard from "../Animation/SpotlightCard";
+import { dm_sans } from "@/utils/fonts";
 
 const truncateText = (text, wordLimit) => {
   const words = text.split(" ");
@@ -18,16 +19,16 @@ const Projectcontainer = ({
   project_img,
   link,
   tags = [],
-  fontSize = "text-3xl",
+  fontSize = "text-2xl!",
   project_tag = []
 }) => {
   return (
     <SpotlightCard
-      className="px-4 py-4 bg-transparent"
+      className={`px-4 py-4 bg-transparent ${dm_sans.className}`}
       spotlightColor="rgba(0, 229, 255, 0.2)"
     >
       {/* GitHub Icon at Top-Right */}
-      <Link href={`https://github.com/ArNAB-0053/${link}`} target="_blank" className="absolute top-4 right-4 z-20"> 
+      <Link href={`https://github.com/ArNAB-0053/${link}`} target="_blank" className="absolute top-4 right-4 z-20">
         <div
           className="rounded-full hover:scale-110 transition-all ease-in-out duration-200 bg-white/10 p-2 backdrop-blur-sm"
         >
@@ -61,7 +62,7 @@ const Projectcontainer = ({
         {/* Project Heading */}
         <h1
           id="project___heading"
-          className={`project_heading mt-3 uppercase ${fontSize} text-start text-gray-200`}
+          className={`project_heading mt-3 uppercase ${fontSize} text-start text-gray-200 ${dm_sans.className}`}
         >
           {project_heading}
         </h1>
@@ -70,14 +71,14 @@ const Projectcontainer = ({
           {tags.map((tag, index) => (
             <span
               key={index}
-              className="px-2 py-[0.2rem] text-[0.65rem] text-white/80 bg-white/10 rounded-full border border-white/10 hover:bg-white/20 transition-all duration-300"
+              className={`px-2 py-[0.2rem] text-[0.65rem] text-white/80 bg-white/10 rounded-full border border-white/10 hover:bg-white/20 transition-all duration-300 ${dm_sans.className}`}
             >
               {tag}
             </span>
           ))}
         </div>
 
-        <p id="project__desc" className=" text-sm text-gray-300 mt-1">
+        <p id="project__desc" className={`text-sm text-gray-300 mt-1 ${dm_sans.className}`}>
           {truncateText(project_desc, 17)}
         </p>
       </div>

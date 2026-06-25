@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
+import Image from "next/image";
 
 const springValues = {
   damping: 30,
@@ -99,15 +100,22 @@ export default function TiltedCard({
           scale,
         }}
       >
-        <motion.img
-          src={imageSrc}
-          alt={altText}
-          className="absolute top-0 left-0 object-cover rounded-[15px] will-change-transform [transform:translateZ(0)]"
+        <div
+          className="absolute top-0 left-0 overflow-hidden rounded-[15px] will-change-transform [transform:translateZ(0)]"
           style={{
             width: imageWidth,
             height: imageHeight,
           }}
-        />
+        >
+          <Image
+            src={imageSrc}
+            alt={altText}
+            fill
+            sizes="(max-width: 768px) 100vw, 400px"
+            className="object-cover"
+            priority={true}
+          />
+        </div>
 
         {displayOverlayContent && overlayContent && (
           <motion.div

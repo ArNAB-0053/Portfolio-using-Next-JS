@@ -1,145 +1,214 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import TextPressure from "./Animation/text-pressure";
-import DecryptedText from "./Animation/decrypted-text";
-import { DM_Sans, Playfair_Display, Montserrat } from "next/font/google";
-import { useIsMobile } from "@/hooks/use-mobile"; // Import the mobile hook
-
-// Load fonts
-const dm_sans = DM_Sans({ subsets: ["latin"], weight: ["400", "700"] });
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
-const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "700"] });
+import Typewriter from "typewriter-effect";
+import { dm_sans } from "@/utils/fonts";
+import Link from "next/link";
+import { FaGithub, FaLinkedin, FaFileAlt, FaEnvelope } from "react-icons/fa";
 
 const Hero = () => {
-  const [greeting, setGreeting] = useState("Hello!");
-  const isMobile = useIsMobile(); // Use the mobile detection hook
-
-  useEffect(() => {
-    const hours = new Date().getHours();
-    if (hours >= 5 && hours < 12) {
-      setGreeting("Good Morning!");
-    } else if (hours >= 12 && hours < 18) {
-      setGreeting("Good Afternoon!");
-    } else {
-      setGreeting("Good Evening!");
-    }
-  }, []);
-
-  // Framer Motion variants for staggered text animation
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3,
+        staggerChildren: 0.15,
+        delayChildren: 0.1,
       },
     },
   };
 
-  const textVariants = {
-    hidden: { opacity: 0, y: 50 },
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
         type: "spring",
-        damping: 20,
-        stiffness: 100,
+        stiffness: 80,
+        damping: 15,
       },
     },
   };
 
-  // Mobile greeting animation variants
-  const mobileGreetingVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
+  const item = {
+    hidden: { opacity: 0, y: 24 },
     visible: {
       opacity: 1,
-      scale: 1,
-      transition: {
-        type: "spring",
-        damping: 12,
-        stiffness: 100,
-        delay: 0.2,
-      },
+      y: 0,
+      transition: { type: "spring", stiffness: 70, damping: 18 },
     },
   };
+
+  const pillClass = {
+    teal: "bg-emerald-950/60 text-emerald-400 border border-emerald-800/50",
+    blue: "bg-sky-950/60 text-sky-400 border border-sky-800/50",
+    neutral: "bg-zinc-900/60 text-zinc-400 border border-zinc-800/60",
+  };
+
+  const skills = [
+    { label: "LangChain", color: "teal" },
+    { label: "RAG", color: "teal" },
+    { label: "Vector DBs", color: "teal" },
+    { label: "Docker", color: "blue" },
+    { label: "GitHub Actions", color: "blue" },
+    { label: "TypeScript", color: "neutral" },
+    { label: "Next.js", color: "neutral" },
+    { label: "Node.js", color: "neutral" },
+    { label: "Python", color: "neutral" },
+    { label: "SvelteKit", color: "neutral" },
+  ];
 
   return (
     <div
-      id="home"
-      className={`min-h-[35svh] md:min-h-[60svh] lg:min-h-[78svh] flex flex-col items-center justify-center px-6 py-12 text-white ${dm_sans.className}`}
+      className={`min-h-[90svh] w-full flex flex-col justify-center py-16 text-white relative ${dm_sans.className}`}
     >
       <motion.div
-        className="flex flex-col items-center text-center"
+        className="max-w-4xl flex flex-col"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        {/* Original TextPressure greeting for desktop */}
-        {!isMobile && (
-          <>
-            <motion.h1 variants={textVariants} className="max-xl:hidden mb-6 ml-10">
-              <TextPressure
-                text="Hello!"
-                flex={true}
-                alpha={false}
-                weight={true}
-                width={true}
-                italic={false}
-                textColor="#ffffff"
-                minFontSize={170}
-                className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-[5rem]"
-              />
-            </motion.h1>
-            <motion.h1 variants={textVariants} className="md:block xl:hidden mb-6 ml-10">
-              <TextPressure
-                text="Hello!"
-                flex={true}
-                alpha={false}
-                weight={true}
-                width={true}
-                italic={false}
-                textColor="#ffffff"
-                minFontSize={10}
-                className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-[5rem]"
-              />
-            </motion.h1>
-          </>
-        )}
+        <motion.div variants={item} className="mb-6 flex items-center gap-x-1.5 w-fit">
+          <span className="text-cyan-500/70 font-mono text-sm select-none">~/</span>
+          <p className="text-sm font-mono text-zinc-500 tracking-wide">
+            hey, I'm
+          </p>
+        </motion.div>
 
-        {/* New stylized greeting for mobile */}
-        {isMobile && (
-          <motion.div
-            className="mb-8 relative"
-            variants={mobileGreetingVariants}
-          >
-            <h1
-              className={`${playfair.className} text-6xl font-bold text-white mb-2`}
-            >
-              Hello!
-            </h1>
-            <div className="w-16 h-1 bg-cyan-400 mx-auto mt-2 mb-4" />
-          </motion.div>
-        )}
-
-        {/* Dynamic Greeting with DecryptedText */}
-        <motion.h2
-          variants={textVariants}
-          className="text-xl md:text-2xl lg:text-3xl text-gray-300"
+        {/* Name */}
+        <motion.h1
+          variants={itemVariants}
+          className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-3 text-white"
         >
-          <DecryptedText
-            text={greeting}
-            speed={1}
-            animateOn="view"
-            revealDirection="center"
-            className="font-medium"
-          />
-        </motion.h2>
+          Arnab Bhattacharyya
+        </motion.h1>
+
+        <motion.div variants={item} className="mb-8">
+          <div className="flex items-center gap-1.5 mb-2">
+            <span className="text-cyan-500/70 font-mono text-sm">~/</span>
+            <span className="font-mono text-sm text-zinc-500">
+              currently
+            </span>
+          </div>
+
+          <div className="font-mono text-lg sm:text-xl text-zinc-300 flex">
+            <span className="text-cyan-400 mr-2">{">"}</span>
+
+            <Typewriter
+              options={{
+                loop: true,
+                autoStart: true,
+                delay: 50,
+                deleteSpeed: 25,
+                cursor: "_",
+              }}
+              onInit={(typewriter) => {
+                typewriter
+                  .typeString("Building AI Applications")
+                  .pauseFor(2000)
+                  .deleteAll()
+
+                  .typeString("Developing Full Stack Systems")
+                  .pauseFor(2000)
+                  .deleteAll()
+
+                  .typeString("Building RAG Systems")
+                  .pauseFor(2000)
+                  .deleteAll()
+
+                  .typeString("Learning DevOps")
+                  .pauseFor(2000)
+                  .deleteAll()
+
+                  .start();
+              }}
+            />
+          </div>
+        </motion.div>
+
+        {/* Bio */}
+        <motion.p
+          variants={item}
+          className="text-base sm:text-lg text-zinc-400 max-w-xl leading-relaxed mb-2"
+        >
+          I build things that actually work — clean APIs, real-time systems,
+          and AI-powered applications. React, Node.js, SvelteKit, .NET,
+          LangChain. Production features, shipped.
+        </motion.p>
+        <motion.p variants={item} className="text-sm text-zinc-600 italic mb-4">
+          Always learning. Always catching up.
+        </motion.p>
+
+        <motion.blockquote
+          variants={item}
+          className="
+            mt-2
+            mb-10
+            max-w-xl
+            border-l-2
+            border-cyan-500/40
+            pl-5
+            py-1
+            text-sm
+            italic
+            text-zinc-500
+          "
+        >
+          “I don't know how talented I am,
+          but I know I can catch up by working hard enough.”
+        </motion.blockquote>
+
+        {/* CTA Buttons - Clean & Subtle */}
+        <motion.div
+          variants={item}
+          className="flex items-center gap-3"
+        >
+          <Link
+            type="button"
+            href="/resume"
+            target="_blank"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-zinc-900 text-sm font-semibold rounded-lg hover:bg-zinc-100 active:scale-[0.97] transition-all duration-200"
+          >
+            <FaFileAlt size={13} />
+            <p className="max-[370px]:hidden">
+              View resume
+            </p>
+            <p className="hidden max-[370px]:block">
+              Resume
+            </p>
+          </Link>
+
+          <div className="flex items-center gap-x-3">
+            <Link
+              href="https://github.com/ArNAB-0053"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-transparent text-zinc-500 md:text-zinc-300 text-sm font-medium rounded-lg border border-zinc-800 hover:border-cyan-500/50 hover:text-cyan-400 active:scale-[0.97] transition-all duration-200 max-md:px-2 max-md:py-2 max-md:w-10 max-md:h-10"
+            >
+              <FaGithub size={13} />
+              <p className="hidden md:block">GitHub</p>
+            </Link>
+
+            <Link
+              href="https://www.linkedin.com/in/arnab-bhattacharyya-dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-zinc-800 text-zinc-500 hover:text-cyan-400 hover:border-cyan-500/50 active:scale-[0.97] transition-all duration-200"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin size={14} />
+            </Link>
+
+            <Link
+              href="mailto:dev.arnabbhattacharyya@gmail.com"
+              className="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-zinc-800 text-zinc-500 hover:text-cyan-400 hover:border-cyan-500/50 active:scale-[0.97] transition-all duration-200"
+              aria-label="Email"
+            >
+              <FaEnvelope size={14} />
+            </Link>
+          </div>
+        </motion.div>
       </motion.div>
     </div>
   );

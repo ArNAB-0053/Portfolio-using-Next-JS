@@ -2,19 +2,17 @@
 
 import React, { useRef } from "react";
 import dynamic from "next/dynamic";
-import { DM_Sans, Oswald } from "next/font/google";
+import { dm_sans, oswald } from "@/utils/fonts";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import { FaFacebook, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
-import Blob from "./Blob";
 import TiltedCard from "../Animation/TiltedCard";
 import Image from "next/image";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { RESUME_URL } from "@/utils/constants";
 
-// Load DM Sans and Oswald fonts
-const dm_sans = DM_Sans({ subsets: ["latin"], weight: ["400", "700"] });
-const oswald = Oswald({ subsets: ["latin"], weight: ["400", "700"] });
+// Fonts loaded from utils/fonts
 
 const Home = () => {
   const containerRef = useRef(null);
@@ -146,7 +144,7 @@ const Home = () => {
             {/* Resume Button */}
             <div>
               <Link
-                href="/PDF/Resume.pdf"
+                href={RESUME_URL}
                 download="Arnab_Bhattacharyya_Resume"
                 className="inline-flex items-center justify-center py-2.5 px-8 bg-[#1f1f1f]/80 text-white font-semibold rounded-md border border-white/20 hover:bg-[#333] transition-all duration-300 shadow-md"
                 target="_blank"
@@ -240,7 +238,7 @@ const Home = () => {
             {/* Resume Button */}
             <motion.div variants={textVariants}>
               <Link
-                href="/PDF/Resume.pdf"
+                href={RESUME_URL}
                 download="Arnab_Bhattacharyya_Resume"
                 className="inline-flex items-center justify-center py-2.5 px-8 bg-[#1f1f1f]/80 text-white font-semibold rounded-md border border-white/20 hover:bg-[#333] hover:shadow-xl transition-all duration-300 shadow-md"
                 target="_blank"
@@ -317,11 +315,9 @@ const Home = () => {
     >
       {/* Blob Background */}
       <div className="xl:hidden max-xl:bg-gray-300 max-lg:rotate-[60deg] absolute -top-0 lg:top-[20rem] left-0 -lg:left-28 w-[100rem] h-[100rem] rounded-[16rem] sm:w-[160rem] sm:h-[160rem] lg:h-[100%] xl:h-full lg:w-[120%] xl:w-[90%] lg:aspect-video -z-10 bg-slate-300">
-        <Blob />
       </div>
 
       <div className="max-xl:hidden max-lg:bg-gray-300 max-lg:rotate-[60deg] absolute -top-0 lg:top-0 left-0 lg:left-10 w-[100rem] h-[100rem] sm:w-[160rem] sm:h-[160rem] lg:h-full lg:w-[90%] lg:aspect-video -z-10">
-        <Blob />
       </div>
 
       {/* Conditional rendering based on device type */}
