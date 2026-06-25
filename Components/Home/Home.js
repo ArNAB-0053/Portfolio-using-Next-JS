@@ -11,6 +11,7 @@ import Blob from "./Blob";
 import TiltedCard from "../Animation/TiltedCard";
 import Image from "next/image";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { RESUME_URL } from "@/utils/constants";
 
 // Load DM Sans and Oswald fonts
 const dm_sans = DM_Sans({ subsets: ["latin"], weight: ["400", "700"] });
@@ -146,7 +147,7 @@ const Home = () => {
             {/* Resume Button */}
             <div>
               <Link
-                href="/PDF/Resume.pdf"
+                href={RESUME_URL}
                 download="Arnab_Bhattacharyya_Resume"
                 className="inline-flex items-center justify-center py-2.5 px-8 bg-[#1f1f1f]/80 text-white font-semibold rounded-md border border-white/20 hover:bg-[#333] transition-all duration-300 shadow-md"
                 target="_blank"
@@ -240,7 +241,7 @@ const Home = () => {
             {/* Resume Button */}
             <motion.div variants={textVariants}>
               <Link
-                href="/PDF/Resume.pdf"
+                href={RESUME_URL}
                 download="Arnab_Bhattacharyya_Resume"
                 className="inline-flex items-center justify-center py-2.5 px-8 bg-[#1f1f1f]/80 text-white font-semibold rounded-md border border-white/20 hover:bg-[#333] hover:shadow-xl transition-all duration-300 shadow-md"
                 target="_blank"

@@ -3,10 +3,8 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
-import { DM_Sans } from "next/font/google";
 import SectionHeader from "./UI/SectionHeader";
-
-const dm_sans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "700"] });
+import { dm_sans } from "@/utils/fonts";
 
 const About = () => {
   const containerVariants = {
@@ -36,16 +34,16 @@ const About = () => {
     {
       title: "Top 10 – HustleX (IIM Lucknow)",
       desc: "Top placement in collaborative engineering hackathon challenge.",
-      cert: 'https://drive.google.com/file/d/1iVLV_5_t0D5hdmMX9GX0hf3mU52gv8aH/view'
+      cert: "https://drive.google.com/file/d/1iVLV_5_t0D5hdmMX9GX0hf3mU52gv8aH/view",
     },
     {
       title: "Finalist – Ideathon (IIM Bangalore)",
       desc: "Recognized among top builders in national product innovation competition.",
-      cert: 'https://drive.google.com/file/d/1aR4NURwG_3_3Au-8miSJNRaqQhiam1_0/view'
+      cert: "https://drive.google.com/file/d/1aR4NURwG_3_3Au-8miSJNRaqQhiam1_0/view",
     },
     {
-      title: "9.53 CGPA",
-      desc: "Strong academic foundation in computer science fundamentals.",
+      title: "1+ Year Industry Experience",
+      desc: "Building production software across CRM systems, web applications, and AI-powered tools.",
     },
   ];
 

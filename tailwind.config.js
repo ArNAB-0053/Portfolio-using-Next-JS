@@ -18,6 +18,9 @@ export const theme = {
       "own-shadow": "5px 3.5px 12px 4px #1c1c1c90",
       "red-shadow": "5.5px 6px 16px -5.5px #ff0000",
       "contact-shadow": "0.5px 3.5px 17.5px 2.5px #9f1515",
+      "hud-glow": "var(--hud-glow)",
+      "hud-glow-strong": "var(--hud-glow-strong)",
+      "hud-glow-subtle": "var(--hud-glow-subtle)",
     },
     colors: {
       myRed: "#ff0000",
@@ -25,6 +28,17 @@ export const theme = {
         "linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)",
       fb: "linear-gradient(to right, #1d7ece, #4b7bec)",
       linkedin: "background: linear-gradient(to right, #55acee, #1da1f2)",
+      hud: {
+        bg: "var(--hud-bg)",
+        "bg-hover": "var(--hud-bg-hover)",
+        "bg-active": "var(--hud-bg-active)",
+        border: "var(--hud-border)",
+        "border-hover": "var(--hud-border-hover)",
+        "border-active": "var(--hud-border-active)",
+        text: "var(--hud-text)",
+        "text-muted": "var(--hud-text-muted)",
+        ring: "var(--hud-ring)",
+      },
     },
     keyframes: {
       shine: {

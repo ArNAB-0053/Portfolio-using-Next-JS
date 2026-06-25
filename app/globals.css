@@ -2,6 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --hud-bg: rgba(9, 9, 11, 0.9);
+  --hud-bg-hover: rgba(24, 24, 27, 0.9);
+  --hud-bg-active: rgba(9, 9, 11, 0.95);
+
+  --hud-border: rgba(6, 182, 212, 0.12);
+  --hud-border-hover: rgba(6, 182, 212, 0.4);
+  --hud-border-active: rgba(34, 211, 238, 1);
+
+  --hud-glow: 0 0 10px rgba(6, 182, 212, 0.3);
+  --hud-glow-strong: 0 0 18px rgba(6, 182, 212, 0.65);
+  --hud-glow-subtle: 0 0 15px rgba(6, 182, 212, 0.08);
+
+  --hud-ring: 0 0 0 2px rgba(34, 211, 238, 0.5);
+
+  --hud-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.04), 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --hud-shadow-hover: inset 0 1px 1px rgba(255, 255, 255, 0.08), 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+  --hud-text: rgb(161, 161, 170);
+  --hud-text-muted: rgb(113, 113, 122);
+
+  --hud-blur: 12px;
+  --hud-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
 @font-face {
   font-family: FuturaNowHeadlineExtraBold;
   src: url("../public/Fonts/FuturaNowHeadlineExtraBold.ttf");
@@ -265,12 +291,10 @@ span .lang {
 }
 
 #project___heading {
-  font-family: Montserrat;
   font-weight: 800;
 }
 
 #project__desc {
-  font-family: Montserrat;
   height: 4.5rem;
   line-height: 1rem;
   display: -webkit-box;
@@ -286,12 +310,10 @@ span .lang {
 }
 
 .project_link {
-  font-family: Montserrat;
   text-transform: uppercase;
 }
 
 .tech_heading {
-  font-family: Montserrat;
   font-weight: 700;
   text-transform: uppercase;
   text-decoration: underline;
@@ -326,12 +348,7 @@ span .lang {
 } */
 
 .conatct_heading {
-  font-family: Montserrat;
   font-weight: 700;
-}
-
-.connect_text {
-  font-family: Montserrat;
 }
 
 .withme_text {

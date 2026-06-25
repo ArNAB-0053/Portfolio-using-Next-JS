@@ -3,6 +3,7 @@ import Body from "@/Components/Body";
 import React from "react";
 import Movestopbtn from "@/Components/Movestopbtn";
 import DockHeader from "@/Components/dock-header";
+import MobileNav from "@/Components/MobileNav";
 import Particles from "@/Components/Animation/Particles";
 import SpotlightComponent from "@/Components/Animation/SpotlightComponent";
 
@@ -36,8 +37,13 @@ const Page = () => {
         <Movestopbtn />
 
         {/* Floating Dock Header */}
-        <div className="fixed z-50 bottom-0 left-1/2 -translate-x-1/2">
+        <div className="hidden md:block fixed z-50 bottom-0 left-1/2 -translate-x-1/2">
           <DockHeader />
+        </div>
+
+        {/* Mobile HUD Navigation */}
+        <div className="block md:hidden">
+          <MobileNav />
         </div>
       </div>
     </SpotlightComponent>

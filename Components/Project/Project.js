@@ -8,6 +8,7 @@ import ProjectSlider from "./ProjectSlider";
 import ProjectTab from "./ProjectTab";
 import { useIsMobile } from "@/hooks/use-mobile";
 import SectionHeader from "../UI/SectionHeader";
+import { dm_sans } from "@/utils/fonts";
 
 const tabs = ["All", "Web Application", "Machine Learning", "React Native"];
 
@@ -61,12 +62,12 @@ const Project = () => {
           <div className="relative">
             <div className="overflow-hidden">
               <h4
-                className="mb-8 font-[Montserrat] text-md text-center max-[768px]:text-sm font-light sm:max-[1024px]:text-xl overflow-hidden text-gray-300"
+                className={`mb-8 text-[16px] text-center overflow-hidden text-gray-300 ${dm_sans.className}`}
               >
                 My projects consist of a diverse range, including React Native, web, and machine learning projects. Some of them were developed for hackathons, where I worked alongside my teammates to turn ideas into reality.
                 Each project is built with care, passion, and love. Visit my
                 <Link
-                  className="bg-transparent underline underline-offset-2 font-semibold text-white hover:no-underline px-4 py-[0.2rem] hover:bg-white hover:text-black text-center z-40 relative ml-1"
+                  className="bg-transparent underline underline-offset-2 font-semibold text-white hover:no-underline px-2 py-[0.2rem] hover:bg-white hover:text-black text-center z-40 relative ml-1"
                   target="_blank"
                   href="https://github.com/ArNAB-0053?tab=repositories"
                 >
@@ -111,12 +112,12 @@ const Project = () => {
                   opacity: 1,
                   y: 0,
                 }}
-                className="mb-8 font-[Montserrat] text-md text-center max-[768px]:text-sm max-[640px]:text-start font-light sm:max-[1024px]:text-xl overflow-hidden text-gray-300"
+                className={`mb-8 font-[Montserrat] text-md text-center max-[768px]:text-sm max-[640px]:text-start font-light sm:max-[1024px]:text-xl overflow-hidden text-gray-300`}
               >
                 My projects consist of a diverse range, including React Native, web, and machine learning projects. Some of them were developed for hackathons, where I worked alongside my teammates to turn ideas into reality.
                 Each project is built with care, passion, and love. Visit my
                 <Link
-                  className="bg-transparent underline underline-offset-2 font-semibold text-white hover:no-underline px-4 py-[0.2rem] hover:bg-white hover:text-black text-center z-40 relative ml-1"
+                  className="bg-transparent underline underline-offset-2 font-semibold text-white hover:no-underline px-2 py-[0.2rem] hover:bg-white hover:text-black text-center z-40 relative ml-1"
                   target="_blank"
                   href="https://github.com/ArNAB-0053?tab=repositories"
                 >

@@ -1,106 +1,49 @@
 "use client";
 
-import {
-  motion,
-  useMotionValue,
-  useSpring,
-  useTransform,
-  AnimatePresence,
-} from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
-import {
-  Children,
-  cloneElement,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import { useMemo } from "react";
+import { useActiveSection } from "@/hooks/use-active-section";
 
 function DockItem({
   children,
   className = "",
   href = "/",
-  mouseX,
-  spring,
-  distance,
-  magnification,
-  baseItemSize,
+  baseItemSize = 50,
 }) {
-  const ref = useRef(null);
-  const isHovered = useMotionValue(0);
-
-  const mouseDistance = useTransform(mouseX, (val) => {
-    const rect = ref.current?.getBoundingClientRect() ?? {
-      x: 0,
-      width: baseItemSize,
-    };
-    return val - rect.x - baseItemSize / 2;
-  });
-
-  const targetSize = useTransform(
-    mouseDistance,
-    [-distance, 0, distance],
-    [baseItemSize, magnification, baseItemSize]
-  );
-  const size = useSpring(targetSize, spring);
-
   return (
     <Link href={href} passHref legacyBehavior>
       <motion.a
-        ref={ref}
         style={{
-          width: size,
-          height: size,
+          width: baseItemSize,
+          height: baseItemSize,
         }}
-        onHoverStart={() => isHovered.set(1)}
-        onHoverEnd={() => isHovered.set(0)}
-        className={`relative inline-flex items-center justify-center rounded-full bg-[#060606]/50 border-neutral-700 backdrop-blur-xl border-2 shadow-md ${className}`}
+        className={`relative inline-flex items-center justify-center rounded-full backdrop-blur-md border text-white select-none transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[var(--hud-ring)] bg-hud-bg border-hud-border hover:bg-hud-bg-hover hover:border-hud-border-hover hover:shadow-hud-glow ${className}`}
         tabIndex={0}
         role="button"
         aria-haspopup="true"
       >
-        {Children.map(children, (child) =>
-          cloneElement(child, { isHovered })
-        )}
+        {children}
       </motion.a>
     </Link>
   );
 }
 
-function DockLabel({ children, className = "", ...rest }) {
-  const { isHovered } = rest;
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const unsubscribe = isHovered.on("change", (latest) => {
-      setIsVisible(latest === 1);
-    });
-    return () => unsubscribe();
-  }, [isHovered]);
-
+function DockLabel({ children, className = "" }) {
   return (
-    <AnimatePresence>
-      {isVisible && (
-        <motion.div
-          initial={{ opacity: 0, y: 0 }}
-          animate={{ opacity: 1, y: -10 }}
-          exit={{ opacity: 0, y: 0 }}
-          transition={{ duration: 0.2 }}
-          className={`${className} absolute -top-6 left-1/2 w-fit whitespace-pre rounded-md border border-neutral-700 bg-[#060606] px-2 py-0.5 text-xs text-white`}
-          role="tooltip"
-          style={{ x: "-50%" }}
-        >
-          {children}
-        </motion.div>
-      )}
-    </AnimatePresence>
+    <div
+      className={`${className} absolute -top-8 left-1/2 w-fit whitespace-pre rounded-md border border-hud-border-hover bg-zinc-950/95 px-2.5 py-1 text-[10px] uppercase tracking-widest text-cyan-400 shadow-hud-glow pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-200`}
+      style={{ transform: "translateX(-50%)" }}
+      role="tooltip"
+    >
+      {children}
+    </div>
   );
 }
 
 function DockIcon({ children, className = "" }) {
   return (
-    <div className={`flex items-center justify-center ${className}`}>
+    <div className={`flex items-center justify-center text-white ${className}`}>
       {children}
     </div>
   );
@@ -109,58 +52,33 @@ function DockIcon({ children, className = "" }) {
 export default function Dock({
   items,
   className = "",
-  spring = { mass: 0.1, stiffness: 150, damping: 12 },
-  magnification = 70,
-  distance = 200,
-  panelHeight = 64,
-  dockHeight = 256,
+  panelHeight = 68,
   baseItemSize = 50,
 }) {
-  const mouseX = useMotionValue(Infinity);
-  const isHovered = useMotionValue(0);
-
-  const maxHeight = useMemo(
-    () => Math.max(dockHeight, magnification + magnification / 2 + 4),
-    [magnification, dockHeight]
-  );
-  const heightRow = useTransform(isHovered, [0, 1], [panelHeight, maxHeight]);
-  const height = useSpring(heightRow, spring);
-
   return (
-    <motion.div
-      style={{ height, scrollbarWidth: "none" }}
-      className="mx-2 flex max-w-full items-center"
+    <div
+      style={{ height: panelHeight }}
+      className="mx-2 flex max-w-full items-center select-none"
     >
-      <motion.div
-        onMouseMove={({ pageX }) => {
-          isHovered.set(1);
-          mouseX.set(pageX);
-        }}
-        onMouseLeave={() => {
-          isHovered.set(0);
-          mouseX.set(Infinity);
-        }}
-        className={`${className} absolute bottom-2 left-1/2 transform -translate-x-1/2 flex items-end w-fit gap-4 rounded-2xl border-neutral-700 border-2 pb-2 px-4`}
+      <div
+        className={`${className} absolute bottom-2 left-1/2 transform -translate-x-1/2 flex items-center w-fit gap-4 rounded-2xl border border-hud-border border-t-cyan-400/30 bg-gradient-to-b from-zinc-900/90 to-zinc-950/95 backdrop-blur-[var(--hud-blur)] py-2 px-4 shadow-hud-glow-subtle hover:border-hud-border-hover hover:shadow-[0_0_20px_rgba(6,182,212,0.15)] transition-all duration-300`}
         style={{ height: panelHeight }}
         role="toolbar"
         aria-label="Application dock"
       >
         {items.map((item, index) => (
-          <DockItem
-            key={index}
-            href={item.href}
-            className={item.className}
-            mouseX={mouseX}
-            spring={spring}
-            distance={distance}
-            magnification={magnification}
-            baseItemSize={baseItemSize}
-          >
-            <DockIcon>{item.icon}</DockIcon>
-            <DockLabel>{item.label}</DockLabel>
-          </DockItem>
+          <div key={index} className="relative group">
+            <DockItem
+              href={item.href}
+              className={item.className}
+              baseItemSize={baseItemSize}
+            >
+              <DockIcon>{item.icon}</DockIcon>
+              <DockLabel>{item.label}</DockLabel>
+            </DockItem>
+          </div>
         ))}
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 }

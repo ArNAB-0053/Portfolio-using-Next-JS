@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import Link from "next/link";
 import SpotlightCard from "../Animation/SpotlightCard";
+import { dm_sans } from "@/utils/fonts";
 
 const truncateText = (text, wordLimit) => {
   const words = text.split(" ");
@@ -23,7 +24,7 @@ const Projectcontainer = ({
 }) => {
   return (
     <SpotlightCard
-      className="px-4 py-4 bg-transparent"
+      className={`px-4 py-4 bg-transparent ${dm_sans.className}`}
       spotlightColor="rgba(0, 229, 255, 0.2)"
     >
       {/* GitHub Icon at Top-Right */}
@@ -61,7 +62,7 @@ const Projectcontainer = ({
         {/* Project Heading */}
         <h1
           id="project___heading"
-          className={`project_heading mt-3 uppercase ${fontSize} text-start text-gray-200`}
+          className={`project_heading mt-3 uppercase ${fontSize} text-start text-gray-200 ${dm_sans.className}`}
         >
           {project_heading}
         </h1>
@@ -70,14 +71,14 @@ const Projectcontainer = ({
           {tags.map((tag, index) => (
             <span
               key={index}
-              className="px-2 py-[0.2rem] text-[0.65rem] text-white/80 bg-white/10 rounded-full border border-white/10 hover:bg-white/20 transition-all duration-300"
+              className="px-2 py-[0.2rem] text-[0.65rem] text-white/80 bg-white/10 rounded-full border border-white/10 hover:bg-white/20 transition-all duration-300 ${dm_sans.className}"
             >
               {tag}
             </span>
           ))}
         </div>
 
-        <p id="project__desc" className=" text-sm text-gray-300 mt-1">
+        <p id="project__desc" className={`text-sm text-gray-300 mt-1 ${dm_sans.className}`}>
           {truncateText(project_desc, 17)}
         </p>
       </div>

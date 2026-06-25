@@ -1,20 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
-import { DM_Sans, Playfair_Display } from "next/font/google";
-import { useIsMobile } from "@/hooks/use-mobile";
+import { DM_Sans } from "next/font/google";
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaFileAlt, FaEnvelope } from "react-icons/fa";
 
 const dm_sans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "700", "800"] });
-const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "700"] });
 
 const Hero = () => {
-  const [greeting, setGreeting] = useState("Hello, I am");
-  const isMobile = useIsMobile();
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -173,7 +167,8 @@ const Hero = () => {
           className="flex items-center gap-3"
         >
           <Link
-            href="/PDF/Resume.pdf"
+            type="button"
+            href="/resume"
             target="_blank"
             className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-zinc-900 text-sm font-semibold rounded-lg hover:bg-zinc-100 active:scale-[0.97] transition-all duration-200"
           >

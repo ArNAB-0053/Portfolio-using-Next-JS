@@ -9,6 +9,7 @@ import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import Hero from "./Hero";
 import Header from "./Header";
+import Education from "./Education";
 
 const Body = () => {
   return (
@@ -41,6 +42,14 @@ const Body = () => {
         className="overflow-hidden min-h-screen px-48 w-screen max-[1024px]:px-8 lg:max-[1280px]:px-8 relative z-10"
       >
         <About />
+      </section>
+
+      {/* Education Section */}
+      <section
+        id="education"
+        className="overflow-hidden min-h-screen px-48 w-screen max-[1024px]:px-8 lg:max-[1280px]:px-8 relative z-10"
+      >
+        <Education />
       </section>
 
       {/* Experience Section */}

@@ -1,7 +1,5 @@
+import { dm_sans } from "@/utils/fonts";
 import { motion } from "framer-motion";
-import { Montserrat } from "next/font/google";
-
-const montserrat = Montserrat({ subsets: ["latin"] });
 
 const ProjectTab = ({ tabs, activeTab, setActiveTab }) => {
   return (
@@ -9,7 +7,7 @@ const ProjectTab = ({ tabs, activeTab, setActiveTab }) => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
-      className={`max-md:w-full flex flex-wrap justify-center sm:justify-start mb-4 ml-4 sm:ml-6 md:ml-8 ${montserrat.className}`}
+      className={`max-md:w-full flex flex-wrap justify-center sm:justify-start mb-4 ml-4 sm:ml-6 md:ml-8 ${dm_sans.className}`}
     >
       <motion.div
         className="max-md:w-full grid grid-cols-2 md:grid-cols-4 gap-2 p-1 bg-black/20 backdrop-blur-sm rounded-lg border border-gray-800 shadow-lg"
