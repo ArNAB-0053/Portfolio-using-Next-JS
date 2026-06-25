@@ -2,8 +2,6 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useMemo } from "react";
-import { useActiveSection } from "@/hooks/use-active-section";
 
 function DockItem({
   children,

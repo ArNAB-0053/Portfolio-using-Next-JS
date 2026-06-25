@@ -1,11 +1,13 @@
 "use client";
-import Body from "@/Components/Body";
 import React from "react";
+import dynamic from "next/dynamic";
+import Body from "@/Components/Body";
 import Movestopbtn from "@/Components/Movestopbtn";
-import DockHeader from "@/Components/dock-header";
-import MobileNav from "@/Components/MobileNav";
-import Particles from "@/Components/Animation/Particles";
 import SpotlightComponent from "@/Components/Animation/SpotlightComponent";
+
+const Particles = dynamic(() => import("@/Components/Animation/Particles"), { ssr: false });
+const DockHeader = dynamic(() => import("@/Components/dock-header"), { ssr: false });
+const MobileNav = dynamic(() => import("@/Components/MobileNav"), { ssr: false });
 
 const Page = () => {
   return (

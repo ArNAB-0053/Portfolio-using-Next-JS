@@ -37,7 +37,6 @@ const getTrajectoryKeyframes = (targetAngle, radius = 120) => {
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [hoveredItem, setHoveredItem] = useState(null);
 
   // Section IDs mapping to page elements
   const sectionIds = ["about", "education", "experience", "project", "tech", "contact"];
@@ -199,10 +198,6 @@ const MobileNav = () => {
                 variants={itemVariants}
                 initial="closed"
                 animate={isOpen ? "open" : "closed"}
-                onMouseEnter={() => setHoveredItem(item.id)}
-                onMouseLeave={() => setHoveredItem(null)}
-                onTouchStart={() => setHoveredItem(item.id)}
-                onTouchEnd={() => setHoveredItem(null)}
                 onClick={(e) => handleItemClick(e, item.href)}
                 className={`absolute w-12 h-12 flex items-center justify-center rounded-full bg-hud-bg backdrop-blur-[var(--hud-blur)] border text-white select-none pointer-events-auto transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[var(--hud-ring)] ${
                   isActive
@@ -213,21 +208,6 @@ const MobileNav = () => {
                 role="link"
               >
                 {item.icon}
-
-                {/* Tooltip label (HUD bracket style) */}
-                {/* <AnimatePresence>
-                  {(hoveredItem === item.id || (isActive && isOpen)) && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 5, scale: 0.8 }}
-                      animate={{ opacity: 1, y: -36, scale: 1 }}
-                      exit={{ opacity: 0, y: 5, scale: 0.8 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap bg-zinc-950/95 border border-cyan-500/40 text-cyan-400 text-[10px] uppercase tracking-widest px-2 py-0.5 rounded shadow-[0_0_8px_rgba(6,182,212,0.4)] pointer-events-none"
-                    >
-                      {item.label}
-                    </motion.div>
-                  )}
-                </AnimatePresence> */}
               </motion.button>
             );
           })}

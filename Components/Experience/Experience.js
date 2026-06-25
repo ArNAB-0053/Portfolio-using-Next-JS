@@ -3,12 +3,10 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
-import { DM_Sans } from "next/font/google";
+import { dm_sans } from "@/utils/fonts";
 import ExperienceCard from "./ExperienceCard";
 import ExperienceConnector from "./ExperienceConnector";
 import SectionHeader from "../UI/SectionHeader";
-
-const dm_sans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
 const Experience = () => {
   const experiences = [

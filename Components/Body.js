@@ -8,7 +8,6 @@ import Footer from "./Footer/Footer";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import Hero from "./Hero";
-import Header from "./Header";
 import Education from "./Education";
 
 const Body = () => {

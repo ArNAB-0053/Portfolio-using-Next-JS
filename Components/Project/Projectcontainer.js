@@ -71,7 +71,7 @@ const Projectcontainer = ({
           {tags.map((tag, index) => (
             <span
               key={index}
-              className="px-2 py-[0.2rem] text-[0.65rem] text-white/80 bg-white/10 rounded-full border border-white/10 hover:bg-white/20 transition-all duration-300 ${dm_sans.className}"
+              className={`px-2 py-[0.2rem] text-[0.65rem] text-white/80 bg-white/10 rounded-full border border-white/10 hover:bg-white/20 transition-all duration-300 ${dm_sans.className}`}
             >
               {tag}
             </span>

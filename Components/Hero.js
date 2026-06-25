@@ -2,11 +2,9 @@
 
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
-import { DM_Sans } from "next/font/google";
+import { dm_sans } from "@/utils/fonts";
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaFileAlt, FaEnvelope } from "react-icons/fa";
-
-const dm_sans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "700", "800"] });
 
 const Hero = () => {
   const containerVariants = {

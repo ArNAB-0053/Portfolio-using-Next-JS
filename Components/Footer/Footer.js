@@ -6,10 +6,8 @@ import { motion } from "framer-motion";
 import { Toaster } from "react-hot-toast";
 import ContactForm from "./ContactForm";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
-import { DM_Sans } from "next/font/google";
+import { dm_sans } from "@/utils/fonts";
 import SectionHeader from "../UI/SectionHeader";
-
-const dm_sans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
 const Footer = () => {
   const socialLinks = [
