@@ -59,6 +59,10 @@ const Footer = () => {
 
   return (
     <div className={`w-full relative z-10 border-t border-zinc-900 bg-zinc-950/20 ${dm_sans.className}`}>
+      <div className="w-full h-px bg-gradient-to-r from-cyan-400/0 via-cyan-400/50 to-cyan-400/0" />
+
+      <div className="w-full h-full bg-gradient-to-b from-black/20 via-cyan-400/5 to-cyan-400/0 absolute left-0 top-0" />
+
       {/* Contact Section */}
       <section
         id="contact"

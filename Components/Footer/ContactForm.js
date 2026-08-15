@@ -141,7 +141,7 @@ const ContactForm = () => {
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
               placeholder="First Name"
-              className="bg-zinc-950/40 border border-zinc-800/80 focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 focus:outline-none rounded-lg px-4 py-3 text-white placeholder-zinc-500 text-sm transition-all duration-300 w-full"
+              className="bg-zinc-950/40 border border-zinc-800/80 focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 focus:outline-none rounded-lg px-4 py-3 text-white placeholder-zinc-500 text-sm w-full"
               required
             />
           </div>
@@ -151,7 +151,7 @@ const ContactForm = () => {
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
               placeholder="Last Name"
-              className="bg-zinc-950/40 border border-zinc-800/80 focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 focus:outline-none rounded-lg px-4 py-3 text-white placeholder-zinc-500 text-sm transition-all duration-300 w-full"
+              className="bg-zinc-950/40 border border-zinc-800/80 focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 focus:outline-none rounded-lg px-4 py-3 text-white placeholder-zinc-500 text-sm w-full"
               required
             />
           </div>
@@ -164,7 +164,7 @@ const ContactForm = () => {
             value={email}
             onChange={handleEmailChange}
             placeholder="Email Address"
-            className={`bg-zinc-950/40 border focus:ring-1 focus:outline-none rounded-lg px-4 py-3 text-white placeholder-zinc-500 text-sm transition-all duration-300 w-full ${emailError
+            className={`bg-zinc-950/40 border focus:ring-1 focus:outline-none rounded-lg px-4 py-3 text-white placeholder-zinc-500 text-sm w-full ${emailError
               ? "border-red-500/50 focus:border-red-500/50 focus:ring-red-500/50"
               : "border-zinc-800/80 focus:border-cyan-500/50 focus:ring-cyan-500/50"
               }`}
@@ -185,7 +185,7 @@ const ContactForm = () => {
             onChange={(e) => setSub(e.target.value)}
             placeholder="Subject"
             maxLength={150}
-            className="bg-zinc-950/40 border border-zinc-800/80 focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 focus:outline-none rounded-lg px-4 py-3 text-white placeholder-zinc-500 text-sm transition-all duration-300 w-full"
+            className="bg-zinc-950/40 border border-zinc-800/80 focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 focus:outline-none rounded-lg px-4 py-3 text-white placeholder-zinc-500 text-sm w-full"
             required
           />
         </div>
@@ -198,7 +198,7 @@ const ContactForm = () => {
             placeholder="How can I help you?"
             rows={4}
             maxLength={2000}
-            className={`bg-zinc-950/40 border focus:ring-1 focus:outline-none rounded-lg px-4 py-3 text-white placeholder-zinc-500 text-sm transition-all duration-300 w-full resize-none ${descError
+            className={`bg-zinc-950/40 border focus:ring-1 focus:outline-none rounded-lg px-4 py-3 text-white placeholder-zinc-500 text-sm w-full resize-none ${descError
               ? "border-red-500/50 focus:border-red-500/50 focus:ring-red-500/50"
               : "border-zinc-800/80 focus:border-cyan-500/50 focus:ring-cyan-500/50"
               }`}

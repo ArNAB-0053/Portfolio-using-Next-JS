@@ -1,0 +1,286 @@
+.readme {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  color: #d1d5db;
+
+  font-size: 16px;
+  line-height: 1.7;
+  word-wrap: break-word;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+
+.readme h1,
+.readme h2,
+.readme h3,
+.readme h4,
+.readme h5,
+.readme h6 {
+  color: #e5e7eb;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.readme h1 {
+  font-size: 2rem;
+  margin: 0 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.readme h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.readme h3 {
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.readme h4 {
+  font-size: 1rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+/* =========================
+   PARAGRAPHS
+========================= */
+
+.readme p {
+  margin: 0 0 1rem;
+}
+
+/* =========================
+   LINKS
+========================= */
+
+.readme a {
+  color: #67e8f9;
+  text-decoration: none;
+}
+
+.readme a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   LISTS
+========================= */
+
+.readme ul {
+  list-style-type: disc;
+  padding-left: 2rem;
+  margin: 0 0 1rem;
+}
+
+.readme ol {
+  list-style-type: decimal;
+  padding-left: 2rem;
+  margin: 0 0 1rem;
+}
+
+.readme li {
+  margin: 0.25rem 0;
+}
+
+.readme li > ul,
+.readme li > ol {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+/* =========================
+   INLINE CODE
+========================= */
+
+.readme :not(pre) > code {
+  padding: 0.15rem 0.4rem;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    monospace;
+
+  font-size: 0.875em;
+}
+
+/* =========================
+   CODE BLOCK
+========================= */
+
+.readme pre {
+  overflow-x: auto;
+
+  margin: 1rem 0;
+  padding: 1rem;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.readme pre code {
+  padding: 0;
+  border: none;
+  background: transparent;
+
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    monospace;
+
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+/* =========================
+   BLOCKQUOTE
+========================= */
+
+.readme blockquote {
+  margin: 1rem 0;
+  padding: 0.25rem 1rem;
+
+  color: #9ca3af;
+
+  border-left: 4px solid rgba(255, 255, 255, 0.2);
+}
+
+.readme blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+/* =========================
+   HORIZONTAL RULE
+========================= */
+
+.readme hr {
+  height: 1px;
+  margin: 2rem 0;
+
+  border: 0;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* =========================
+   IMAGES
+========================= */
+
+.readme img {
+  max-width: 100%;
+  height: auto;
+
+  border-radius: 8px;
+}
+
+/* GitHub README HTML commonly uses this */
+.readme div[align="center"] {
+  text-align: center;
+}
+
+.readme div[align="center"] img {
+  display: inline-block;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.readme table {
+  display: block;
+  width: 100%;
+
+  margin: 1rem 0;
+
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+.readme th,
+.readme td {
+  padding: 0.6rem 0.8rem;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.readme th {
+  color: #f3f4f6;
+  font-weight: 600;
+
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* =========================
+   DETAILS / SUMMARY
+========================= */
+
+.readme details {
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.readme summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+/* =========================
+   CHECKBOX / TASK LIST
+========================= */
+
+.readme input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+/* =========================
+   STRONG / EMPHASIS
+========================= */
+
+.readme strong {
+  color: #f3f4f6;
+  font-weight: 600;
+}
+
+.readme em {
+  color: #d1d5db;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 640px) {
+  .readme {
+    font-size: 14px;
+  }
+
+  .readme h1 {
+    font-size: 1.75rem;
+  }
+
+  .readme h2 {
+    font-size: 1.35rem;
+  }
+
+  .readme pre {
+    padding: 0.75rem;
+  }
+}

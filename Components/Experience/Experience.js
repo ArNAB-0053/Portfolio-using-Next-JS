@@ -13,7 +13,7 @@ const Experience = () => {
     {
       company: "Capsitech IT Solution",
       role: "Assistant System Engineer (Software Development) - L1",
-      period: "Jul 2025 – Present",
+      period: "Jul 2025 – Jun 2026",
       tech: ["React", "Next.js", "Node.js", "REST APIs", "SEO"],
       highlights: [
         "Built full-stack features using React, Next.js and Node.js",

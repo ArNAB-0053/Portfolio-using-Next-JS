@@ -118,6 +118,7 @@ function ProjectSlider({ activeTab, projects = [], loading = false, error = null
         autoplay={{
           delay: 4500,
           disableOnInteraction: false,
+          pauseOnMouseEnter: true
         }}
         className="mySwiper"
         key={activeTab} 

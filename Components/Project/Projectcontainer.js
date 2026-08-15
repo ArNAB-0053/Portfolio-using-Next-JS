@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import SpotlightCard from "../Animation/SpotlightCard";
 import { dm_sans } from "@/utils/fonts";
+import { FaGithub } from "react-icons/fa";
 
 const truncateText = (text, wordLimit) => {
   const words = text.split(" ");
@@ -19,34 +20,16 @@ const Projectcontainer = ({
   project_img,
   link,
   tags = [],
-  fontSize = "text-2xl!",
-  project_tag = []
+  fontSize = "!text-2xl",
+  project_tag = [],
 }) => {
   return (
     <SpotlightCard
       className={`px-4 py-4 bg-transparent ${dm_sans.className}`}
       spotlightColor="rgba(0, 229, 255, 0.2)"
     >
-      {/* GitHub Icon at Top-Right */}
-      <Link href={`https://github.com/ArNAB-0053/${link}`} target="_blank" className="absolute top-4 right-4 z-20">
-        <div
-          className="rounded-full hover:scale-110 transition-all ease-in-out duration-200 bg-white/10 p-2 backdrop-blur-sm"
-        >
-          <Image
-            src="/Images/github.svg"
-            alt="GitHub link"
-            width="24"
-            height="24"
-            className="w-6 h-6 opacity-80"
-            loading="lazy"
-          />
-        </div>
-      </Link>
-
       {/* Project Image */}
-      <div
-        className="relative w-full h-48 overflow-hidden "
-      >
+      <div className="relative w-full h-48 overflow-hidden ">
         <Image
           src={project_img}
           alt={`${project_heading} image`}
@@ -78,9 +61,31 @@ const Projectcontainer = ({
           ))}
         </div>
 
-        <p id="project__desc" className={`text-sm text-gray-300 mt-1 ${dm_sans.className}`}>
+        <p
+          id="project__desc"
+          className={`text-sm text-gray-300 mt-1 ${dm_sans.className}`}
+        >
           {truncateText(project_desc, 17)}
         </p>
+
+        {/* Actions */}
+        <div className="flex flex-row items-center justify-between w-full gap-2">
+          {/* View Project */}
+          <Link
+            href={`/projects/${link}`}
+            className="
+                group relative
+                flex flex-1 items-center justify-center gap-2
+                text-sm text-cyan-400
+                transition-all duration-200                
+              "
+          >
+            View Project
+            <span className="transition-transform duration-200 group-hover:translate-x-1">
+              →
+            </span>
+          </Link>
+        </div>
       </div>
     </SpotlightCard>
   );
