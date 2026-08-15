@@ -1,6 +1,7 @@
 import { ToastContainer } from 'react-toastify';
 import './globals.css'
 import { Inter } from 'next/font/google'
+import NextTopLoader from 'nextjs-toploader';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className=''>
       <body className={`${inter.className} overflow-x-hidden selection:bg-white selection:text-black`}>
+        <NextTopLoader/>
         {children}
         <ToastContainer />
       </body>
