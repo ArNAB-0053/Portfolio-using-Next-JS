@@ -140,7 +140,7 @@ const Footer = () => {
         </motion.div>
 
         {/* Footer Credit */}
-        <div className="mt-24 text-zinc-600 text-xs tracking-wider uppercase font-medium">
+        <div className="mt-24 mb-10 text-zinc-600 text-xs tracking-wider uppercase font-medium">
           &copy; {new Date().getFullYear()} Arnab Bhattacharyya. Built with Next.js & TailwindCSS.
         </div>
       </section>

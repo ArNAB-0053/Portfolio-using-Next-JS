@@ -24,7 +24,7 @@ const Projectcontainer = ({
 }) => {
   return (
     <SpotlightCard
-      className={`px-4 py-4 bg-transparent ${dm_sans.className}`}
+      className={`px-4 py-4 bg-transparent relative ${dm_sans.className}`}
       spotlightColor="rgba(0, 229, 255, 0.2)"
     >
       {/* Project Image */}
@@ -68,21 +68,18 @@ const Projectcontainer = ({
         </p>
 
         {/* Actions */}
-        <div className="flex flex-row items-center justify-between w-full gap-2">
-          {/* View Project */}
+        <div className="flex flex-row items-center justify-between w-full gap-2 relative">
           <Link
             href={`/projects/${id}`}
-            className="
-                group relative
-                flex flex-1 items-center justify-center gap-2
-                text-sm text-cyan-400
-                transition-all duration-200                
-              "
+            className="group relative flex flex-1 items-center justify-center gap-2 text-sm text-cyan-400 transition-all duration-200"
           >
             View Project
             <span className="transition-transform duration-200 group-hover:translate-x-1">
               →
             </span>
+            <span
+              className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[1px] w-28 origin-left scale-x-0 bg-cyan-400 transition-transform duration-300 ease-out group-hover:scale-x-100"
+            />
           </Link>
         </div>
       </div>
