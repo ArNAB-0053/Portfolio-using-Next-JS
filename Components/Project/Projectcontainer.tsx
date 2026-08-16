@@ -1,0 +1,98 @@
+"use client";
+import Image from "next/image";
+import React from "react";
+import Link from "next/link";
+import SpotlightCard from "../Animation/SpotlightCard";
+import { dm_sans } from "@/utils/fonts";
+import { FaGithub } from "react-icons/fa";
+import type { Project } from "@/types";
+import { cn } from "@/lib/utils";
+
+const truncateText = (text: string, wordLimit: number): string => {
+  const words = text.split(" ");
+  if (words.length > wordLimit) {
+    return `${words.slice(0, wordLimit).join(" ")}...`;
+  }
+  return text;
+};
+
+interface ProjectContainerProps extends Pick<Project, "id" | "project_heading" | "project_desc" | "project_img"> {
+  tags?: string[];
+  fontSize?: string;
+  bg?: string;
+}
+
+const Projectcontainer = ({
+  id,
+  project_heading,
+  project_desc,
+  project_img,
+  tags = [],
+  fontSize = "!text-2xl",
+}: ProjectContainerProps): React.ReactElement => {
+  return (
+    <SpotlightCard
+      className={cn("px-4 py-0 pt-4 bg-gradient-to-b from-cyan-400/5 via-transparent to-cyan-400/5 backdrop-blur-[2px] relative border-cyan-400/20", dm_sans.className)}
+      spotlightColor="rgba(0, 229, 255, 0.2)"
+    >
+      {/* Project Image */}
+      <div className="relative w-full h-48 overflow-hidden ">
+        <Image
+          src={project_img}
+          alt={`${project_heading} image`}
+          width="500"
+          height="500"
+          className={`w-full h-full object-cover rounded-xl bg-white`}
+          loading="lazy"
+        />
+      </div>
+
+      {/* Project Content */}
+      <div className="flex flex-col items-start justify-center gap-y-3 px-1.5 max-[640px]:pb-2 pb-4 max-[640px]:mt-2">
+        {/* Project Heading */}
+        <h1
+          id="project___heading"
+          className={`project_heading mt-3 uppercase ${fontSize} text-start text-gray-200 ${dm_sans.className}`}
+        >
+          {project_heading}
+        </h1>
+
+        <div className="flex flex-wrap gap-x-1 gap-y-1">
+          {tags.map((tag, index) => (
+            <span
+              key={index}
+              className={`px-2 py-[0.2rem] text-[0.63rem] text-white/80 bg-white/10 rounded-full border border-white/10 hover:bg-white/20 transition-all duration-300 ${dm_sans.className}`}
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <p
+          id="project__desc"
+          className={`text-sm text-gray-300 mt-1 ${dm_sans.className}`}
+        >
+          {truncateText(project_desc, 17)}
+        </p>
+
+        {/* Actions */}
+        <div className="flex flex-row items-center justify-between w-full gap-2 relative">
+          <Link
+            href={`/projects/${id}`}
+            className="group relative flex flex-1 items-center justify-center gap-2 text-sm text-cyan-400 transition-all duration-200"
+          >
+            View Project
+            <span className="transition-transform duration-200 group-hover:translate-x-1">
+              →
+            </span>
+            <span
+              className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[1px] w-28 origin-left scale-x-0 bg-cyan-400 transition-transform duration-300 ease-out group-hover:scale-x-100"
+            />
+          </Link>
+        </div>
+      </div>
+    </SpotlightCard>
+  );
+};
+
+export default Projectcontainer;
