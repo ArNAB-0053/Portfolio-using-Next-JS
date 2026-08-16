@@ -3,59 +3,23 @@ import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import "react-toastify/dist/ReactToastify.css";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ProjectSlider from "./ProjectSlider";
 import ProjectTab from "./ProjectTab";
 import { useIsMobile } from "@/hooks/use-mobile";
 import SectionHeader from "../UI/SectionHeader";
 import { dm_sans } from "@/utils/fonts";
-import { PROJECT_TABS, isProjectArray } from "@/types";
+import { PROJECT_TABS } from "@/types";
 import type { Project, ProjectTab as ProjectTabName } from "@/types";
+import { useGetProjects } from "@/services/project.service";
 
 const tabs = PROJECT_TABS;
 
 const Project = (): JSX.Element => {
   const [activeTab, setActiveTab] = useState<ProjectTabName>("All");
   const isMobile = useIsMobile();
-  const [projects, setProjects] = useState<Project[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    let isMounted = true;
-    const fetchProjects = async () => {
-      try {
-        setLoading(true);
-        const res = await fetch("/api/projects");
-        if (!res.ok) {
-          throw new Error("Failed to fetch projects data");
-        }
-        const data: unknown = await res.json();
-        if (!isProjectArray(data)) {
-          throw new Error("Invalid project data received from API");
-        }
-        if (isMounted) {
-          setProjects(data);
-          setError(null);
-        }
-      } catch (err: unknown) {
-        if (isMounted) {
-          console.error("Error fetching projects:", err);
-          setError(err instanceof Error ? err.message : "Failed to load projects");
-        }
-      } finally {
-        if (isMounted) {
-          setLoading(false);
-        }
-      }
-    };
-
-    fetchProjects();
-
-    return () => {
-      isMounted = false;
-    };
-  }, []);
+  const { data: projects = [], isLoading, error } = useGetProjects();
+  const errorMessage = error instanceof Error ? error.message : null;
 
   // Conditional rendering based on device type
   const renderContent = () => {
@@ -90,8 +54,8 @@ const Project = (): JSX.Element => {
                   activeTab={activeTab}
                   isMobile={isMobile}
                   projects={projects}
-                  loading={loading}
-                  error={error}
+                  loading={isLoading}
+                  error={errorMessage}
                 />
               </div>
             </div>
@@ -153,8 +117,8 @@ const Project = (): JSX.Element => {
                   activeTab={activeTab}
                   isMobile={isMobile}
                   projects={projects}
-                  loading={loading}
-                  error={error}
+                  loading={isLoading}
+                  error={errorMessage}
                 />
               </motion.div>
             </div>

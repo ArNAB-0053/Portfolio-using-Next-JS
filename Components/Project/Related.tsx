@@ -1,32 +1,18 @@
-import { getRelatedProjects } from '@/services/project.service';
-import { Project } from '@/types';
-import React, { useEffect, useState } from 'react'
+import React from 'react';
 import ProjectSlider from './ProjectSlider';
+import { useGetRelatedProjects } from '@/services/project.service';
 
 const RelatedProjects = ({ projectId }: { projectId: string }) => {
-  const [relatedProjects, setRelatedProjects] = useState<Project[] | null>(null);
-  useEffect(() => {
-    // Fetch related projects from an API or database
-    const fetchRelatedProjects = async () => {
-      await getRelatedProjects(projectId)
-        .then((projects) => {
-          setRelatedProjects(projects);
-        })
-        .catch((error) => {
-          console.error('Error fetching related projects:', error);
-        });
-    };
-
-    fetchRelatedProjects();
-  }, [projectId]);
+  const { data: relatedProjects = [], isLoading, error } = useGetRelatedProjects({ projectId });
+  const errorMessage = error instanceof Error ? error.message : null;
 
   return (
     <div className='relative'>
       <ProjectSlider
         activeTab="All"
-        projects={relatedProjects || []}
-        loading={relatedProjects === null}
-        error={relatedProjects === null ? 'Loading...' : null}
+        projects={relatedProjects}
+        loading={isLoading}
+        error={errorMessage}
       />
     </div>
   )

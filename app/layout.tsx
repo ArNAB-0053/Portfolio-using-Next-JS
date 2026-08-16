@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import Providers from "./providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,8 +27,7 @@ export default function RootLayout({
         className={`${inter.className} overflow-x-hidden selection:bg-white selection:text-black`}
       >
         <NextTopLoader />
-        
-        {children}
+        <Providers>{children}</Providers>
         <ToastContainer />
       </body>
     </html>

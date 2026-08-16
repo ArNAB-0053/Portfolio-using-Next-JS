@@ -13,9 +13,7 @@ export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { id } = await params;
-
   const project = await getProjectById(id);
-
   return {
     title: `Project Details | ${project?.project_heading || id}`,
     description: project?.project_desc,
@@ -24,18 +22,12 @@ export async function generateMetadata({
 
 const Page = async ({ params }: PageProps): Promise<JSX.Element> => {
   const { id } = await params;
-
   const project = await getProjectById(id);
-
   if (!project) {
     notFound();
   }
+  return <ProjectReadmePage project={project} />
 
-  return (
-    <>
-      <ProjectReadmePage project={project} />
-    </>
-  );
 };
 
 export default Page;

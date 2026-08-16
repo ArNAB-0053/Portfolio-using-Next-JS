@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@tanstack/react-query": "^5.101.4",
     "clsx": "^2.1.1",
     "framer-motion": "^10.16.16",
     "highlight.js": "^11.11.1",
