@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Resume",
 };
 
-const page = (): JSX.Element => {
+const page = (): React.ReactElement => {
   return (
     <div className="h-screen">
       <iframe

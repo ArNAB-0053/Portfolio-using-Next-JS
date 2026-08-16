@@ -2,7 +2,7 @@
 import React from "react";
 import SpotlightCard from "../Animation/SpotlightCard";
 
-const ProjectSkeleton = (): JSX.Element => {
+const ProjectSkeleton = (): React.ReactElement => {
   return (
     <SpotlightCard
       className="px-4 py-4 bg-transparent select-none pointer-events-none"

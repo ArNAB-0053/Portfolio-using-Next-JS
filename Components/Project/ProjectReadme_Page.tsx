@@ -9,12 +9,13 @@ import Link from "next/link";
 import type { Project } from "@/types";
 import RelatedProjects from "./Related";
 import Header2 from "../UI/Header2";
+import React from "react";
 
 interface ProjectReadmePageProps {
   project: Project | null;
 }
 
-const ProjectReadmePage = ({ project }: ProjectReadmePageProps): JSX.Element | null => {
+const ProjectReadmePage = ({ project }: ProjectReadmePageProps): React.ReactElement | null => {
   const router = useRouter();
 
   if (!project) {

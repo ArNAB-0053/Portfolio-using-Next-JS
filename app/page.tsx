@@ -12,7 +12,7 @@ const MobileNav = dynamic(() => import("@/Components/MobileNav"), {
   ssr: false,
 });
 
-const Page = (): JSX.Element => {
+const Page = (): React.ReactElement => {
   return (
     <ParticlesLayout>
       {/* Main Content */}

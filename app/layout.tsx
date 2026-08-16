@@ -5,6 +5,7 @@ import NextTopLoader from "nextjs-toploader";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Providers from "./providers";
+import React from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: ReactNode }>): JSX.Element {
+}: Readonly<{ children: ReactNode }>): React.ReactElement {
   console.clear();
   return (
     <html lang="en" className="">

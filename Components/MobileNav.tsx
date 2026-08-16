@@ -49,7 +49,7 @@ const getTrajectoryKeyframes = (targetAngle: number, radius = 120): Trajectory =
   return { x, y };
 };
 
-const MobileNav = (): JSX.Element => {
+const MobileNav = (): React.ReactElement => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   // Section IDs mapping to page elements

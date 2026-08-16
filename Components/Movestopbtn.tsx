@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { IoIosArrowUp } from "react-icons/io";
 
-const Movestopbtn = (): JSX.Element => {
+const Movestopbtn = (): React.ReactElement => {
   const [showScrollToTop, setShowScrollToTop] = useState<boolean>(false);
 
   useEffect(() => {

@@ -13,7 +13,7 @@ interface SkillPill {
   color: SkillPillColor;
 }
 
-const Hero = (): JSX.Element => {
+const Hero = (): React.ReactElement => {
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {

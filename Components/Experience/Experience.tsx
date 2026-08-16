@@ -9,7 +9,7 @@ import ExperienceConnector from "./ExperienceConnector";
 import SectionHeader from "../UI/SectionHeader";
 import type { ExperienceEntry } from "@/types";
 
-const Experience = (): JSX.Element => {
+const Experience = (): React.ReactElement => {
   const experiences: ExperienceEntry[] = [
     {
       company: "Capsitech IT Solution",

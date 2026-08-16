@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import ParticlesLayout from "@/Components/Backgrounds/particles";
 import { dm_sans, lora, oswald, space_grotesk } from "@/utils/fonts";
 
-const NotFound = (): JSX.Element => {
+const NotFound = (): React.ReactElement => {
   return (
     <ParticlesLayout>
       <main className={cn("relative flex min-h-screen items-center justify-center overflow-hidden px-6 text-white", dm_sans.className)}>

@@ -29,7 +29,7 @@ const Projectcontainer = ({
   project_img,
   tags = [],
   fontSize = "!text-2xl",
-}: ProjectContainerProps): JSX.Element => {
+}: ProjectContainerProps): React.ReactElement => {
   return (
     <SpotlightCard
       className={cn("px-4 py-0 pt-4 bg-gradient-to-b from-cyan-400/5 via-transparent to-cyan-400/5 backdrop-blur-[2px] relative border-cyan-400/20", dm_sans.className)}

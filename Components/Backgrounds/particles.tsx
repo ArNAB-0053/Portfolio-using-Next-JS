@@ -9,7 +9,7 @@ interface ParticlesLayoutProps {
   children: ReactNode;
 }
 
-export default function ParticlesLayout({ children }: ParticlesLayoutProps): JSX.Element {
+export default function ParticlesLayout({ children }: ParticlesLayoutProps): React.ReactElement {
   return (
     <SpotlightComponent
       className="px-0 py-0 bg-black rounded-none bg-zi00"

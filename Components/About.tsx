@@ -12,7 +12,7 @@ interface Achievement {
   cert?: string;
 }
 
-const About = (): JSX.Element => {
+const About = (): React.ReactElement => {
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {

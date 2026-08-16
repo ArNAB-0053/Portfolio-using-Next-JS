@@ -55,7 +55,7 @@ interface DockProps {
 
 const TypedDock = Dock as ComponentType<DockProps>;
 
-const DockHeader = (): JSX.Element => {
+const DockHeader = (): React.ReactElement => {
   return (
     <TypedDock
       items={items}

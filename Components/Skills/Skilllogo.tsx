@@ -20,7 +20,7 @@ const Skilllogo = ({
   left = false,
   style,
   isMobile,
-}: SkilllogoProps): JSX.Element => {
+}: SkilllogoProps): React.ReactElement => {
   // For screens above 320px
   const renderStandardLogo = () => {
     // If mobile, return without animation

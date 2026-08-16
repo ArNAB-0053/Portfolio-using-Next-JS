@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import Hero from "./Hero";
 import Education from "./Education";
 
-const Body = (): JSX.Element => {
+const Body = (): React.ReactElement => {
   return (
     <motion.div
       initial={{

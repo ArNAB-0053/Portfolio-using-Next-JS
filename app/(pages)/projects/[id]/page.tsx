@@ -20,7 +20,7 @@ export async function generateMetadata({
   };
 }
 
-const Page = async ({ params }: PageProps): Promise<JSX.Element> => {
+const Page = async ({ params }: PageProps): Promise<React.ReactElement> => {
   const { id } = await params;
   const project = await getProjectById(id);
   if (!project) {
