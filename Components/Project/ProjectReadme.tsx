@@ -39,6 +39,11 @@ export default function ProjectReadme({ repo }: ProjectReadmeProps): JSX.Element
           rehypeRaw,
           rehypeHighlight,
         ]}
+        components={{
+          a: ({ node, ...props }) => (
+            <a {...props} target="_blank" rel="noopener noreferrer" />
+          ),
+        }}
       >
         {readme}
       </ReactMarkdown>
