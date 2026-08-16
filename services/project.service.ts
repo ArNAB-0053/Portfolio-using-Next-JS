@@ -86,3 +86,38 @@ export async function getProjectById(id: string): Promise<Project | null> {
 
   return projects.find((project) => project.id === id) ?? null;
 }
+
+export async function getRelatedProjects(projectId: string, limit: number = 5): Promise<Project[]> {
+  const projects = await getProjects();
+
+  const currentProject = projects.find(
+    (project) => project.id === projectId
+  );
+
+  if (!currentProject) {
+    return [];
+  }
+
+  const currentCategories = new Set(currentProject.project_tag || []);
+  const currentTags = new Set(currentProject.tags || []);
+
+  return projects
+    .filter((project) => project.id !== projectId)
+    .map((project) => {
+      const categoryScore = (project.project_tag || []).filter(
+        (tag) => currentCategories.has(tag)
+      ).length;
+
+      const technologyScore = (project.tags || []).filter(
+        (tag) => currentTags.has(tag)
+      ).length;
+
+      return {
+        project,
+        score: categoryScore * 3 + technologyScore,
+      };
+    })
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map(({ project }) => project);
+}

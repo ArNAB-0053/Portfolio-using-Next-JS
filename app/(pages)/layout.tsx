@@ -7,8 +7,10 @@ const PagesLayout = ({
 }: Readonly<{ children: ReactNode }>): JSX.Element => {
   return (
     <ParticlesLayout>
-      <main className="relative z-20">
-        {children}
+      <main className="relative z-20 ">
+        <section className="mx-auto w-full max-w-6xl">
+                    {children}
+        </section>
         <Footer />
       </main>
     </ParticlesLayout>

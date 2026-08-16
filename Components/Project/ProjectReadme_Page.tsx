@@ -7,6 +7,8 @@ import ProjectReadme from "@/Components/Project/ProjectReadme";
 import { dm_sans } from "@/utils/fonts";
 import Link from "next/link";
 import type { Project } from "@/types";
+import RelatedProjects from "./Related";
+import Header2 from "../UI/Header2";
 
 interface ProjectReadmePageProps {
   project: Project | null;
@@ -35,19 +37,11 @@ const ProjectReadmePage = ({ project }: ProjectReadmePageProps): JSX.Element | n
   };
 
   return (
-    <main className={`relative min-h-screen overflow-hidden text-white ${dm_sans.className}`}>
-      {/* Subtle background atmosphere */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute left-1/2 top-[-20rem] h-[40rem] w-[40rem] -translate-x-1/2 rounded-full bg-cyan-500/[0.035] blur-3xl" />
-        <div className="absolute right-[-10rem] top-[35rem] h-[30rem] w-[30rem] rounded-full bg-blue-500/[0.02] blur-3xl" />
-      </div>
-
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-5 sm:px-8 lg:px-10">
-
+    <main className={`relative w-full min-h-screen overflow-hidden text-white ${dm_sans.className}`}>
+      <div className="relative z-10">
         {/* ─────────────────────────────────────────────
             TOP BAR
         ───────────────────────────────────────────── */}
-
         <div className="flex items-center justify-between border-b border-white/[0.06] py-6">
           <button
             onClick={() => router.back()}
@@ -60,7 +54,7 @@ const ProjectReadmePage = ({ project }: ProjectReadmePageProps): JSX.Element | n
           </button>
 
           <div className="hidden text-xs text-white/25 sm:block">
-            <Link href="/" className="hover:text-white/45 transition-all duration-150">Home </Link> 
+            <Link href="/" className="hover:text-white/45 transition-all duration-150">Home </Link>
             / Projects /
             <span className="text-white/45"> {projectName}</span>
           </div>
@@ -69,7 +63,6 @@ const ProjectReadmePage = ({ project }: ProjectReadmePageProps): JSX.Element | n
         {/* ─────────────────────────────────────────────
             HERO
         ───────────────────────────────────────────── */}
-
         <section className="py-16 sm:py-20 lg:py-24">
           <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
 
@@ -97,7 +90,7 @@ const ProjectReadmePage = ({ project }: ProjectReadmePageProps): JSX.Element | n
               <div className="mt-7 h-px w-20 bg-cyan-400/60" />
 
               {/* Description */}
-              <p className="mt-7 max-w-2xl text-base leading-7 text-white/45 sm:text-lg sm:leading-8">
+              <p className="mt-7 max-w-2xl text-base leading-6 text-white/45 sm:text-lg ">
                 {description}
               </p>
 
@@ -202,22 +195,10 @@ const ProjectReadmePage = ({ project }: ProjectReadmePageProps): JSX.Element | n
 
         <section
           id="readme"
-          className="pb-32 pt-20 sm:pt-28"
+          className="pb-10 pt-20 sm:pt-28"
         >
           {/* Section heading */}
-          <div className="mb-10 flex items-center gap-5">
-            <div>
-              <p className="text-[10px] uppercase tracking-[0.3em] text-cyan-400/60">
-                Documentation
-              </p>
-
-              <h2 className="mt-2 text-2xl font-medium tracking-tight text-white sm:text-3xl">
-                Project README
-              </h2>
-            </div>
-
-            <div className="h-px flex-1 bg-white/[0.07]" />
-          </div>
+          <Header2 tag="Documentation">Project README</Header2>
 
           {/* README */}
           <div className="rounded-2xl border border-white/[0.08] bg-black/20 px-5 py-8 sm:px-8 lg:px-12 lg:py-12">
@@ -225,6 +206,14 @@ const ProjectReadmePage = ({ project }: ProjectReadmePageProps): JSX.Element | n
           </div>
         </section>
 
+
+        {/* ─────────────────────────────────────────────
+            RELATED PROJECTS
+        ───────────────────────────────────────────── */}
+        <div className="mb-32 mt-8 overflow-hidden w-full">
+          <Header2 tag="More Projects">Related Projects</Header2>
+          <RelatedProjects projectId={project.id} />
+        </div>
       </div>
     </main>
   );

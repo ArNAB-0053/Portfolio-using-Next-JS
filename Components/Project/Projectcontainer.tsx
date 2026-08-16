@@ -6,6 +6,7 @@ import SpotlightCard from "../Animation/SpotlightCard";
 import { dm_sans } from "@/utils/fonts";
 import { FaGithub } from "react-icons/fa";
 import type { Project } from "@/types";
+import { cn } from "@/lib/utils";
 
 const truncateText = (text: string, wordLimit: number): string => {
   const words = text.split(" ");
@@ -31,7 +32,7 @@ const Projectcontainer = ({
 }: ProjectContainerProps): JSX.Element => {
   return (
     <SpotlightCard
-      className={`px-4 py-4 bg-transparent relative ${dm_sans.className}`}
+      className={cn("px-4 py-0 pt-4 bg-gradient-to-b from-cyan-400/5 via-transparent to-cyan-400/5 backdrop-blur-[2px] relative border-cyan-400/20", dm_sans.className)}
       spotlightColor="rgba(0, 229, 255, 0.2)"
     >
       {/* Project Image */}
@@ -47,7 +48,7 @@ const Projectcontainer = ({
       </div>
 
       {/* Project Content */}
-      <div className="flex flex-col items-start justify-center gap-y-3 px-4 max-[640px]:px-6 max-[640px]:pb-2 max-[640px]:mt-2">
+      <div className="flex flex-col items-start justify-center gap-y-3 px-1.5 max-[640px]:pb-2 pb-4 max-[640px]:mt-2">
         {/* Project Heading */}
         <h1
           id="project___heading"
@@ -60,7 +61,7 @@ const Projectcontainer = ({
           {tags.map((tag, index) => (
             <span
               key={index}
-              className={`px-2 py-[0.2rem] text-[0.65rem] text-white/80 bg-white/10 rounded-full border border-white/10 hover:bg-white/20 transition-all duration-300 ${dm_sans.className}`}
+              className={`px-2 py-[0.2rem] text-[0.63rem] text-white/80 bg-white/10 rounded-full border border-white/10 hover:bg-white/20 transition-all duration-300 ${dm_sans.className}`}
             >
               {tag}
             </span>

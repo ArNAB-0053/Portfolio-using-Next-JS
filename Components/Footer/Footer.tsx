@@ -10,6 +10,7 @@ import { dm_sans, space_grotesk } from "@/utils/fonts";
 import SectionHeader from "../UI/SectionHeader";
 import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
+import { usePathname } from "next/navigation";
 
 interface SocialLink {
   id: string;
@@ -20,6 +21,9 @@ interface SocialLink {
 }
 
 const Footer = (): JSX.Element => {
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+
   const socialLinks: SocialLink[] = [
     {
       id: "email",
@@ -149,7 +153,7 @@ const Footer = (): JSX.Element => {
         </motion.div>
 
         {/* Footer Credit */}
-        <div className="mt-24 mb-10 text-zinc-600 text-xs tracking-wider uppercase font-medium">
+        <div className={cn("mt-24 text-zinc-600 text-xs tracking-wider uppercase font-medium", isHomePage && 'mb-10')}>
           &copy; {new Date().getFullYear()} Arnab Bhattacharyya. Built with Next.js & TailwindCSS.
         </div>
       </section>

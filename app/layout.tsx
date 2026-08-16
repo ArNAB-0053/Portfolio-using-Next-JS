@@ -26,6 +26,7 @@ export default function RootLayout({
         className={`${inter.className} overflow-x-hidden selection:bg-white selection:text-black`}
       >
         <NextTopLoader />
+        
         {children}
         <ToastContainer />
       </body>
