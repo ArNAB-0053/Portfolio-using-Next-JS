@@ -57,7 +57,7 @@ const ContactFallbackModal = ({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 15 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="relative w-full max-w-md bg-zinc-950 border border-zinc-800 rounded-2xl p-6 shadow-2xl z-10 text-white font-[Montserrat] relative"
+            className="relative w-full max-w-md bg-zinc-950 border border-zinc-800 rounded-2xl p-6 shadow-2xl z-10 text-white font-[Montserrat]"
           >
             {/* Header / Title */}
             <h3 className="text-lg font-bold text-center text-red-400 mb-2">

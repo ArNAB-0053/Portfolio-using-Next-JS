@@ -54,7 +54,7 @@ const ProjectReadmePage = ({ project }: ProjectReadmePageProps): React.ReactElem
             Back
           </button>
 
-          <div className="hidden text-xs text-white/25 sm:block">
+          <div className="text-xs text-white/25 ">
             <Link href="/" className="hover:text-white/45 transition-all duration-150">Home </Link>
             / Projects /
             <span className="text-white/45"> {projectName}</span>

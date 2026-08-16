@@ -9,7 +9,7 @@ const PagesLayout = ({
   return (
     <ParticlesLayout>
       <main className="relative z-20 ">
-        <section className="mx-auto w-full max-w-6xl">
+        <section className="mx-auto w-full max-w-6xl max-[1024px]:px-8 lg:max-[1280px]:px-8">
           {children}
         </section>
         <Footer />
