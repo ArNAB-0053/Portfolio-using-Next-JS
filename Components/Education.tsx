@@ -1,7 +1,7 @@
 import React from "react";
 import SectionHeader from "./UI/SectionHeader";
 import { dm_sans } from "@/utils/fonts";
-import { MapPin, Calendar } from "lucide-react";
+import { Calendar, MapPin } from "lucide-react";
 
 const Education = () => {
   const courses: string[] = [
