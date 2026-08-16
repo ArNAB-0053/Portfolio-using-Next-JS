@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { FaBrain, FaCode, FaBriefcase } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { MdAttachEmail } from "react-icons/md";
@@ -98,7 +98,7 @@ const MobileNav = (): JSX.Element => {
   const radius = 120;
 
   // Variants for individual item deployment
-  const itemVariants = {
+  const itemVariants: Variants = {
     closed: {
       x: 0,
       y: 0,

@@ -2,7 +2,7 @@
 
 import LinkNext from "next/link";
 import dynamic from "next/dynamic";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { Toaster } from "react-hot-toast";
 import ContactForm from "./ContactForm";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
@@ -48,7 +48,7 @@ const Footer = (): JSX.Element => {
     },
   ];
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -58,7 +58,7 @@ const Footer = (): JSX.Element => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 25 },
     visible: {
       opacity: 1,

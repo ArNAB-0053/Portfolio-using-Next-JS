@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import { dm_sans } from "@/utils/fonts";
 import Link from "next/link";
@@ -14,7 +14,7 @@ interface SkillPill {
 }
 
 const Hero = (): JSX.Element => {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -25,7 +25,7 @@ const Hero = (): JSX.Element => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
@@ -38,7 +38,7 @@ const Hero = (): JSX.Element => {
     },
   };
 
-  const item = {
+  const item: Variants = {
     hidden: { opacity: 0, y: 24 },
     visible: {
       opacity: 1,
