@@ -31,6 +31,10 @@ function ProjectSlider({ activeTab, projects = [], loading = false, error = null
       setFilteredProjects(projects.filter(project => 
         project.project_tag.includes("ml")
       ));
+    } else if (activeTab === "Extension") {
+      setFilteredProjects(projects.filter(project => 
+        project.project_tag.includes("extension")
+      ));
     }
   }, [activeTab, projects, loading, error]);
 
@@ -126,14 +130,13 @@ function ProjectSlider({ activeTab, projects = [], loading = false, error = null
         {filteredProjects.map((project, index) => (
           <SwiperSlide className="swiperSlider" key={`${project.link}-${index}`}>
             <Projectcontainer
+              id={project.id}
               project_img={project.project_img}
               project_heading={project.project_heading}
               project_desc={project.project_desc}
-              link={project.link}
               bg={project.bg || "transparent"}
               fontSize={project.fontSize || "text-3xl"}
               tags={project.tags || []}
-              project_tag={project.project_tag || []}
             />
           </SwiperSlide>
         ))}

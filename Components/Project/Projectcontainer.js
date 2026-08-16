@@ -15,13 +15,12 @@ const truncateText = (text, wordLimit) => {
 };
 
 const Projectcontainer = ({
+  id,
   project_heading,
   project_desc,
   project_img,
-  link,
   tags = [],
   fontSize = "!text-2xl",
-  project_tag = [],
 }) => {
   return (
     <SpotlightCard
@@ -72,7 +71,7 @@ const Projectcontainer = ({
         <div className="flex flex-row items-center justify-between w-full gap-2">
           {/* View Project */}
           <Link
-            href={`/projects/${link}`}
+            href={`/projects/${id}`}
             className="
                 group relative
                 flex flex-1 items-center justify-center gap-2

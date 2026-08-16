@@ -10,12 +10,12 @@ const ProjectTab = ({ tabs, activeTab, setActiveTab }) => {
       className={`max-md:w-full flex flex-wrap justify-center sm:justify-start mb-4 ml-4 sm:ml-6 md:ml-8 ${dm_sans.className}`}
     >
       <motion.div
-        className="max-md:w-full grid grid-cols-2 md:grid-cols-4 gap-2 p-1 bg-black/20 backdrop-blur-sm rounded-lg border border-gray-800 shadow-lg"
+        className="max-md:w-full grid grid-cols-2 md:grid-cols-5 gap-2 p-1 bg-black/20 backdrop-blur-sm rounded-lg border border-gray-800 shadow-lg"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
       >
-        {tabs.map((tab) => (
+        {tabs?.map((tab) => (
           <motion.button
             key={tab}
             onClick={() => setActiveTab(tab)}

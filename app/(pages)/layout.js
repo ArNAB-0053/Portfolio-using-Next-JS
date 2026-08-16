@@ -2,6 +2,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import SpotlightComponent from "@/Components/Animation/SpotlightComponent";
+import Footer from "@/Components/Footer/Footer";
 
 const Particles = dynamic(() => import("@/Components/Animation/Particles"), {
   ssr: false,
@@ -14,7 +15,10 @@ const PagesLayout = ({ children }) => {
       spotlightColor="rgba(0, 155, 255, 0.1)"
     >
       <div className="relative w-screen min-h-screen overflow-hidden ">
-        <main className="relative z-20">{children}</main>
+        <main className="relative z-20">
+          {children}
+          <Footer />
+        </main>
         {/* Global Background */}
         <div className="fixed inset-0 z-10">
           <div className="absolute inset-0 backdrop-blur-md opacity-40 z-10"></div>{" "}

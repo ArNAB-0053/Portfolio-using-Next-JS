@@ -8,6 +8,7 @@ import "@/style/markdown.css"; // Import the CSS file for markdown styling
 
 import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/github-dark.css";
+import { Loader2 } from "lucide-react";
 
 export default function ProjectReadme({ repo }) {
   const [readme, setReadme] = useState("");
@@ -38,7 +39,10 @@ export default function ProjectReadme({ repo }) {
   }, [repo]);
 
   if (loading) {
-    return <div>Loading project...</div>;
+    return <div className="flex items-center justify-center py-8 text-white/60 gap-2">
+      <Loader2 className="h-6 w-6 animate-spin " />
+      Loading details...
+    </div>;
   }
 
   return (

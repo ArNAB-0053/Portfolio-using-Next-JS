@@ -10,7 +10,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import SectionHeader from "../UI/SectionHeader";
 import { dm_sans } from "@/utils/fonts";
 
-const tabs = ["All", "Web Application", "Machine Learning", "React Native"];
+const tabs = ["All", "Web Application", "Machine Learning", "React Native", "Extension"];
 
 const Project = () => {
   const [activeTab, setActiveTab] = useState("All");
@@ -72,7 +72,7 @@ const Project = () => {
                   href="https://github.com/ArNAB-0053?tab=repositories"
                 >
                   GitHub
-                </Link>{" "}
+                </Link>
                 profile to explore them in detail.
               </h4>
 
@@ -122,7 +122,7 @@ const Project = () => {
                   href="https://github.com/ArNAB-0053?tab=repositories"
                 >
                   GitHub
-                </Link>{" "}
+                </Link>
                 profile to explore them in detail.
               </motion.h4>
 

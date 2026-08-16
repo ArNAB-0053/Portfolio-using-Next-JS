@@ -6,8 +6,9 @@ import { motion } from "framer-motion";
 import { Toaster } from "react-hot-toast";
 import ContactForm from "./ContactForm";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
-import { dm_sans } from "@/utils/fonts";
+import { dm_sans, lora, space_grotesk } from "@/utils/fonts";
 import SectionHeader from "../UI/SectionHeader";
+import { cn } from "@/lib/utils";
 
 const Footer = () => {
   const socialLinks = [
@@ -74,7 +75,7 @@ const Footer = () => {
         {/* Headline */}
         <div className="text-center mb-16 max-w-2xl">
           <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-4 leading-tight">
-            Let's Build Something Meaningful
+            Let's Build Something <span className={cn(space_grotesk.className, "text-cyan-400 underline underline-offset-[8px]")}>Amazing</span> Together
           </h3>
           <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
             Have an interesting project, engineering role, or collaboration idea? Let's connect.
@@ -102,20 +103,20 @@ const Footer = () => {
           {/* Right Column: Connect Info */}
           <motion.div
             variants={itemVariants}
-            className="lg:col-span-5 w-full flex flex-col space-y-6 lg:pl-8 border-l border-zinc-900"
+            className="lg:col-span-5 w-full flex flex-col space-y-6 lg:pl-8"
           >
             <h4 className="text-sm font-semibold tracking-widest text-zinc-500 uppercase">
               Connect With Me
             </h4>
 
-            <div className="space-y-4">
+            <div className="space-y-4 border-l-2 border-cyan-400/20 pl-2">
               {socialLinks.map((link) => (
                 <LinkNext
                   key={link.id}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 group p-2.5 rounded-lg border border-zinc-900/60 hover:border-zinc-800 hover:bg-zinc-950/30 transition-all duration-300"
+                  className="flex items-center gap-3 group p-2.5 rounded-lg border border-transparent hover:border-zinc-800 hover:bg-zinc-950/30 transition-all duration-300"
                 >
                   <div className="p-2 bg-zinc-950/60 rounded-md border border-zinc-900 group-hover:bg-zinc-900 transition-colors">
                     {link.icon}
@@ -132,7 +133,7 @@ const Footer = () => {
               ))}
             </div>
 
-            <p className="text-zinc-500 text-xs leading-relaxed pt-4 border-t border-zinc-900">
+            <p className="text-zinc-500 text-xs leading-relaxed pt-4 border-t border-cyan-400/20">
               Open to backend, full-stack, and AI application engineering opportunities. Let's start the conversation.
             </p>
           </motion.div>

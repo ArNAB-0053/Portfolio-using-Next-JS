@@ -42,13 +42,20 @@ const About = () => {
       cert: "https://drive.google.com/file/d/1aR4NURwG_3_3Au-8miSJNRaqQhiam1_0/view",
     },
     {
+      title: "Intel® Unnati Industrial Training",
+      desc: "Business Contract Validation industrial training program completed from May–July 2024.",
+      cert: "https://drive.google.com/file/d/1EWs74Dth0Dlq1SoSboSr0vc8HASn4lVI/view",
+    },
+    {
       title: "1+ Year Industry Experience",
       desc: "Building production software across CRM systems, web applications, and AI-powered tools.",
     },
   ];
 
   return (
-    <div className={`w-full py-20 flex flex-col items-center justify-center text-white ${dm_sans.className}`}>
+    <div
+      className={`w-full py-20 flex flex-col items-center justify-center text-white ${dm_sans.className}`}
+    >
       {/* Section Header */}
       <SectionHeader title="About Me" />
 
@@ -66,25 +73,24 @@ const About = () => {
         >
           <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight">
             Building Products, <br />
-            <span className="text-cyan-400">
-              Not Just Projects
-            </span>
+            <span className="text-cyan-400">Not Just Projects</span>
           </h3>
           <div className="h-[2px] w-12 bg-cyan-500/50 rounded-full"></div>
 
           <div className="space-y-5 text-zinc-400 text-base sm:text-lg leading-relaxed">
             <p>
-              I started my journey through AI and Machine Learning, but over time I
-              became equally interested in backend engineering, APIs, developer tooling,
-              and system design.
+              I started my journey through AI and Machine Learning, but over
+              time I became equally interested in backend engineering, APIs,
+              developer tooling, and system design.
             </p>
             <p>
-              Today I work as a Full Stack Engineer building practical software—from
-              CRM systems and real-time applications to AI-powered tools.
+              Today I work as a Full Stack Engineer building practical
+              software—from CRM systems and real-time applications to AI-powered
+              tools.
             </p>
             <p>
-              I enjoy understanding how products are built, how systems scale, and
-              how ideas move from prototype to production.
+              I enjoy understanding how products are built, how systems scale,
+              and how ideas move from prototype to production.
             </p>
           </div>
         </motion.div>
@@ -92,7 +98,7 @@ const About = () => {
         {/* Right Side: Achievements - Minimal Text List */}
         <motion.div
           variants={itemVariants}
-          className="lg:col-span-5 flex flex-col space-y-6 w-full lg:pl-6 border-l border-zinc-900"
+          className="lg:col-span-5 flex flex-col space-y-6 w-full lg:pl-6 border-l border-cyan-400/20"
         >
           <h4 className="text-sm font-semibold tracking-widest text-zinc-500 uppercase">
             Highlights & Focus
