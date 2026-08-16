@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import About from "./About";
 import Skills from "./Skills/Skills";
 import Project from "./Project/Project";
@@ -29,7 +28,7 @@ const Body = (): JSX.Element => {
       {/* Hero Section */}
       <section
         id="hero"
-        className="overflow-hidden min-h-screen px-48 w-screen max-[1024px]:px-8 lg:max-[1280px]:px-8 relative z-10 relative"
+        className="overflow-hidden min-h-screen px-48 w-screen max-[1024px]:px-8 lg:max-[1280px]:px-8 relative z-10"
       >
         {/* <Header /> */}
         <Hero />
