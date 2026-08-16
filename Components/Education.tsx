@@ -3,7 +3,7 @@ import SectionHeader from "./UI/SectionHeader";
 import { dm_sans } from "@/utils/fonts";
 import { MapPin, Calendar } from "lucide-react";
 
-const Education = (): JSX.Element => {
+const Education = () => {
   const courses: string[] = [
     "DSA",
     "DBMS",
