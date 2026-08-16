@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "clsx": "^2.1.1",
     "framer-motion": "^10.16.16",
     "highlight.js": "^11.11.1",
     "lucide-react": "^0.477.0",
@@ -26,14 +27,19 @@
     "rehype-raw": "^7.0.0",
     "remark-gfm": "^4.0.1",
     "sharp": "^0.33.5",
+    "styled-jsx": "^5.1.7",
     "swiper": "^11.1.0",
     "tailwind-merge": "^3.6.0",
     "typewriter-effect": "^2.22.0"
   },
   "devDependencies": {
+    "@types/node": "26.2.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
     "autoprefixer": "^10.0.1",
     "postcss": "^8",
     "tailwind-scrollbar": "^3.0.5",
-    "tailwindcss": "^3.3.0"
+    "tailwindcss": "^3.3.0",
+    "typescript": "5.6.3"
   }
 }
