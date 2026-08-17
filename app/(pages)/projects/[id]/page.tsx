@@ -1,4 +1,4 @@
-import ProjectReadmePage from "@/Components/Project/ProjectReadme_Page";
+import ProjectReadmePage from "@/Components/Project/readme/ProjectReadme_Page";
 import { getProjectById } from "@/services/project.service";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";

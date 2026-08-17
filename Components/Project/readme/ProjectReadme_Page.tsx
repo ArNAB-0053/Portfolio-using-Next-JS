@@ -1,15 +1,14 @@
 "use client";
 
+import { dm_sans } from "@/utils/fonts";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-
-import ProjectReadme from "@/Components/Project/ProjectReadme";
-import { dm_sans } from "@/utils/fonts";
 import Link from "next/link";
 import type { Project } from "@/types";
-import RelatedProjects from "./Related";
-import Header2 from "../UI/Header2";
+import RelatedProjects from "../Related";
+import Header2 from "../../UI/Header2";
 import React from "react";
+import ReadmeSection from "./ReadmeSection";
 
 interface ProjectReadmePageProps {
   project: Project | null;
@@ -38,7 +37,7 @@ const ProjectReadmePage = ({ project }: ProjectReadmePageProps): React.ReactElem
   };
 
   return (
-    <main className={`relative w-full min-h-screen overflow-hidden text-white ${dm_sans.className}`}>
+    <main className={`relative w-full min-h-screen overflow-x-clip text-white ${dm_sans.className}`}>
       <div className="relative z-10">
         {/* ─────────────────────────────────────────────
             TOP BAR
@@ -202,9 +201,7 @@ const ProjectReadmePage = ({ project }: ProjectReadmePageProps): React.ReactElem
           <Header2 tag="Documentation">Project README</Header2>
 
           {/* README */}
-          <div className="rounded-2xl lg:border lg:border-white/[0.08] lg:bg-gradient-to-t lg:from-cyan-800/5 lg:via-black/20 lg:to-black/10 lg:backdrop-blur-sm p-0 lg:px-12 lg:py-12">
-            <ProjectReadme repo={repo} />
-          </div>
+          <ReadmeSection repo={repo} />
         </section>
 
 

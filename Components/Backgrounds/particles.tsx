@@ -12,7 +12,7 @@ interface ParticlesLayoutProps {
 export default function ParticlesLayout({ children }: ParticlesLayoutProps): React.ReactElement {
   return (
     <SpotlightComponent
-      className="px-0 py-0 bg-black rounded-none bg-zi00"
+      className="px-0 py-0 rounded-none bg-zi00 overflow-visible"
       spotlightColor="rgba(0, 155, 255, 0.1)"
     >
       {/* Subtle background atmosphere */}
@@ -20,7 +20,7 @@ export default function ParticlesLayout({ children }: ParticlesLayoutProps): Rea
         <div className="absolute left-1/2 top-[-20rem] h-[40rem] w-[40rem] -translate-x-1/2 rounded-full bg-cyan-500/[0.035] blur-3xl" />
         <div className="absolute right-[-10rem] top-[35rem] h-[30rem] w-[30rem] rounded-full bg-blue-500/[0.02] blur-3xl" />
       </div>
-      <div className="relative w-screen min-h-screen overflow-hidden">
+      <div className="relative w-full min-h-screen overflow-x-clip">
         <div className="fixed inset-0 z-10">
           <div className="absolute inset-0 backdrop-blur-md opacity-40 z-10" />
           <div style={{ width: "100%", height: "100%", position: "relative" }}>

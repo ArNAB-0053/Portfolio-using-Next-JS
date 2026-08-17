@@ -271,6 +271,13 @@
 }
 
 /* =========================
+   HEADING
+========================= */
+.readme h1, .readme h2, .readme h3, .readme h4 {
+  scroll-margin-top: 6rem;
+}
+
+/* =========================
    RESPONSIVE — TABLET / ≤1024px
 ========================= */
 
