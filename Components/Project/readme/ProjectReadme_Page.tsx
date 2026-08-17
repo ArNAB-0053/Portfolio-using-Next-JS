@@ -195,7 +195,7 @@ const ProjectReadmePage = ({ project }: ProjectReadmePageProps): React.ReactElem
 
         <section
           id="readme"
-          className="pb-10 pt-10 lg:pt-28 scroll-mt-6 lg:-scroll-mt-10"
+          className="pb-10 pt-10 lg:mt-16 scroll-mt-6"
         >
           {/* Section heading */}
           <Header2 tag="Documentation">Project README</Header2>

@@ -27,7 +27,6 @@ const Page = async ({ params }: PageProps): Promise<React.ReactElement> => {
     notFound();
   }
   return <ProjectReadmePage project={project} />
-
 };
 
 export default Page;
