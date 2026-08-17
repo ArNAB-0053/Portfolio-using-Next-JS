@@ -16,6 +16,7 @@
     "framer-motion": "^13.1.0",
     "highlight.js": "^11.11.1",
     "lucide-react": "^1.31.0",
+    "mermaid": "^11.16.1",
     "next": "^14.2.5",
     "nextjs-toploader": "^3.9.17",
     "ogl": "^1.0.11",

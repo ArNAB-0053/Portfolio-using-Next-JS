@@ -196,13 +196,13 @@ const ProjectReadmePage = ({ project }: ProjectReadmePageProps): React.ReactElem
 
         <section
           id="readme"
-          className="pb-10 pt-20 sm:pt-28"
+          className="pb-10 pt-10 lg:pt-28 scroll-mt-6 lg:-scroll-mt-10"
         >
           {/* Section heading */}
           <Header2 tag="Documentation">Project README</Header2>
 
           {/* README */}
-          <div className="rounded-2xl border border-white/[0.08] bg-black/20 px-5 py-8 sm:px-8 lg:px-12 lg:py-12">
+          <div className="rounded-2xl lg:border lg:border-white/[0.08] lg:bg-gradient-to-t lg:from-cyan-800/5 lg:via-black/20 lg:to-black/10 lg:backdrop-blur-sm p-0 lg:px-12 lg:py-12">
             <ProjectReadme repo={repo} />
           </div>
         </section>
