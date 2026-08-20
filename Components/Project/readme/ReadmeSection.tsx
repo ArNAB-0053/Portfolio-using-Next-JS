@@ -5,7 +5,7 @@ import { Loader2 } from "lucide-react";
 import { useGetReadme } from "@/services/readme.service";
 import { extractHeadings } from "@/lib/markdown/headings";
 import ProjectReadme from "./ProjectReadme";
-import TableOfContents from "@/Components/UI/markdown/TableOfContents";
+import TableOfContents from "@/Components/UI/table-of-contents";
 
 interface ReadmeSectionProps {
   repo: string;
@@ -37,7 +37,7 @@ export default function ReadmeSection({ repo }: ReadmeSectionProps) {
         <ProjectReadme content={readme} />
       </div>
 
-      <aside className="hidden w-[18rem] self-start xl:block sticky top-24 rounded-2xl pl-2 py-2">
+      <aside className="hidden w-[18rem] self-start xl:block sticky top-2 rounded-2xl pl-2 py-2">
         <TableOfContents headings={headings} />
       </aside>
     </div>

@@ -1,3 +1,5 @@
+@import "../style/fonts.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -27,57 +29,38 @@
   --hud-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-
-@font-face {
-  font-family: FuturaNowHeadlineExtraBold;
-  src: url("../public/Fonts/FuturaNowHeadlineExtraBold.ttf");
-}
+/* =========================
+   SCROLLBAR STYLES
+========================= */
 
 * {
   scrollbar-width: thin;
   scrollbar-color: #27272a #0c0c0c;
 }
 
-*::-webkit-scrollbar {
-  width: 8px; 
-}
-
 *::-webkit-scrollbar-track {
   background: #0c0c0c;
+  width: 0px; 
 }
 
 *::-webkit-scrollbar-thumb {
   background-color: #27272a;
+  width: 8px; 
   border-radius: 4px;
 }
 
-@font-face {
-  font-family: Pavelt;
-  src: url("../public/Fonts/pavelt-vg24b.otf");
+.table-of-contents {
+  scrollbar-width: thin;
+  scrollbar-color: #66737b transparent;
 }
 
-@font-face {
-  font-family: Montserrat;
-  src: url("../public/Fonts/Montserrat-VariableFont_wght.ttf");
+html {
+  height: 100%;
+  scroll-behavior: smooth;
 }
 
-@font-face {
-  font-family: HelveticaBold;
-  src: url("../public/Fonts/HelveticaNowText-Bold.ttf");
-}
-
-@font-face {
-  font-family: DancingScriptBold;
-  src: url("../public/Fonts/DancingScript-Bold.ttf");
-}
-
-@font-face {
-  font-family: DancingScriptMedium;
-  src: url("../public/Fonts/DancingScript-Medium.ttf");
-}
-
-html,
 body {
+  min-height: 100%;
   scroll-behavior: smooth;
 }
 
@@ -295,7 +278,9 @@ span .lang {
   border-radius: 6px;
 }
 
-
+/* =========================
+    SWIPER STYLES
+========================= */
 
 .swiper {
   width: 100%;
@@ -339,6 +324,10 @@ span .lang {
   border-radius: 10px !important; 
   background-color: #00E5FF !important;
 }
+
+/* =========================
+    TOOLTIP STYLES
+========================= */
 
 .tooltip-link {
   position: relative;

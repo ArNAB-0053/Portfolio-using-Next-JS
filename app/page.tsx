@@ -3,7 +3,6 @@ import React from "react";
 import dynamic from "next/dynamic";
 import Body from "@/Components/Body";
 import Movestopbtn from "@/Components/Movestopbtn";
-import ParticlesLayout from "@/Components/Backgrounds/particles";
 
 const DockHeader = dynamic(() => import("@/Components/dock-header"), {
   ssr: false,
@@ -14,7 +13,7 @@ const MobileNav = dynamic(() => import("@/Components/MobileNav"), {
 
 const Page = (): React.ReactElement => {
   return (
-    <ParticlesLayout>
+    <>
       {/* Main Content */}
       <Body />
       <Movestopbtn />
@@ -28,7 +27,7 @@ const Page = (): React.ReactElement => {
       <div className="block md:hidden">
         <MobileNav />
       </div>
-    </ParticlesLayout>
+    </>
   );
 };
 

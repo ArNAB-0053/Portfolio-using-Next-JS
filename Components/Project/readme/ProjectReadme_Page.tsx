@@ -37,7 +37,7 @@ const ProjectReadmePage = ({ project }: ProjectReadmePageProps): React.ReactElem
   };
 
   return (
-    <main className={`relative w-full min-h-screen overflow-x-clip text-white ${dm_sans.className}`}>
+    <div className={`relative w-full overflow-x-clip text-white ${dm_sans.className}`}>
       <div className="relative z-10">
         {/* ─────────────────────────────────────────────
             TOP BAR
@@ -208,12 +208,12 @@ const ProjectReadmePage = ({ project }: ProjectReadmePageProps): React.ReactElem
         {/* ─────────────────────────────────────────────
             RELATED PROJECTS
         ───────────────────────────────────────────── */}
-        <div className="mb-32 mt-8 overflow-hidden w-full">
+        <div className="pb-32 mt-8 overflow-hidden w-full">
           <Header2 tag="More Projects">Related Projects</Header2>
           <RelatedProjects projectId={project.id} />
         </div>
       </div>
-    </main>
+    </div>
   );
 };
 

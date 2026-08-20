@@ -21,7 +21,7 @@ export async function getReadme(
     throw new Error("Repository name is required.");
   }
 
-  const url = `https://raw.githubusercontent.com/ArNAB-0053/${repo}/${branch}/README.md`;
+  const url = `https://cdn.jsdelivr.net/gh/ArNAB-0053/${repo}@${branch}/README.md`;
 
   const response = await fetch(url, {
     next: {

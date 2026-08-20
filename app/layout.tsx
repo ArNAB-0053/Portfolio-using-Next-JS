@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Providers from "./providers";
 import React from "react";
+import ParticlesLayout from "@/Components/Backgrounds/particles";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,13 +24,17 @@ export default function RootLayout({
 }: Readonly<{ children: ReactNode }>): React.ReactElement {
   console.clear();
   return (
-    <html lang="en" className="">
+    <html lang="en" className="bg-black relative">
       <body
-        className={`${inter.className} overflow-x-hidden selection:bg-white selection:text-black`}
+        className={`${inter.className} selection:bg-white selection:text-black`}
       >
-        <NextTopLoader />
-        <Providers>{children}</Providers>
-        <ToastContainer />
+        <ParticlesLayout>
+          {/* <NextTopLoader /> */}
+          <Providers>
+            {children}
+          </Providers>
+          <ToastContainer />
+        </ParticlesLayout>
       </body>
     </html>
   );
