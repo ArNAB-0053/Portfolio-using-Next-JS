@@ -11,8 +11,9 @@ interface ParticlesLayoutProps {
 
 export default function ParticlesLayout({ children }: ParticlesLayoutProps): React.ReactElement {
   return (
-    <div
+    <SpotlightComponent
       className="px-0 py-0 rounded-none bg-zinc-900 overflow-visible"
+      spotlightColor="rgba(0, 155, 255, 0.1)"
     >
       {/* Subtle background atmosphere */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -37,6 +38,6 @@ export default function ParticlesLayout({ children }: ParticlesLayoutProps): Rea
 
         <main className="relative z-20">{children}</main>
       </div>
-    </div>
+    </SpotlightComponent>
   );
 }

@@ -1,6 +1,11 @@
 import { useRef, useState } from "react";
 
-const SpotlightComponent = ({ children, className = "", spotlightColor = "rgba(255, 255, 255, 0.4)" }) => {
+const SpotlightComponent = ({
+  children,
+  className = "",
+  spotlightColor = "rgba(255, 255, 255, 0.4)",
+  spotlightSize = 300,
+}) => {
   const divRef = useRef(null);
   const [isFocused, setIsFocused] = useState(false);
   const [position, setPosition] = useState({ x: "50%", y: "50%" });
@@ -11,7 +16,7 @@ const SpotlightComponent = ({ children, className = "", spotlightColor = "rgba(2
 
     const rect = divRef.current.getBoundingClientRect();
     setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-    setOpacity(1); // Max opacity for strong focus
+    setOpacity(1);
   };
 
   const handleFocus = () => {
@@ -46,7 +51,7 @@ const SpotlightComponent = ({ children, className = "", spotlightColor = "rgba(2
         className="pointer-events-none absolute inset-0 transition-all duration-300 ease-out"
         style={{
           opacity,
-          background: `radial-gradient(circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 15%)`,
+          background: `radial-gradient(circle ${spotlightSize}px at ${position.x}px ${position.y}px, ${spotlightColor}, transparent)`,
         }}
       />
       {children}
