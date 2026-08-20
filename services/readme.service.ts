@@ -1,9 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import { queryKeyConfig } from "@/lib/queryKeys";
+import { cache } from "react";
 
 /**
  * Fetches a project's raw README content directly from GitHub via the
- * `raw.githubusercontent.com` CDN. Assumes all repos live under the
+ * `cdn.jsdelivr.net` CDN. Assumes all repos live under the
  * `ArNAB-0053` GitHub account. Revalidates every 12 hours.
  *
  * @param repo - The repository name (e.g. `"portfolio-content"`).
@@ -13,7 +14,9 @@ import { queryKeyConfig } from "@/lib/queryKeys";
  * repo, branch, or `README.md` doesn't exist.
  * @returns A promise resolving to the raw README content as plain text (markdown source).
  */
-export async function getReadme(
+export const getReadme = cache(getReadmeApi)
+
+async function getReadmeApi(
   repo: string,
   branch = "main",
 ): Promise<string> {
@@ -43,7 +46,7 @@ export async function getReadme(
  * specifically deal with project READMEs (e.g. the project detail page).
  * Behaves identically to `getReadme` — no separate implementation.
  */
-export const getProjectReadme = getReadme;
+export const getProjectReadme = cache(getReadmeApi);
 
 /**
  * TanStack Query hook for fetching a project's README on the client.

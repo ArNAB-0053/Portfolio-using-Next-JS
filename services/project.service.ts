@@ -16,7 +16,8 @@ const DEFAULT_REVALIDATE_SECONDS = 43_200;
  * @returns `true` if `value` is an array where every element is a string.
  */
 const isStringArray = (value: unknown): value is string[] =>
-  Array.isArray(value) && value.every((item): item is string => typeof item === "string");
+  Array.isArray(value) &&
+  value.every((item): item is string => typeof item === "string");
 
 /**
  * Validates and normalizes a single raw project object from the remote JSON
@@ -41,7 +42,9 @@ const normalizeProject = (project: unknown, index: number): Project => {
     typeof rawProject.project_desc !== "string" ||
     typeof rawProject.github_link !== "string"
   ) {
-    throw new Error(`Invalid project at index ${index}: Missing required fields.`);
+    throw new Error(
+      `Invalid project at index ${index}: Missing required fields.`,
+    );
   }
 
   return {
@@ -78,7 +81,12 @@ export const getProjects = cache(async (): Promise<Project[]> => {
   );
 
   const response = await fetch(url, {
-    next: { revalidate: Number.isNaN(revalidateSeconds) ? DEFAULT_REVALIDATE_SECONDS : revalidateSeconds },
+    next: {
+      revalidate: Number.isNaN(revalidateSeconds)
+        ? DEFAULT_REVALIDATE_SECONDS
+        : revalidateSeconds,
+      tags: ["revalidate"],
+    },
   });
 
   if (!response.ok) {
@@ -109,6 +117,7 @@ export function useGetProjects() {
   return useQuery({
     queryKey: queryKeyConfig.projects.list(),
     queryFn: getProjects,
+    staleTime: 24 * 60 * 60 * 1000, // 24h
   });
 }
 
@@ -122,11 +131,13 @@ export function useGetProjects() {
  * @param id - The project's unique identifier.
  * @returns A promise resolving to the matching `Project`, or `null` if no project has that `id`.
  */
-export const getProjectById = cache(async (id: string): Promise<Project | null> => {
-  const projects = await getProjects();
+export const getProjectById = cache(
+  async (id: string): Promise<Project | null> => {
+    const projects = await getProjects();
 
-  return projects.find((project) => project.id === id) ?? null;
-});
+    return projects.find((project) => project.id === id) ?? null;
+  },
+);
 
 /**
  * TanStack Query hook for fetching a single project by `id` on the client.
@@ -157,12 +168,13 @@ export function useGetProjectById(id: string) {
  * @returns A promise resolving to an array of related projects, best match first.
  * Returns an empty array if `projectId` doesn't match any known project.
  */
-export async function getRelatedProjects(projectId: string, limit: number = 5): Promise<Project[]> {
+export async function getRelatedProjects(
+  projectId: string,
+  limit: number = 5,
+): Promise<Project[]> {
   const projects = await getProjects();
 
-  const currentProject = projects.find(
-    (project) => project.id === projectId
-  );
+  const currentProject = projects.find((project) => project.id === projectId);
 
   if (!currentProject) {
     return [];
@@ -174,12 +186,12 @@ export async function getRelatedProjects(projectId: string, limit: number = 5): 
   return projects
     .filter((project) => project.id !== projectId)
     .map((project) => {
-      const categoryScore = (project.project_tag || []).filter(
-        (tag) => currentCategories.has(tag)
+      const categoryScore = (project.project_tag || []).filter((tag) =>
+        currentCategories.has(tag),
       ).length;
 
-      const technologyScore = (project.tags || []).filter(
-        (tag) => currentTags.has(tag)
+      const technologyScore = (project.tags || []).filter((tag) =>
+        currentTags.has(tag),
       ).length;
 
       return {
