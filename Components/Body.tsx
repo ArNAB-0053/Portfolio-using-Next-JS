@@ -3,7 +3,6 @@ import About from "./About";
 import Skills from "./Skills/Skills";
 import Project from "./Project/Project";
 import Experience from "./Experience/Experience";
-import Footer from "./Footer/Footer";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import Hero from "./Hero";
@@ -73,9 +72,6 @@ const Body = (): React.ReactElement => {
       >
         <Skills />
       </section>
-
-      {/* Contact/Footer Section */}
-      <Footer />
     </motion.div>
   );
 };

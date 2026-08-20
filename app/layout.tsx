@@ -7,6 +7,8 @@ import type { ReactNode } from "react";
 import Providers from "./providers";
 import React from "react";
 import ParticlesLayout from "@/Components/Backgrounds/particles";
+import Movestopbtn from "@/Components/Movestopbtn";
+import Footer from "@/Components/Footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,9 +31,11 @@ export default function RootLayout({
         className={`${inter.className} selection:bg-white selection:text-black`}
       >
         <ParticlesLayout>
-          {/* <NextTopLoader /> */}
+          <NextTopLoader />
           <Providers>
+            <Movestopbtn />
             {children}
+            <Footer />
           </Providers>
           <ToastContainer />
         </ParticlesLayout>

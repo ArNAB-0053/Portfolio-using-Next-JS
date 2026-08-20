@@ -12,7 +12,7 @@ interface ParticlesLayoutProps {
 export default function ParticlesLayout({ children }: ParticlesLayoutProps): React.ReactElement {
   return (
     <SpotlightComponent
-      className="px-0 py-0 rounded-none bg-zinc-900 overflow-visible"
+      className="px-0 py-0 rounded-none bg-[#212121]/70 overflow-visible"
       spotlightColor="rgba(0, 155, 255, 0.1)"
     >
       {/* Subtle background atmosphere */}

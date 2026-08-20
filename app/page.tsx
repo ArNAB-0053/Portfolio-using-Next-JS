@@ -2,7 +2,6 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import Body from "@/Components/Body";
-import Movestopbtn from "@/Components/Movestopbtn";
 
 const DockHeader = dynamic(() => import("@/Components/dock-header"), {
   ssr: false,
@@ -16,7 +15,6 @@ const Page = (): React.ReactElement => {
     <>
       {/* Main Content */}
       <Body />
-      <Movestopbtn />
 
       {/* Floating Dock Header */}
       <div className="hidden md:block fixed z-50 bottom-0 left-1/2 -translate-x-1/2">
