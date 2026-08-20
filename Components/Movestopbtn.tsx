@@ -29,7 +29,7 @@ const Movestopbtn = (): React.ReactElement => {
     <div>
       {showScrollToTop && (
         <motion.button
-          className="fixed p-3 bg-cyan-500 backdrop-blur-md text-white hover:bg-cyan-600 hover:shadow-cyan-600 transition-all ease max-lg:bottom-24 bottom-4 right-4 rounded-full z-40"
+          className="fixed p-2 bg-cyan-500 backdrop-blur-md text-white hover:bg-cyan-600 hover:shadow-cyan-600 transition-all ease max-lg:bottom-10 bottom-4 right-4 rounded-full z-40"
           onClick={scrollToTop}
           initial={{
             opacity: 0,

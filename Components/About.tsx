@@ -104,12 +104,13 @@ const About = (): React.ReactElement => {
         {/* Right Side: Achievements - Minimal Text List */}
         <motion.div
           variants={itemVariants}
-          className="lg:col-span-5 flex flex-col space-y-6 w-full lg:pl-6 border-l border-cyan-400/20"
+          className="lg:col-span-5 flex flex-col space-y-6 w-full lg:pl-6 lg:border-l border-cyan-400/20"
         >
           <h4 className="text-sm font-semibold tracking-widest text-zinc-500 uppercase">
             Highlights & Focus
           </h4>
-          <div className="space-y-6">
+          <div className="space-y-6 relative">
+            <div className="absolute left-0.5 top-0 h-full w-px bg-cyan-400/20"/>
             {achievements.map((item, index) => (
               <div
                 key={index}
