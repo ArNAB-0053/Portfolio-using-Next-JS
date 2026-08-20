@@ -151,6 +151,7 @@ export function useGetProjectById(id: string) {
   return useQuery({
     queryKey: queryKeyConfig.projects.byId(id),
     queryFn: () => getProjectById(id),
+    staleTime: 24 * 60 * 60 * 1000, // 24h
     enabled: Boolean(id),
   });
 }
@@ -222,6 +223,7 @@ export function useGetRelatedProjects({
   return useQuery({
     queryKey: queryKeyConfig.projects.related(projectId, limit),
     queryFn: () => getRelatedProjects(projectId, limit),
+    staleTime: 24 * 60 * 60 * 1000, // 24h
     enabled: Boolean(projectId),
   });
 }

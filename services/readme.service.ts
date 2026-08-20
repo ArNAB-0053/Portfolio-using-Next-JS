@@ -63,6 +63,7 @@ export function useGetReadme({ repo, branch = "main" }: UseGetReadmeOptions) {
   return useQuery({
     queryKey: queryKeyConfig.projects.readme(repo, branch),
     queryFn: () => getReadme(repo, branch),
+    staleTime: 24 * 60 * 60 * 1000, // 24h
     enabled: Boolean(repo),
   });
 }
