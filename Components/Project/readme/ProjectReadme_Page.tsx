@@ -1,15 +1,14 @@
 "use client";
 
+import { dm_sans } from "@/utils/fonts";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-
-import ProjectReadme from "@/Components/Project/ProjectReadme";
-import { dm_sans } from "@/utils/fonts";
 import Link from "next/link";
 import type { Project } from "@/types";
-import RelatedProjects from "./Related";
-import Header2 from "../UI/Header2";
+import RelatedProjects from "../Related";
+import Header2 from "../../UI/Header2";
 import React from "react";
+import ReadmeSection from "./ReadmeSection";
 
 interface ProjectReadmePageProps {
   project: Project | null;
@@ -38,7 +37,7 @@ const ProjectReadmePage = ({ project }: ProjectReadmePageProps): React.ReactElem
   };
 
   return (
-    <main className={`relative w-full min-h-screen overflow-hidden text-white ${dm_sans.className}`}>
+    <div className={`relative w-full overflow-x-clip text-white ${dm_sans.className}`}>
       <div className="relative z-10">
         {/* ─────────────────────────────────────────────
             TOP BAR
@@ -196,27 +195,25 @@ const ProjectReadmePage = ({ project }: ProjectReadmePageProps): React.ReactElem
 
         <section
           id="readme"
-          className="pb-10 pt-20 sm:pt-28"
+          className="pb-10 pt-10 lg:mt-16 scroll-mt-6"
         >
           {/* Section heading */}
           <Header2 tag="Documentation">Project README</Header2>
 
           {/* README */}
-          <div className="rounded-2xl border border-white/[0.08] bg-black/20 px-5 py-8 sm:px-8 lg:px-12 lg:py-12">
-            <ProjectReadme repo={repo} />
-          </div>
+          <ReadmeSection repo={repo} />
         </section>
 
 
         {/* ─────────────────────────────────────────────
             RELATED PROJECTS
         ───────────────────────────────────────────── */}
-        <div className="mb-32 mt-8 overflow-hidden w-full">
+        <div className="pb-32 mt-8 overflow-hidden w-full">
           <Header2 tag="More Projects">Related Projects</Header2>
           <RelatedProjects projectId={project.id} />
         </div>
       </div>
-    </main>
+    </div>
   );
 };
 

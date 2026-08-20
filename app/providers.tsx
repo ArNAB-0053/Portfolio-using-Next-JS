@@ -23,6 +23,8 @@ export default function Providers({ children }: ProvidersProps): React.ReactElem
   );
 
   return (
-    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    <QueryClientProvider client={queryClient} >
+      {children}
+    </QueryClientProvider>
   );
 }
