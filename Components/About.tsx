@@ -110,7 +110,7 @@ const About = (): React.ReactElement => {
             Highlights & Focus
           </h4>
           <div className="space-y-6 relative">
-            <div className="absolute left-0.5 top-0 h-full w-px bg-cyan-400/20"/>
+            <div className="absolute left-0.5 top-0 h-full w-px bg-cyan-400/20 lg:hidden"/>
             {achievements.map((item, index) => (
               <div
                 key={index}
